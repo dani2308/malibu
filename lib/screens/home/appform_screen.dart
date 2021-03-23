@@ -383,7 +383,7 @@ class _AppformScreenState extends State<AppformScreen> {
                       padding: EdgeInsets.only(top: 70),
                       child: SizedBox(
                         width: 400,
-                        height: 400,
+                        height: 75,
                         child: Stack(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           overflow: Overflow.visible,

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 var rotas = ['forecast', 'rentboard', 'rentwetsuit', 'class', 'news', 'profile'];
 
-return Container(
+/*return Container(
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
@@ -55,4 +55,4 @@ return Container(
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
         ),
-      );
+      );*/

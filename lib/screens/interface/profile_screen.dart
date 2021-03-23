@@ -25,6 +25,79 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ],
             ),
+            Align(
+              alignment: Alignment.center,
+              child: Padding(
+                padding: EdgeInsets.only(top: 50),
+                child: Stack(
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  overflow: Overflow.visible,
+                  children: [
+                    Container(
+                      width: 100,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.blue),
+                        borderRadius: BorderRadius.circular(50.0),
+                      ),
+                      child: CircleAvatar(
+                        backgroundImage: AssetImage("assets/mii.png"),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 0,
+                      right: 10,
+                      child: Container(
+                        width: 25,
+                        height: 25,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50.0),
+                          color: Colors.blue,
+                        ),
+                        child: Icon(
+                          Icons.add,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.center,
+              child: Padding(
+                padding: EdgeInsets.only(top: 15),
+                child: Text(
+                  'Daniel Rodrigues',
+                  style: TextStyle(
+                      fontFamily: 'Ubuntu',
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600),
+                ),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Align(
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 15),
+                    child: Text(
+                      'Dani_23',
+                      style: TextStyle(
+                        fontFamily: 'Ubuntu',
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 15, left: 5),
+                  child: Icon(Icons.create_rounded, size: 20),
+                ),
+              ],
+            ),
           ],
         ),
       ),

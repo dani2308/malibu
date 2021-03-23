@@ -40,11 +40,24 @@ class _NewsScreenState extends State<NewsScreen> {
                     overflow: Overflow.visible,
                     children: [
                       Container(
+                        width: 300,
+                        height: 150,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: Image.asset('assets/pipe.png'),
+                      ),
+                      Container(
                         width: 60,
                         height: 20,
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.black),
                           borderRadius: BorderRadius.circular(10.0),
+                          color: Colors.white,
                         ),
                         alignment: Alignment.center,
                         child: Text(
@@ -57,25 +70,44 @@ class _NewsScreenState extends State<NewsScreen> {
                         alignment: Alignment.bottomCenter,
                         child: Container(
                           width: 300,
-                          height: 60,
+                          height: 70,
                           decoration: BoxDecoration(
                             border: Border.all(color: Colors.black),
                             borderRadius: BorderRadius.circular(10.0),
+                            color: Colors.white,
                           ),
-                          child: Row(
+                          child: Column(
                             children: [
-                              IconButton(
-                                  icon: Icon(Icons.favorite_border),
-                                  iconSize: 20,
-                                  padding: EdgeInsets.only(left: 20),
-                                  alignment: Alignment.bottomLeft,
-                                  onPressed: null),
-                              IconButton(
-                                  icon: Icon(Icons.comment_outlined),
-                                  iconSize: 20,
-                                  padding: EdgeInsets.only(left: 10),
-                                  alignment: Alignment.bottomLeft,
-                                  onPressed: null),
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(top: 6, left: 10),
+                                    child: Text(
+                                      'Woowwwwww!!!',
+                                      style: TextStyle(
+                                          fontFamily: 'Ubuntu', fontSize: 12),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  IconButton(
+                                      icon: Icon(Icons.favorite_border),
+                                      iconSize: 20,
+                                      padding:
+                                          EdgeInsets.only(left: 20, bottom: 10),
+                                      alignment: Alignment.bottomLeft,
+                                      onPressed: null),
+                                  IconButton(
+                                      icon: Icon(Icons.comment_outlined),
+                                      iconSize: 20,
+                                      padding:
+                                          EdgeInsets.only(left: 10, bottom: 10),
+                                      alignment: Alignment.bottomLeft,
+                                      onPressed: null),
+                                ],
+                              ),
                             ],
                           ),
                         ),
