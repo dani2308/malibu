@@ -1,40 +1,9 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:malibu/screens/interface/class_screen.dart';
-import 'package:malibu/screens/interface/news_screen.dart';
-import 'package:malibu/screens/interface/forecast_screen.dart';
-import 'package:malibu/screens/interface/profile_screen.dart';
-import 'package:malibu/screens/interface/rentboard_screen.dart';
 
-class HomeScreen extends StatefulWidget {
-  HomeScreen({Key key}) : super(key: key);
 
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
+var rotas = ['forecast', 'rentboard', 'rentwetsuit', 'class', 'news', 'profile'];
 
-class _HomeScreenState extends State<HomeScreen> {
-  int _selectedIndex = 0;
-
-  static List<Widget> _widgetOptions = <Widget>[
-    ForecastScreen(),
-    RentBoardScreen(),
-    ClassScreen(),
-    NewsScreen(),
-    ProfileScreen(),
-  ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: _widgetOptions.elementAt(_selectedIndex),
-      bottomNavigationBar: Container(
+return Container(
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
@@ -86,7 +55,4 @@ class _HomeScreenState extends State<HomeScreen> {
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
         ),
-      ),
-    );
-  }
-}
+      );

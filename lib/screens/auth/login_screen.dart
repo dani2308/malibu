@@ -145,7 +145,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             child: FlatButton(
                               child: Icon(Icons.arrow_forward,
                                   color: Colors.white),
-                              onPressed: () => Navigator.pushNamed(context, ''),
+                              onPressed: () =>
+                                  Navigator.pushNamed(context, 'forecast'),
                             ),
                             width: 90,
                             height: 55,

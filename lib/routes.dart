@@ -5,6 +5,11 @@ import 'package:malibu/screens/auth/login_screen.dart';
 import 'package:malibu/screens/auth/register_screen.dart';
 import 'package:malibu/screens/home/appform_screen.dart';
 import 'package:malibu/screens/interface/forecast_screen.dart';
+import 'package:malibu/screens/interface/rentboard_screen.dart';
+import 'package:malibu/screens/interface/rentwetsuit_screen.dart';
+import 'package:malibu/screens/interface/class_screen.dart';
+import 'package:malibu/screens/interface/news_screen.dart';
+import 'package:malibu/screens/interface/profile_screen.dart';
 
 class RouterHandler {
   static FluroRouter router = FluroRouter();
@@ -29,6 +34,26 @@ class RouterHandler {
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           ForecastScreen());
 
+  static final Handler _rentboardScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          RentBoardScreen());
+
+  static final Handler _rentwetsuitScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          RentWetsuitScreen());
+
+  static final Handler _classScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          ClassScreen());
+
+  static final Handler _newsScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          NewsScreen());
+
+  static final Handler _profileScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          ProfileScreen());
+
   static void setupRouter() {
     router.define(
       'home',
@@ -49,6 +74,26 @@ class RouterHandler {
     router.define(
       'forecast',
       handler: _forecastScreen,
+    );
+    router.define(
+      'rentboard',
+      handler: _rentboardScreen,
+    );
+    router.define(
+      'rentwetsuit',
+      handler: _rentwetsuitScreen,
+    );
+    router.define(
+      'class',
+      handler: _classScreen,
+    );
+    router.define(
+      'news',
+      handler: _newsScreen,
+    );
+    router.define(
+      'profile',
+      handler: _profileScreen,
     );
   }
 }
