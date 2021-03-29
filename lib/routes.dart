@@ -14,6 +14,7 @@ import 'package:malibu/screens/options/language_screen.dart';
 import 'package:malibu/screens/options/privacy_screen.dart';
 import 'package:malibu/screens/options/help_screen.dart';
 import 'package:malibu/screens/options/pack_screen.dart';
+import 'package:malibu/screens/suboptions/pay_screen.dart';
 
 class RouterHandler {
   static FluroRouter router = FluroRouter();
@@ -74,6 +75,10 @@ class RouterHandler {
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           PackScreen());
 
+          static final Handler _payScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          PayScreen());
+
   static void setupRouter() {
     router.define(
       'home',
@@ -130,6 +135,10 @@ class RouterHandler {
     router.define(
       'pack',
       handler: _packScreen,
+    );
+    router.define(
+      'pay',
+      handler: _payScreen,
     );
   }
 }
