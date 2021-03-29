@@ -34,7 +34,7 @@ class _ForecastScreenState extends State<ForecastScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: Container(
                     height: 1.0,
-                    width: 350.0,
+                    width: 355.0,
                     color: Colors.black,
                   ),
                 ),
@@ -129,7 +129,7 @@ class _ForecastScreenState extends State<ForecastScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: Container(
                     height: 1.0,
-                    width: 350.0,
+                    width: 355.0,
                     color: Colors.black,
                   ),
                 ),
@@ -224,7 +224,7 @@ class _ForecastScreenState extends State<ForecastScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: Container(
                     height: 1.0,
-                    width: 350.0,
+                    width: 355.0,
                     color: Colors.black,
                   ),
                 ),
@@ -326,10 +326,10 @@ class _ForecastScreenState extends State<ForecastScreen> {
                       style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
                     ),
                   ),
-                  width: 200,
+                  width: 170,
                   height: 35,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12.0),
+                    borderRadius: BorderRadius.circular(10.0),
                     color: Colors.grey,
                   ),
                 ),

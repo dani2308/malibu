@@ -10,6 +10,10 @@ import 'package:malibu/screens/interface/rentwetsuit_screen.dart';
 import 'package:malibu/screens/interface/class_screen.dart';
 import 'package:malibu/screens/interface/news_screen.dart';
 import 'package:malibu/screens/interface/profile_screen.dart';
+import 'package:malibu/screens/options/language_screen.dart';
+import 'package:malibu/screens/options/privacy_screen.dart';
+import 'package:malibu/screens/options/help_screen.dart';
+import 'package:malibu/screens/options/pack_screen.dart';
 
 class RouterHandler {
   static FluroRouter router = FluroRouter();
@@ -54,6 +58,22 @@ class RouterHandler {
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           ProfileScreen());
 
+  static final Handler _languageScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          LanguageScreen());
+
+  static final Handler _privacyScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          PrivacyScreen());
+
+  static final Handler _helpScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          HelpScreen());
+
+  static final Handler _packScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          PackScreen());
+
   static void setupRouter() {
     router.define(
       'home',
@@ -94,6 +114,22 @@ class RouterHandler {
     router.define(
       'profile',
       handler: _profileScreen,
+    );
+    router.define(
+      'language',
+      handler: _languageScreen,
+    );
+    router.define(
+      'privacy',
+      handler: _privacyScreen,
+    );
+    router.define(
+      'help',
+      handler: _helpScreen,
+    );
+    router.define(
+      'pack',
+      handler: _packScreen,
     );
   }
 }
