@@ -32,6 +32,7 @@ class _PayScreenState extends State<PayScreen> {
                 child: Text(
                   'Este pack oferece duas aulas por semana sendo estas sábado e domingo.',
                   textAlign: TextAlign.center,
+                  style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
                 ),
               ),
               Padding(
@@ -39,6 +40,7 @@ class _PayScreenState extends State<PayScreen> {
                 child: Text(
                   'Época alta (maio a setembro): 90€',
                   textAlign: TextAlign.center,
+                  style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
                 ),
               ),
               Padding(
@@ -46,6 +48,7 @@ class _PayScreenState extends State<PayScreen> {
                 child: Text(
                   'Época baixa (outubro a abril): 55€',
                   textAlign: TextAlign.center,
+                  style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
                 ),
               ),
               Padding(

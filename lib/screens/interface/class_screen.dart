@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -76,6 +79,202 @@ class _ClassScreenState extends State<ClassScreen> {
               ),
               startingDayOfWeek: StartingDayOfWeek.monday,
               calendarController: _controller,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              padding: EdgeInsets.only(left: 30),
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.55,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular((50)),
+                  topRight: Radius.circular((50)),
+                ),
+                color: Colors.blue[900],
+              ),
+              child: Stack(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: 50),
+                        child: Text(
+                          "Hoje",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'Ubuntu',
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Row(
+                          children: [
+                            Icon(
+                              CupertinoIcons.check_mark_circled_solid,
+                              color: Colors.green[200],
+                              size: 30,
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              width: MediaQuery.of(context).size.width * 0.8,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Aula',
+                                    style: (TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Ubuntu',
+                                      color: Colors.white,
+                                    )),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    'Das 10:00 às 11:30',
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        color: Colors.white,
+                                        fontFamily: 'Ubuntu'),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Row(
+                          children: [
+                            Icon(
+                              CupertinoIcons.clock_solid,
+                              color: Colors.orange[300],
+                              size: 30,
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              width: MediaQuery.of(context).size.width * 0.8,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Tarefa 2',
+                                    style: (TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Ubuntu',
+                                      color: Colors.white,
+                                    )),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    'Descrição da Tarfea 2',
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        color: Colors.white,
+                                        fontFamily: 'Ubuntu'),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Row(
+                          children: [
+                            Icon(
+                              CupertinoIcons.clock_solid,
+                              color: Colors.orange[300],
+                              size: 30,
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              width: MediaQuery.of(context).size.width * 0.8,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Tarefa 3',
+                                    style: (TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Ubuntu',
+                                      color: Colors.white,
+                                    )),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    'Descrição da Tarfea 3',
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        color: Colors.white,
+                                        fontFamily: 'Ubuntu'),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Row(
+                          children: [
+                            Icon(
+                              CupertinoIcons.check_mark_circled_solid,
+                              color: Colors.green[200],
+                              size: 30,
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              width: MediaQuery.of(context).size.width * 0.8,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Tarefa 4',
+                                    style: (TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Ubuntu',
+                                      color: Colors.white,
+                                    )),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    'Descrição da Tarfea 4',
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        color: Colors.white,
+                                        fontFamily: 'Ubuntu'),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
           ],
         ),

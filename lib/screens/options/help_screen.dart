@@ -32,6 +32,7 @@ class _HelpScreenState extends State<HelpScreen> {
                 child: Text(
                   'Ao selecionar a opção abaixo será redirecionado para o nosso website.',
                   textAlign: TextAlign.center,
+                  style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
                 ),
               ),
               Padding(
