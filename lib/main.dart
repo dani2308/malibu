@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: themeLight(),
       // * darkTheme: themeDark(),
-      initialRoute: 'classconfirm',
+      initialRoute: 'locationchoose',
       onGenerateRoute: RouterHandler.router.generator,
     );
   }

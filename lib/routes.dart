@@ -14,8 +14,10 @@ import 'package:malibu/screens/options/language_screen.dart';
 import 'package:malibu/screens/options/privacy_screen.dart';
 import 'package:malibu/screens/options/help_screen.dart';
 import 'package:malibu/screens/options/pack_screen.dart';
+import 'package:malibu/screens/options/forecastdetail_screen.dart';
 import 'package:malibu/screens/suboptions/pay_screen.dart';
 import 'package:malibu/screens/suboptions/classconfirm_screen.dart';
+import 'package:malibu/screens/suboptions/locationchoose_screen.dart';
 
 class RouterHandler {
   static FluroRouter router = FluroRouter();
@@ -84,6 +86,14 @@ class RouterHandler {
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           ClassConfirmScreen());
 
+  static final Handler _forecastdetailScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          ForecastDetailScreen());
+
+  static final Handler _locationchooseScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          LocationChooseScreen());
+
   static void setupRouter() {
     router.define(
       'home',
@@ -148,6 +158,14 @@ class RouterHandler {
     router.define(
       'classconfirm',
       handler: _classconfirmScreen,
+    );
+    router.define(
+      'forecastdetail',
+      handler: _forecastdetailScreen,
+    );
+    router.define(
+      'locationchoose',
+      handler: _locationchooseScreen,
     );
   }
 }
