@@ -18,6 +18,7 @@ import 'package:malibu/screens/options/forecastdetail_screen.dart';
 import 'package:malibu/screens/suboptions/pay_screen.dart';
 import 'package:malibu/screens/suboptions/classconfirm_screen.dart';
 import 'package:malibu/screens/suboptions/locationchoose_screen.dart';
+import 'package:malibu/screens/suboptions/boardrentchoose_screen.dart';
 
 class RouterHandler {
   static FluroRouter router = FluroRouter();
@@ -94,6 +95,10 @@ class RouterHandler {
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           LocationChooseScreen());
 
+  static final Handler _boardrentchooseScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          BoardRentChooseScreen());
+
   static void setupRouter() {
     router.define(
       'home',
@@ -166,6 +171,10 @@ class RouterHandler {
     router.define(
       'locationchoose',
       handler: _locationchooseScreen,
+    );
+    router.define(
+      'boardrentchoose',
+      handler: _boardrentchooseScreen,
     );
   }
 }
