@@ -27,15 +27,15 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 18, left: 33),
+                    padding: EdgeInsets.only(top: 25, left: 33),
                     child: Icon(Icons.search_rounded),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 18, left: 15),
+                    padding: EdgeInsets.only(top: 25, left: 15),
                     child: Icon(Icons.favorite_border),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 18, left: 15),
+                    padding: EdgeInsets.only(top: 25, left: 15),
                     child: Icon(Icons.shopping_bag_outlined),
                   ),
                 ],
@@ -101,6 +101,19 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                             clipBehavior: Clip.antiAliasWithSaveLayer,
                             overflow: Overflow.visible,
                             children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                heightFactor: 13.5,
+                                widthFactor: 1.1,
+                                child: Text("SoftBoard - Ocean 7'0"),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 10, right: 65),
+                                child: Image.asset(
+                                  'assets/board.png',
+                                  height: 170,
+                                ),
+                              ),
                               Container(
                                 width: 40,
                                 height: 40,
@@ -108,6 +121,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                   border: Border.all(color: Colors.black),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                child: Icon(Icons.add),
                               ),
                             ],
                           ),
@@ -125,6 +139,19 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                             clipBehavior: Clip.antiAliasWithSaveLayer,
                             overflow: Overflow.visible,
                             children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                heightFactor: 13.5,
+                                widthFactor: 1.1,
+                                child: Text("SoftBoard - Ocean 7'0"),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 10, right: 65),
+                                child: Image.asset(
+                                  'assets/board.png',
+                                  height: 170,
+                                ),
+                              ),
                               Container(
                                 width: 40,
                                 height: 40,
@@ -132,6 +159,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                   border: Border.all(color: Colors.black),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                child: Icon(Icons.add),
                               ),
                             ],
                           ),
@@ -149,6 +177,19 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                             clipBehavior: Clip.antiAliasWithSaveLayer,
                             overflow: Overflow.visible,
                             children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                heightFactor: 13.5,
+                                widthFactor: 1.1,
+                                child: Text("SoftBoard - Ocean 7'0"),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 10, right: 65),
+                                child: Image.asset(
+                                  'assets/board.png',
+                                  height: 170,
+                                ),
+                              ),
                               Container(
                                 width: 40,
                                 height: 40,
@@ -156,6 +197,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                   border: Border.all(color: Colors.black),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                child: Icon(Icons.add),
                               ),
                             ],
                           ),
@@ -177,6 +219,19 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                             clipBehavior: Clip.antiAliasWithSaveLayer,
                             overflow: Overflow.visible,
                             children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                heightFactor: 13.5,
+                                widthFactor: 1.1,
+                                child: Text("SoftBoard - Ocean 7'0"),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 10, right: 65),
+                                child: Image.asset(
+                                  'assets/board.png',
+                                  height: 170,
+                                ),
+                              ),
                               Container(
                                 width: 40,
                                 height: 40,
@@ -184,6 +239,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                   border: Border.all(color: Colors.black),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                child: Icon(Icons.add),
                               ),
                             ],
                           ),
@@ -201,6 +257,19 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                             clipBehavior: Clip.antiAliasWithSaveLayer,
                             overflow: Overflow.visible,
                             children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                heightFactor: 13.5,
+                                widthFactor: 1.1,
+                                child: Text("SoftBoard - Ocean 7'0"),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 10, right: 65),
+                                child: Image.asset(
+                                  'assets/board.png',
+                                  height: 170,
+                                ),
+                              ),
                               Container(
                                 width: 40,
                                 height: 40,
@@ -208,6 +277,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                   border: Border.all(color: Colors.black),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                child: Icon(Icons.add),
                               ),
                             ],
                           ),
@@ -225,6 +295,19 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                             clipBehavior: Clip.antiAliasWithSaveLayer,
                             overflow: Overflow.visible,
                             children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                heightFactor: 13.5,
+                                widthFactor: 1.1,
+                                child: Text("SoftBoard - Ocean 7'0"),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 10, right: 65),
+                                child: Image.asset(
+                                  'assets/board.png',
+                                  height: 170,
+                                ),
+                              ),
                               Container(
                                 width: 40,
                                 height: 40,
@@ -232,6 +315,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                   border: Border.all(color: Colors.black),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                child: Icon(Icons.add),
                               ),
                             ],
                           ),
@@ -245,7 +329,6 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
           ),
         ),
       ),
-      
     );
   }
 }

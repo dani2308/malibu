@@ -23,50 +23,42 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                   ),
                 ],
               ),
-              Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 50, top: 30),
-                    child: Text(
+              Padding(
+                padding: EdgeInsets.only(left: 50, right: 30, top: 15),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
                       'Segunda',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
+                      style: TextStyle(fontSize: 17),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 50, top: 30),
-                    child: Text(
+                    Text(
                       'Canidelo',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
+                      style: TextStyle(fontSize: 17),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 50, top: 30),
-                    child: Text(
+                    Text(
                       '12/02/2021',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
+                      style: TextStyle(fontSize: 17),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 110, top: 30),
-                    child: Icon(Icons.arrow_back_ios_rounded),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 30, top: 30),
-                    child: Text(
+              Padding(
+                padding: EdgeInsets.only(top: 40),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Icon(Icons.arrow_back_ios_rounded),
+                    Text(
                       '9:00',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 30),
+                      style: TextStyle(fontSize: 30),
                       textAlign: TextAlign.center,
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 30, top: 30),
-                    child: Icon(Icons.arrow_forward_ios_rounded),
-                  ),
-                ],
+                    Icon(Icons.arrow_forward_ios_rounded),
+                  ],
+                ),
               ),
               Row(
                 children: [
@@ -124,7 +116,7 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                     padding: EdgeInsets.only(top: 70, left: 70),
                     child: Text(
                       'Energia 900',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
+                      style: TextStyle(fontSize: 17),
                     ),
                   ),
                   Padding(
@@ -136,9 +128,17 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 70, left: 45),
-                    child: Text(
-                      'Maré Alta 2:15',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
+                    child: Column(
+                      children: [
+                        Text(
+                          'Maré Alta 2:15',
+                          style: TextStyle(fontSize: 17),
+                        ),
+                        Text(
+                          'Maré Baixa 8:27',
+                          style: TextStyle(fontSize: 17),
+                        )
+                      ],
                     ),
                   ),
                   Padding(

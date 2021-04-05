@@ -9,9 +9,11 @@ ThemeData themeLight() {
     textTheme: TextTheme(
       bodyText1: TextStyle(
         color: Colors.black,
+        fontFamily: 'Ubuntu',
       ),
       bodyText2: TextStyle(
         color: Colors.black,
+        fontFamily: 'Ubuntu',
       ),
     ),
   );

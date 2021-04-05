@@ -48,27 +48,22 @@ class _LanguageScreenState extends State<LanguageScreen> {
                   ),
                 ),
               ),
-              Container(
+              Padding(
+                padding: EdgeInsets.only(top: 30, left: 50),
                 child: Row(
                   children: [
-                    Padding(
-                      padding: EdgeInsets.only(top: 70, left: 50),
-                      child: Text(
-                        'Português',
-                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
-                      ),
+                    Text(
+                      'Português',
+                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
                     ),
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: Radio(
-                        value: Language.pt,
-                        groupValue: _lang,
-                        onChanged: (Language value) {
-                          setState(() {
-                            _lang = value;
-                          });
-                        },
-                      ),
+                    Radio(
+                      value: Language.pt,
+                      groupValue: _lang,
+                      onChanged: (Language value) {
+                        setState(() {
+                          _lang = value;
+                        });
+                      },
                     ),
                   ],
                 ),
@@ -76,7 +71,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
               Container(
                 alignment: Alignment(2, 0.0),
                 child: Padding(
-                  padding: EdgeInsets.only(top: 30),
+                  padding: EdgeInsets.only(top: 10),
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10.0),
                     child: Container(

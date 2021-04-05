@@ -99,6 +99,19 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           overflow: Overflow.visible,
                           children: [
+                            Align(
+                              alignment: Alignment.topLeft,
+                              heightFactor: 13.5,
+                              widthFactor: 1.4,
+                              child: Text("Wetsuit - RipCurl"),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(bottom: 10, right: 55),
+                              child: Image.asset(
+                                'assets/realwetsuit.png',
+                                height: 170,
+                              ),
+                            ),
                             Container(
                               width: 40,
                               height: 40,
@@ -106,6 +119,7 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                                 border: Border.all(color: Colors.black),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
+                              child: Icon(Icons.add),
                             ),
                           ],
                         ),
@@ -123,6 +137,19 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           overflow: Overflow.visible,
                           children: [
+                            Align(
+                              alignment: Alignment.topLeft,
+                              heightFactor: 13.5,
+                              widthFactor: 1.4,
+                              child: Text("Wetsuit - RipCurl"),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(bottom: 10, right: 55),
+                              child: Image.asset(
+                                'assets/realwetsuit.png',
+                                height: 170,
+                              ),
+                            ),
                             Container(
                               width: 40,
                               height: 40,
@@ -130,6 +157,7 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                                 border: Border.all(color: Colors.black),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
+                              child: Icon(Icons.add),
                             ),
                           ],
                         ),
@@ -147,6 +175,19 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           overflow: Overflow.visible,
                           children: [
+                            Align(
+                              alignment: Alignment.topLeft,
+                              heightFactor: 13.5,
+                              widthFactor: 1.4,
+                              child: Text("Wetsuit - RipCurl"),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(bottom: 10, right: 55),
+                              child: Image.asset(
+                                'assets/realwetsuit.png',
+                                height: 170,
+                              ),
+                            ),
                             Container(
                               width: 40,
                               height: 40,
@@ -154,6 +195,7 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                                 border: Border.all(color: Colors.black),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
+                              child: Icon(Icons.add),
                             ),
                           ],
                         ),
@@ -175,6 +217,19 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           overflow: Overflow.visible,
                           children: [
+                            Align(
+                              alignment: Alignment.topLeft,
+                              heightFactor: 13.5,
+                              widthFactor: 1.4,
+                              child: Text("Wetsuit - RipCurl"),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(bottom: 10, right: 55),
+                              child: Image.asset(
+                                'assets/realwetsuit.png',
+                                height: 170,
+                              ),
+                            ),
                             Container(
                               width: 40,
                               height: 40,
@@ -182,6 +237,7 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                                 border: Border.all(color: Colors.black),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
+                              child: Icon(Icons.add),
                             ),
                           ],
                         ),
@@ -199,6 +255,19 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           overflow: Overflow.visible,
                           children: [
+                            Align(
+                              alignment: Alignment.topLeft,
+                              heightFactor: 13.5,
+                              widthFactor: 1.4,
+                              child: Text("Wetsuit - RipCurl"),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(bottom: 10, right: 55),
+                              child: Image.asset(
+                                'assets/realwetsuit.png',
+                                height: 170,
+                              ),
+                            ),
                             Container(
                               width: 40,
                               height: 40,
@@ -206,6 +275,7 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                                 border: Border.all(color: Colors.black),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
+                              child: Icon(Icons.add),
                             ),
                           ],
                         ),
@@ -223,6 +293,19 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           overflow: Overflow.visible,
                           children: [
+                            Align(
+                              alignment: Alignment.topLeft,
+                              heightFactor: 13.5,
+                              widthFactor: 1.4,
+                              child: Text("Wetsuit - RipCurl"),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(bottom: 10, right: 55),
+                              child: Image.asset(
+                                'assets/realwetsuit.png',
+                                height: 170,
+                              ),
+                            ),
                             Container(
                               width: 40,
                               height: 40,
@@ -230,6 +313,7 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                                 border: Border.all(color: Colors.black),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
+                              child: Icon(Icons.add),
                             ),
                           ],
                         ),
