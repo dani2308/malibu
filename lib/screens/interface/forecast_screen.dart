@@ -44,8 +44,7 @@ class _ForecastScreenState extends State<ForecastScreen> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(top: 40, left: 33),
-                  child: Text('1.2',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 25)),
+                  child: Text('1.2', style: TextStyle(fontSize: 25)),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 40, left: 50),
@@ -72,7 +71,10 @@ class _ForecastScreenState extends State<ForecastScreen> {
                             Icons.brightness_low_outlined,
                             color: Colors.black,
                           ),
-                          Text("Forecast"),
+                          Text(
+                            "Forecast",
+                            style: TextStyle(fontFamily: 'Ubuntu'),
+                          ),
                         ],
                       ),
                     ),
@@ -99,7 +101,10 @@ class _ForecastScreenState extends State<ForecastScreen> {
                             Icons.videocam,
                             color: Colors.black,
                           ),
-                          Text("Em direto"),
+                          Text(
+                            "Em direto",
+                            style: TextStyle(fontFamily: 'Ubuntu'),
+                          ),
                         ],
                       ),
                     ),
@@ -111,13 +116,11 @@ class _ForecastScreenState extends State<ForecastScreen> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(left: 45),
-                  child: Text('m',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 15)),
+                  child: Text('m', style: TextStyle(fontSize: 15)),
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 45),
-                  child: Text('Matosinhos',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 15)),
+                  child: Text('Matosinhos', style: TextStyle(fontSize: 15)),
                 ),
               ],
             ),
@@ -139,8 +142,7 @@ class _ForecastScreenState extends State<ForecastScreen> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(top: 40, left: 33),
-                  child: Text('2.1',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 25)),
+                  child: Text('2.1', style: TextStyle(fontSize: 25)),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 40, left: 50),
@@ -167,7 +169,10 @@ class _ForecastScreenState extends State<ForecastScreen> {
                             Icons.brightness_low_outlined,
                             color: Colors.black,
                           ),
-                          Text("Forecast"),
+                          Text(
+                            "Forecast",
+                            style: TextStyle(fontFamily: 'Ubuntu'),
+                          ),
                         ],
                       ),
                     ),
@@ -194,7 +199,10 @@ class _ForecastScreenState extends State<ForecastScreen> {
                             Icons.videocam,
                             color: Colors.black,
                           ),
-                          Text("Em direto"),
+                          Text(
+                            "Em direto",
+                            style: TextStyle(fontFamily: 'Ubuntu'),
+                          ),
                         ],
                       ),
                     ),
@@ -206,13 +214,11 @@ class _ForecastScreenState extends State<ForecastScreen> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(left: 45),
-                  child: Text('m',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 15)),
+                  child: Text('m', style: TextStyle(fontSize: 15)),
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 50),
-                  child: Text('Canidelo',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 15)),
+                  child: Text('Canidelo', style: TextStyle(fontSize: 15)),
                 ),
               ],
             ),
@@ -234,8 +240,7 @@ class _ForecastScreenState extends State<ForecastScreen> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(top: 40, left: 33),
-                  child: Text('1.9',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 25)),
+                  child: Text('1.9', style: TextStyle(fontSize: 25)),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 40, left: 50),
@@ -262,7 +267,10 @@ class _ForecastScreenState extends State<ForecastScreen> {
                             Icons.brightness_low_outlined,
                             color: Colors.black,
                           ),
-                          Text("Forecast"),
+                          Text(
+                            "Forecast",
+                            style: TextStyle(fontFamily: 'Ubuntu'),
+                          ),
                         ],
                       ),
                     ),
@@ -289,7 +297,10 @@ class _ForecastScreenState extends State<ForecastScreen> {
                             Icons.videocam,
                             color: Colors.black,
                           ),
-                          Text("Em direto"),
+                          Text(
+                            "Em direto",
+                            style: TextStyle(fontFamily: 'Ubuntu'),
+                          ),
                         ],
                       ),
                     ),
@@ -301,13 +312,11 @@ class _ForecastScreenState extends State<ForecastScreen> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(left: 45),
-                  child: Text('m',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 15)),
+                  child: Text('m', style: TextStyle(fontSize: 15)),
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 53),
-                  child: Text('Espinho',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 15)),
+                  child: Text('Espinho', style: TextStyle(fontSize: 15)),
                 ),
               ],
             ),

@@ -27,9 +27,11 @@ ThemeData themeDark() {
     textTheme: TextTheme(
       bodyText1: TextStyle(
         color: Colors.white,
+        fontFamily: 'Ubuntu',
       ),
       bodyText2: TextStyle(
         color: Colors.white,
+        fontFamily: 'Ubuntu',
       ),
     ),
   );
