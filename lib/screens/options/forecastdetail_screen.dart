@@ -71,11 +71,19 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(left: 30, top: 50),
-                    child: Text(
-                      '2.1 m / W',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 30),
+                    child: Column(
+                      children: [
+                        Text(
+                          '2.1 m',
+                          style: TextStyle(fontFamily: 'Ubuntu', fontSize: 30),
+                        ),
+                        Text(
+                          'W',
+                          style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                        ),
+                      ],
                     ),
-                  )
+                  ),
                 ],
               ),
               Row(
