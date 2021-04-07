@@ -39,29 +39,6 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                 ),
               ],
             ),
-            Row(
-              children: [
-                FlatButton(
-                  padding: EdgeInsets.only(left: 40, top: 40),
-                  child: Text(
-                    "Pranchas",
-                    style: TextStyle(fontFamily: 'Ubuntu'),
-                  ),
-                  onPressed: () => Navigator.pushNamed(context, 'rentboard'),
-                ),
-                SizedBox(
-                  width: 10.0,
-                ),
-                FlatButton(
-                  padding: EdgeInsets.only(left: 40, top: 40),
-                  child: Text(
-                    "Fatos",
-                    style: TextStyle(fontFamily: 'Ubuntu'),
-                  ),
-                  onPressed: () => Navigator.pushNamed(context, 'rentwetsuit'),
-                ),
-              ],
-            ),
             Align(
               alignment: Alignment.topLeft,
               child: Container(

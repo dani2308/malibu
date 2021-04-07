@@ -59,6 +59,7 @@ flutter:
     - assets/swell.png
     - assets/board.png
     - assets/realwetsuit.png
+    - assets/board_icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

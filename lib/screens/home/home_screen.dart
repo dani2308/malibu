@@ -5,6 +5,7 @@ import 'package:malibu/screens/interface/news_screen.dart';
 import 'package:malibu/screens/interface/forecast_screen.dart';
 import 'package:malibu/screens/interface/profile_screen.dart';
 import 'package:malibu/screens/interface/rentboard_screen.dart';
+import 'package:malibu/screens/interface/rentwetsuit_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
@@ -19,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   static List<Widget> _widgetOptions = <Widget>[
     ForecastScreen(),
     RentBoardScreen(),
+    RentWetsuitScreen(),
     ClassScreen(),
     NewsScreen(),
     ProfileScreen(),
@@ -50,6 +52,13 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(
               icon: Image.asset(
                 'assets/wave.png',
+                width: 30.0,
+              ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                'assets/board_icon.png',
                 width: 30.0,
               ),
               label: '',
