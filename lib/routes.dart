@@ -19,6 +19,8 @@ import 'package:malibu/screens/suboptions/pay_screen.dart';
 import 'package:malibu/screens/suboptions/classconfirm_screen.dart';
 import 'package:malibu/screens/suboptions/locationchoose_screen.dart';
 import 'package:malibu/screens/suboptions/boardrentchoose_screen.dart';
+import 'package:malibu/screens/suboptions/postcreator_screen.dart';
+import 'package:malibu/screens/suboptions/postcomment_screen.dart';
 
 class RouterHandler {
   static FluroRouter router = FluroRouter();
@@ -99,6 +101,14 @@ class RouterHandler {
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           BoardRentChooseScreen());
 
+  static final Handler _postcreatorScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          PostCreatorScreen());
+
+  static final Handler _postcommentScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          PostCommentScreen());
+
   static void setupRouter() {
     router.define(
       'home',
@@ -175,6 +185,14 @@ class RouterHandler {
     router.define(
       'boardrentchoose',
       handler: _boardrentchooseScreen,
+    );
+    router.define(
+      'postcreator',
+      handler: _postcreatorScreen,
+    );
+    router.define(
+      'postcomment',
+      handler: _postcommentScreen,
     );
   }
 }
