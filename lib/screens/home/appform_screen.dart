@@ -391,7 +391,7 @@ class _AppformScreenState extends State<AppformScreen> {
                             Container(
                               width: 400,
                               height: 75,
-                              color: Colors.red,
+                              color: Theme.of(context).accentColor,
                             ),
                             Positioned(
                               top: -25,
@@ -405,7 +405,10 @@ class _AppformScreenState extends State<AppformScreen> {
                                 ),
                                 width: 90,
                                 height: 55,
-                                color: Colors.blue,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Theme.of(context).primaryColor,
+                                ),
                               ),
                             )
                           ],
