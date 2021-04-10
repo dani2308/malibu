@@ -94,6 +94,154 @@ class _PostCommentScreenState extends State<PostCommentScreen> {
                   ],
                 ),
               ),
+              Container(
+                alignment: Alignment(2, 0.0),
+                child: Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Container(
+                      height: 1.0,
+                      width: 355.0,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 60, top: 20),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.blue),
+                        borderRadius: BorderRadius.circular(50.0),
+                      ),
+                      child: CircleAvatar(
+                        backgroundImage: AssetImage("assets/profile.png"),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Text(
+                        'Paulo Sérgio',
+                        style: TextStyle(fontSize: 15),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 20, left: 60),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 350,
+                      constraints:
+                          BoxConstraints(maxHeight: 100, maxWidth: 320),
+                      child: Text(
+                        'Eu vou!!!',
+                        style: TextStyle(fontSize: 15),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 60),
+                child: Row(
+                  children: [
+                    IconButton(
+                        icon: Icon(Icons.favorite_border),
+                        iconSize: 20,
+                        alignment: Alignment.bottomLeft,
+                        onPressed: null),
+                  ],
+                ),
+              ),
+              Container(
+                alignment: Alignment(2, 0.0),
+                child: Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Container(
+                      height: 1.0,
+                      width: 355.0,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 60, top: 20),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.blue),
+                        borderRadius: BorderRadius.circular(50.0),
+                      ),
+                      child: CircleAvatar(
+                        backgroundImage: AssetImage("assets/profile.png"),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Text(
+                        'Bruno Carvalho',
+                        style: TextStyle(fontSize: 15),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 20, left: 60),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 350,
+                      constraints:
+                          BoxConstraints(maxHeight: 100, maxWidth: 320),
+                      child: Text(
+                        'Eu também!',
+                        style: TextStyle(fontSize: 15),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 60),
+                child: Row(
+                  children: [
+                    IconButton(
+                        icon: Icon(Icons.favorite_border),
+                        iconSize: 20,
+                        alignment: Alignment.bottomLeft,
+                        onPressed: null),
+                  ],
+                ),
+              ),
+              Container(
+                alignment: Alignment(2, 0.0),
+                child: Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Container(
+                      height: 1.0,
+                      width: 355.0,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ),
+              ),
               Padding(
                 padding: EdgeInsets.only(left: 40, top: 40),
                 child: Row(

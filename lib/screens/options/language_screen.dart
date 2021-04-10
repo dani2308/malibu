@@ -49,8 +49,9 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 30, left: 50),
+                padding: EdgeInsets.only(top: 50, left: 50, right: 30),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       'Português',
@@ -58,6 +59,218 @@ class _LanguageScreenState extends State<LanguageScreen> {
                     ),
                     Radio(
                       value: Language.pt,
+                      groupValue: _lang,
+                      onChanged: (Language value) {
+                        setState(
+                          () {
+                            _lang = value;
+                          },
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                alignment: Alignment(2, 0.0),
+                child: Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Container(
+                      height: 1.0,
+                      width: 355.0,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 20, left: 50, right: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Alemão',
+                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                    ),
+                    Radio(
+                      value: Language.al,
+                      groupValue: _lang,
+                      onChanged: (Language value) {
+                        setState(() {
+                          _lang = value;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                alignment: Alignment(2, 0.0),
+                child: Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Container(
+                      height: 1.0,
+                      width: 355.0,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 20, left: 50, right: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Chinês',
+                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                    ),
+                    Radio(
+                      value: Language.ch,
+                      groupValue: _lang,
+                      onChanged: (Language value) {
+                        setState(() {
+                          _lang = value;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                alignment: Alignment(2, 0.0),
+                child: Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Container(
+                      height: 1.0,
+                      width: 355.0,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 20, left: 50, right: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Espanhol',
+                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                    ),
+                    Radio(
+                      value: Language.es,
+                      groupValue: _lang,
+                      onChanged: (Language value) {
+                        setState(() {
+                          _lang = value;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                alignment: Alignment(2, 0.0),
+                child: Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Container(
+                      height: 1.0,
+                      width: 355.0,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 20, left: 50, right: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Francês',
+                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                    ),
+                    Radio(
+                      value: Language.fr,
+                      groupValue: _lang,
+                      onChanged: (Language value) {
+                        setState(() {
+                          _lang = value;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                alignment: Alignment(2, 0.0),
+                child: Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Container(
+                      height: 1.0,
+                      width: 355.0,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 20, left: 50, right: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Inglês',
+                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                    ),
+                    Radio(
+                      value: Language.ig,
+                      groupValue: _lang,
+                      onChanged: (Language value) {
+                        setState(() {
+                          _lang = value;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                alignment: Alignment(2, 0.0),
+                child: Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Container(
+                      height: 1.0,
+                      width: 355.0,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 20, left: 50, right: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Italiano',
+                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                    ),
+                    Radio(
+                      value: Language.it,
                       groupValue: _lang,
                       onChanged: (Language value) {
                         setState(() {

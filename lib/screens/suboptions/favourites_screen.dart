@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
 
-class RentBoardScreen extends StatefulWidget {
-  RentBoardScreen({Key key}) : super(key: key);
+class FavouritesScreen extends StatefulWidget {
+  FavouritesScreen({Key key}) : super(key: key);
 
   @override
-  _RentBoardScreenState createState() => _RentBoardScreenState();
+  _FavouritesScreenState createState() => _FavouritesScreenState();
 }
 
-class _RentBoardScreenState extends State<RentBoardScreen> {
+class _FavouritesScreenState extends State<FavouritesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,48 +16,21 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
           child: Column(
             children: [
               Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 20, top: 30),
-                    child: Image.asset(
-                      'assets/logo.png',
-                      width: 220,
-                    ),
+                  FlatButton(
+                    child: Icon(Icons.arrow_back_ios_rounded),
+                    onPressed: () => Navigator.pushNamed(context, ''),
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 25, left: 33),
-                    child: Icon(Icons.search_rounded),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 25, left: 15),
-                    child: Icon(Icons.favorite_border),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 25, left: 15),
-                    child: Icon(Icons.shopping_bag_outlined),
+                  Text(
+                    'Favoritos',
+                    style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
                   ),
                 ],
               ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Container(
-                  margin: EdgeInsets.only(top: 25, left: 40),
-                  padding: EdgeInsets.all(2.0),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
-                  ),
-                  child: Text('Filtros'),
-                ),
-              ),
-              SizedBox(
-                height: 40.0,
-              ),
-              // ! FlatButton.icon();
               Padding(
                 padding: const EdgeInsets.only(
                   left: 15.0,
-                  top: 10.0,
+                  top: 30.0,
                 ),
                 child: Row(
                   children: [
@@ -99,43 +71,12 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                 ),
                                 child: Icon(Icons.add),
                               ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 15, top: 15),
-                          width: 160,
-                          height: 230,
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.bottomRight,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            overflow: Overflow.visible,
-                            children: [
-                              Align(
-                                alignment: Alignment.topLeft,
-                                heightFactor: 13.5,
-                                widthFactor: 1.1,
-                                child: Text("SoftBoard - Ocean 7'0"),
-                              ),
                               Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 65),
-                                child: Image.asset(
-                                  'assets/board.png',
-                                  height: 170,
+                                padding: EdgeInsets.only(bottom: 45, right: 5),
+                                child: Icon(
+                                  Icons.favorite,
+                                  size: 30,
                                 ),
-                              ),
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.black),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                child: Icon(Icons.add),
                               ),
                             ],
                           ),
@@ -162,7 +103,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                               Padding(
                                 padding: EdgeInsets.only(bottom: 10, right: 65),
                                 child: Image.asset(
-                                  'assets/board.png',
+                                  'assets/realwetsuit.png',
                                   height: 170,
                                 ),
                               ),
@@ -174,6 +115,58 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Icon(Icons.add),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 45, right: 5),
+                                child: Icon(
+                                  Icons.favorite,
+                                  size: 30,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 15, top: 15),
+                          width: 160,
+                          height: 230,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: Stack(
+                            alignment: Alignment.bottomRight,
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            overflow: Overflow.visible,
+                            children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                heightFactor: 13.5,
+                                widthFactor: 1.1,
+                                child: Text("SoftBoard - Ocean 7'0"),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 10, right: 65),
+                                child: Image.asset(
+                                  'assets/realwetsuit.png',
+                                  height: 170,
+                                ),
+                              ),
+                              Container(
+                                width: 40,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.black),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                child: Icon(Icons.add),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 45, right: 5),
+                                child: Icon(
+                                  Icons.favorite,
+                                  size: 30,
+                                ),
                               ),
                             ],
                           ),
@@ -217,6 +210,58 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                 ),
                                 child: Icon(Icons.add),
                               ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 45, right: 5),
+                                child: Icon(
+                                  Icons.favorite,
+                                  size: 30,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 15, top: 15),
+                          width: 160,
+                          height: 230,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: Stack(
+                            alignment: Alignment.bottomRight,
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            overflow: Overflow.visible,
+                            children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                heightFactor: 13.5,
+                                widthFactor: 1.1,
+                                child: Text("SoftBoard - Ocean 7'0"),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 10, right: 65),
+                                child: Image.asset(
+                                  'assets/realwetsuit.png',
+                                  height: 170,
+                                ),
+                              ),
+                              Container(
+                                width: 40,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.black),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                child: Icon(Icons.add),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 45, right: 5),
+                                child: Icon(
+                                  Icons.favorite,
+                                  size: 30,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -255,43 +300,12 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                 ),
                                 child: Icon(Icons.add),
                               ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 15, top: 15),
-                          width: 160,
-                          height: 230,
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.bottomRight,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            overflow: Overflow.visible,
-                            children: [
-                              Align(
-                                alignment: Alignment.topLeft,
-                                heightFactor: 13.5,
-                                widthFactor: 1.1,
-                                child: Text("SoftBoard - Ocean 7'0"),
-                              ),
                               Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 65),
-                                child: Image.asset(
-                                  'assets/board.png',
-                                  height: 170,
+                                padding: EdgeInsets.only(bottom: 45, right: 5),
+                                child: Icon(
+                                  Icons.favorite,
+                                  size: 30,
                                 ),
-                              ),
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.black),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                child: Icon(Icons.add),
                               ),
                             ],
                           ),
@@ -300,9 +314,6 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                     ),
                   ],
                 ),
-              ),
-              SizedBox(
-                height: 20,
               ),
             ],
           ),

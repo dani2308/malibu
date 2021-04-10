@@ -365,7 +365,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Padding(
               padding: EdgeInsets.only(
                 top: 50,
-                bottom: 30.0,
+                bottom: 20.0,
               ),
               child: FlatButton(
                 onPressed: () => Navigator.popAndPushNamed(context, ''),

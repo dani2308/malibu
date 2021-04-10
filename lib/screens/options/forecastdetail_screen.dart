@@ -89,7 +89,7 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
               Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(top: 70, left: 70),
+                    padding: EdgeInsets.only(top: 70, left: 60),
                     child: Text(
                       'Período 15',
                       style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
@@ -121,7 +121,7 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
               Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(top: 70, left: 70),
+                    padding: EdgeInsets.only(top: 70, left: 60),
                     child: Text(
                       'Energia 900',
                       style: TextStyle(fontSize: 17),
@@ -135,7 +135,7 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 70, left: 45),
+                    padding: EdgeInsets.only(top: 70, left: 40),
                     child: Column(
                       children: [
                         Text(

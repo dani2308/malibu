@@ -110,11 +110,11 @@ class _ClassConfirmScreenState extends State<ClassConfirmScreen> {
                       alignment: Alignment.center,
                       child: Text(
                         'Confirmar',
-                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
                       ),
                     ),
-                    width: 120,
-                    height: 35,
+                    width: 100,
+                    height: 30,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
                       color: Colors.grey,

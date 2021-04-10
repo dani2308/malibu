@@ -29,10 +29,13 @@ class _HelpScreenState extends State<HelpScreen> {
               ),
               Padding(
                 padding: EdgeInsets.only(top: 50),
-                child: Text(
-                  'Ao selecionar a opção abaixo será redirecionado para o nosso website.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
+                child: Container(
+                  width: 300,
+                  child: Text(
+                    'Ao selecionar a opção abaixo será redirecionado para o nosso website.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
+                  ),
                 ),
               ),
               Padding(
@@ -47,11 +50,11 @@ class _HelpScreenState extends State<HelpScreen> {
                       alignment: Alignment.center,
                       child: Text(
                         'Ajuda',
-                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
                       ),
                     ),
-                    width: 80,
-                    height: 35,
+                    width: 100,
+                    height: 30,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
                       color: Colors.grey,

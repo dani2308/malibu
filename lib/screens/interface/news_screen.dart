@@ -424,6 +424,9 @@ class _NewsScreenState extends State<NewsScreen> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 20,
+            ),
           ],
         ),
       ),

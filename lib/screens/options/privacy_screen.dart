@@ -83,12 +83,25 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
               ),
               Container(
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Padding(
                       padding: EdgeInsets.only(top: 70, left: 50),
-                      child: Text(
-                        'Permitir que outros vejam o seu perfil',
-                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                      child: Container(
+                        width: 350,
+                        constraints:
+                            BoxConstraints(maxWidth: 250, maxHeight: 130),
+                        child: Text(
+                          'Permitir que outros vejam o seu perfil',
+                          style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 15),
+                      child: Icon(
+                        Icons.toggle_on,
+                        size: 50,
                       ),
                     ),
                   ],

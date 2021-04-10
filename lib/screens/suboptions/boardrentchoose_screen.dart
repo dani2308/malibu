@@ -48,7 +48,7 @@ class _BoardRentChooseScreenState extends State<BoardRentChooseScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: 20.0,
+                      height: 40.0,
                     ),
                     Row(
                       children: [

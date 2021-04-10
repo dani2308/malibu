@@ -29,10 +29,13 @@ class _PayScreenState extends State<PayScreen> {
               ),
               Padding(
                 padding: EdgeInsets.only(top: 50),
-                child: Text(
-                  'Este pack oferece duas aulas por semana sendo estas sábado e domingo.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
+                child: Container(
+                  width: 300,
+                  child: Text(
+                    'Este pack oferece duas aulas por semana sendo estas sábado e domingo.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
+                  ),
                 ),
               ),
               Padding(
@@ -63,11 +66,11 @@ class _PayScreenState extends State<PayScreen> {
                       alignment: Alignment.center,
                       child: Text(
                         'Adquirir',
-                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
                       ),
                     ),
                     width: 100,
-                    height: 35,
+                    height: 30,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
                       color: Colors.grey,

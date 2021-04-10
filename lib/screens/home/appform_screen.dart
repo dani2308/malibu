@@ -401,7 +401,7 @@ class _AppformScreenState extends State<AppformScreen> {
                                   child: Icon(Icons.arrow_forward,
                                       color: Colors.white),
                                   onPressed: () =>
-                                      Navigator.pushNamed(context, 'forecast'),
+                                      Navigator.pushNamed(context, 'home'),
                                 ),
                                 width: 90,
                                 height: 55,

@@ -21,6 +21,8 @@ import 'package:malibu/screens/suboptions/locationchoose_screen.dart';
 import 'package:malibu/screens/suboptions/boardrentchoose_screen.dart';
 import 'package:malibu/screens/suboptions/postcreator_screen.dart';
 import 'package:malibu/screens/suboptions/postcomment_screen.dart';
+import 'package:malibu/screens/suboptions/favourites_screen.dart';
+import 'package:malibu/screens/suboptions/shopbag_screen.dart';
 
 class RouterHandler {
   static FluroRouter router = FluroRouter();
@@ -109,6 +111,14 @@ class RouterHandler {
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           PostCommentScreen());
 
+          static final Handler _favouritesScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          FavouritesScreen());
+
+          static final Handler _shopbagScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          ShopBagScreen());
+
   static void setupRouter() {
     router.define(
       'home',
@@ -193,6 +203,14 @@ class RouterHandler {
     router.define(
       'postcomment',
       handler: _postcommentScreen,
+    );
+    router.define(
+      'favourites',
+      handler: _favouritesScreen,
+    );
+    router.define(
+      'shopbag',
+      handler: _shopbagScreen,
     );
   }
 }

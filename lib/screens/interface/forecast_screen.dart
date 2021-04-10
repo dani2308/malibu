@@ -323,7 +323,7 @@ class _ForecastScreenState extends State<ForecastScreen> {
             Padding(
               padding: EdgeInsets.only(
                 top: 50,
-                bottom: 50.0,
+                bottom: 20.0,
               ),
               child: FlatButton(
                 onPressed: () => Navigator.popAndPushNamed(context, ''),

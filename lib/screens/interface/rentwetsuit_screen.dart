@@ -26,15 +26,15 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 18, left: 33),
+                  padding: EdgeInsets.only(top: 25, left: 33),
                   child: Icon(Icons.search_rounded),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 18, left: 15),
+                  padding: EdgeInsets.only(top: 25, left: 15),
                   child: Icon(Icons.favorite_border),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 18, left: 15),
+                  padding: EdgeInsets.only(top: 25, left: 15),
                   child: Icon(Icons.shopping_bag_outlined),
                 ),
               ],
@@ -299,6 +299,9 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                   ),
                 ],
               ),
+            ),
+            SizedBox(
+              height: 20,
             ),
           ],
         ),
