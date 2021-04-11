@@ -51,7 +51,6 @@ flutter:
     - assets/wave.png
     - assets/wetsuit.png
     - assets/fulllogo.png
-    - assets/classes.png
     - assets/feed.png
     - assets/profile.png
     - assets/pipe.png
@@ -60,6 +59,7 @@ flutter:
     - assets/board.png
     - assets/realwetsuit.png
     - assets/board_icon.png
+    - assets/class.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

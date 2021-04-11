@@ -27,27 +27,45 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 25, left: 33),
-                  child: Icon(Icons.search_rounded),
+                  child: Icon(
+                    Icons.search_rounded,
+                    color: Theme.of(context).primaryColor,
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 25, left: 15),
-                  child: Icon(Icons.favorite_border),
+                  child: Icon(
+                    Icons.favorite_border,
+                    color: Theme.of(context).primaryColor,
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 25, left: 15),
-                  child: Icon(Icons.shopping_bag_outlined),
+                  child: Icon(
+                    Icons.shopping_bag_outlined,
+                    color: Theme.of(context).primaryColor,
+                  ),
                 ),
               ],
             ),
             Align(
               alignment: Alignment.topLeft,
               child: Container(
-                margin: EdgeInsets.only(top: 25, left: 40),
+                margin: EdgeInsets.only(top: 25, left: 33),
                 padding: EdgeInsets.all(2.0),
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black),
+                  color: Theme.of(context).primaryColor,
+                  border: Border.all(
+                    color: Theme.of(context).primaryColor,
+                  ),
                 ),
-                child: Text('Filtros'),
+                child: Text(
+                  'Filtros',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 17,
+                  ),
+                ),
               ),
             ),
             SizedBox(
@@ -68,7 +86,9 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                         width: 160,
                         height: 230,
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
+                          border: Border.all(
+                            color: Theme.of(context).primaryColor,
+                          ),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: Stack(
@@ -93,10 +113,15 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                               width: 40,
                               height: 40,
                               decoration: BoxDecoration(
-                                border: Border.all(color: Colors.black),
+                                border: Border.all(
+                                  color: Theme.of(context).primaryColor,
+                                ),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
-                              child: Icon(Icons.add),
+                              child: Icon(
+                                Icons.add,
+                                color: Theme.of(context).primaryColor,
+                              ),
                             ),
                           ],
                         ),
@@ -106,7 +131,9 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                         width: 160,
                         height: 230,
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
+                          border: Border.all(
+                            color: Theme.of(context).primaryColor,
+                          ),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: Stack(
@@ -131,10 +158,15 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                               width: 40,
                               height: 40,
                               decoration: BoxDecoration(
-                                border: Border.all(color: Colors.black),
+                                border: Border.all(
+                                  color: Theme.of(context).primaryColor,
+                                ),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
-                              child: Icon(Icons.add),
+                              child: Icon(
+                                Icons.add,
+                                color: Theme.of(context).primaryColor,
+                              ),
                             ),
                           ],
                         ),
@@ -144,7 +176,9 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                         width: 160,
                         height: 230,
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
+                          border: Border.all(
+                            color: Theme.of(context).primaryColor,
+                          ),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: Stack(
@@ -169,10 +203,15 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                               width: 40,
                               height: 40,
                               decoration: BoxDecoration(
-                                border: Border.all(color: Colors.black),
+                                border: Border.all(
+                                  color: Theme.of(context).primaryColor,
+                                ),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
-                              child: Icon(Icons.add),
+                              child: Icon(
+                                Icons.add,
+                                color: Theme.of(context).primaryColor,
+                              ),
                             ),
                           ],
                         ),
@@ -186,7 +225,9 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                         width: 160,
                         height: 230,
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
+                          border: Border.all(
+                            color: Theme.of(context).primaryColor,
+                          ),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: Stack(
@@ -211,10 +252,15 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                               width: 40,
                               height: 40,
                               decoration: BoxDecoration(
-                                border: Border.all(color: Colors.black),
+                                border: Border.all(
+                                  color: Theme.of(context).primaryColor,
+                                ),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
-                              child: Icon(Icons.add),
+                              child: Icon(
+                                Icons.add,
+                                color: Theme.of(context).primaryColor,
+                              ),
                             ),
                           ],
                         ),
@@ -224,7 +270,9 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                         width: 160,
                         height: 230,
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
+                          border: Border.all(
+                            color: Theme.of(context).primaryColor,
+                          ),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: Stack(
@@ -249,10 +297,15 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                               width: 40,
                               height: 40,
                               decoration: BoxDecoration(
-                                border: Border.all(color: Colors.black),
+                                border: Border.all(
+                                  color: Theme.of(context).primaryColor,
+                                ),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
-                              child: Icon(Icons.add),
+                              child: Icon(
+                                Icons.add,
+                                color: Theme.of(context).primaryColor,
+                              ),
                             ),
                           ],
                         ),
@@ -262,7 +315,9 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                         width: 160,
                         height: 230,
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
+                          border: Border.all(
+                            color: Theme.of(context).primaryColor,
+                          ),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: Stack(
@@ -287,10 +342,15 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                               width: 40,
                               height: 40,
                               decoration: BoxDecoration(
-                                border: Border.all(color: Colors.black),
+                                border: Border.all(
+                                  color: Theme.of(context).primaryColor,
+                                ),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
-                              child: Icon(Icons.add),
+                              child: Icon(
+                                Icons.add,
+                                color: Theme.of(context).primaryColor,
+                              ),
                             ),
                           ],
                         ),

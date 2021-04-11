@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:malibu/theme.dart';
 
 class BoardRentChooseScreen extends StatefulWidget {
   BoardRentChooseScreen({Key key}) : super(key: key);
@@ -18,7 +19,10 @@ class _BoardRentChooseScreenState extends State<BoardRentChooseScreen> {
               Row(
                 children: [
                   FlatButton(
-                    child: Icon(Icons.arrow_back_ios_rounded),
+                    child: Icon(
+                      Icons.arrow_back_ios_rounded,
+                      color: Theme.of(context).accentColor,
+                    ),
                     onPressed: () => Navigator.pushNamed(context, ''),
                   ),
                 ],
@@ -38,7 +42,10 @@ class _BoardRentChooseScreenState extends State<BoardRentChooseScreen> {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height * 0.55,
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black),
+                  color: Theme.of(context).primaryColor,
+                  border: Border.all(
+                    color: Theme.of(context).primaryColor,
+                  ),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular((50)),
                     topRight: Radius.circular((50)),
@@ -57,15 +64,21 @@ class _BoardRentChooseScreenState extends State<BoardRentChooseScreen> {
                           child: Text(
                             "SoftBoard Ocean - 7'0'",
                             style: TextStyle(
-                                fontFamily: 'Ubuntu',
-                                fontWeight: FontWeight.bold),
+                              fontFamily: 'Ubuntu',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsets.only(
                             left: 20.0,
                           ),
-                          child: Icon(Icons.favorite_border),
+                          child: Icon(
+                            Icons.favorite_border,
+                            color: Colors.white,
+                          ),
                         ),
                       ],
                     ),
@@ -88,10 +101,11 @@ class _BoardRentChooseScreenState extends State<BoardRentChooseScreen> {
                                 height: 30,
                                 child: FlatButton(
                                   onPressed: () => {},
-                                  color: Colors.grey[300],
+                                  color: Theme.of(context).accentColor,
                                   padding: EdgeInsets.all(10.0),
                                   child: Icon(
                                     Icons.remove,
+                                    color: Colors.white,
                                     size: 12.0,
                                   ),
                                 ),
@@ -103,11 +117,16 @@ class _BoardRentChooseScreenState extends State<BoardRentChooseScreen> {
                                 width: 24,
                                 height: 24,
                                 decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.black),
+                                  border: Border.all(
+                                    color: Theme.of(context).accentColor,
+                                  ),
                                 ),
                                 child: Center(
                                   child: Text(
                                     "1",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -119,10 +138,11 @@ class _BoardRentChooseScreenState extends State<BoardRentChooseScreen> {
                                 height: 30,
                                 child: FlatButton(
                                   onPressed: () => {},
-                                  color: Colors.grey[300],
+                                  color: Theme.of(context).accentColor,
                                   padding: EdgeInsets.all(10.0),
                                   child: Icon(
                                     Icons.add,
+                                    color: Colors.white,
                                     size: 12.0,
                                   ),
                                 ),
@@ -134,6 +154,7 @@ class _BoardRentChooseScreenState extends State<BoardRentChooseScreen> {
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 23.0,
+                              color: Colors.white,
                             ),
                           ),
                         ],
@@ -146,6 +167,10 @@ class _BoardRentChooseScreenState extends State<BoardRentChooseScreen> {
                       ),
                       child: Text(
                         "Hello world, aqui está a minha descrição",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                        ),
                       ),
                     ),
                   ],

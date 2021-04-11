@@ -21,7 +21,10 @@ class _LanguageScreenState extends State<LanguageScreen> {
               Row(
                 children: [
                   FlatButton(
-                    child: Icon(Icons.arrow_back_ios_rounded),
+                    child: Icon(
+                      Icons.arrow_back_ios_rounded,
+                      color: Theme.of(context).accentColor,
+                    ),
                     onPressed: () => Navigator.pushNamed(context, ''),
                   ),
                   Text(
@@ -34,16 +37,37 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 padding: EdgeInsets.only(top: 50),
                 child: Container(
                   width: 320,
-                  height: 35,
+                  height: 30,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
-                    color: Colors.grey,
+                    color: Colors.white,
+                    border: Border.all(
+                      color: Theme.of(context).primaryColor,
+                    ),
                   ),
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text(
-                      'Pesquisar por um idioma',
-                      style: TextStyle(fontFamily: 'Ubuntu'),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 10, right: 85, top: 2),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Icon(
+                                Icons.search_outlined,
+                                color: Theme.of(context).primaryColor,
+                              ),
+                              Text(
+                                'Pesquisar por um idioma',
+                                style: TextStyle(
+                                    fontFamily: 'Ubuntu', fontSize: 17),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -80,7 +104,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                     child: Container(
                       height: 1.0,
                       width: 355.0,
-                      color: Colors.grey,
+                      color: Colors.grey[300],
                     ),
                   ),
                 ),
@@ -115,7 +139,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                     child: Container(
                       height: 1.0,
                       width: 355.0,
-                      color: Colors.grey,
+                      color: Colors.grey[300],
                     ),
                   ),
                 ),
@@ -150,7 +174,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                     child: Container(
                       height: 1.0,
                       width: 355.0,
-                      color: Colors.grey,
+                      color: Colors.grey[300],
                     ),
                   ),
                 ),
@@ -185,7 +209,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                     child: Container(
                       height: 1.0,
                       width: 355.0,
-                      color: Colors.grey,
+                      color: Colors.grey[300],
                     ),
                   ),
                 ),
@@ -220,7 +244,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                     child: Container(
                       height: 1.0,
                       width: 355.0,
-                      color: Colors.grey,
+                      color: Colors.grey[300],
                     ),
                   ),
                 ),
@@ -255,7 +279,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                     child: Container(
                       height: 1.0,
                       width: 355.0,
-                      color: Colors.grey,
+                      color: Colors.grey[300],
                     ),
                   ),
                 ),
@@ -290,7 +314,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                     child: Container(
                       height: 1.0,
                       width: 355.0,
-                      color: Colors.grey,
+                      color: Colors.grey[300],
                     ),
                   ),
                 ),

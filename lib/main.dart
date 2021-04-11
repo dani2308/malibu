@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: themeLight(),
       // * darkTheme: themeDark(),
-      initialRoute: 'login',
+      initialRoute: 'shopbag',
       onGenerateRoute: RouterHandler.router.generator,
     );
   }

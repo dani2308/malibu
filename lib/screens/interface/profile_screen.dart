@@ -37,7 +37,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       width: 100,
                       height: 100,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Colors.blue),
+                        border: Border.all(
+                          color: Theme.of(context).primaryColor,
+                        ),
                         borderRadius: BorderRadius.circular(50.0),
                       ),
                       child: CircleAvatar(
@@ -52,7 +54,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         height: 25,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50.0),
-                          color: Colors.blue,
+                          color: Theme.of(context).primaryColor,
                         ),
                         child: Icon(
                           Icons.add,
@@ -94,7 +96,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 15, left: 5),
-                  child: Icon(Icons.create_rounded, size: 20),
+                  child: Icon(
+                    Icons.create_rounded,
+                    size: 20,
+                    color: Theme.of(context).primaryColor,
+                  ),
                 ),
               ],
             ),
@@ -105,7 +111,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: Text(
                   'Aluno avançado',
                   style: TextStyle(
-                      fontFamily: 'Ubuntu', fontSize: 15, color: Colors.grey),
+                    fontFamily: 'Ubuntu',
+                    fontSize: 15,
+                    color: Theme.of(context).accentColor,
+                  ),
                 ),
               ),
             ),
@@ -116,7 +125,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: Text(
                   'Frequenta a ecola desde',
                   style: TextStyle(
-                      fontFamily: 'Ubuntu', fontSize: 15, color: Colors.grey),
+                      fontFamily: 'Ubuntu',
+                      fontSize: 15,
+                      color: Theme.of(context).accentColor),
                 ),
               ),
             ),
@@ -127,7 +138,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: Text(
                   '16/09/2018',
                   style: TextStyle(
-                      fontFamily: 'Ubuntu', fontSize: 15, color: Colors.grey),
+                      fontFamily: 'Ubuntu',
+                      fontSize: 15,
+                      color: Theme.of(context).accentColor),
                 ),
               ),
             ),
@@ -140,10 +153,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     height: 50,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50.0),
-                      color: Colors.blue,
+                      color: Theme.of(context).primaryColor,
                     ),
                     child: Icon(
                       Icons.notifications_none,
+                      color: Colors.white,
                       size: 35,
                     ),
                   ),
@@ -159,6 +173,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   padding: EdgeInsets.only(top: 45, left: 85),
                   child: Icon(
                     Icons.toggle_off_outlined,
+                    color: Theme.of(context).accentColor,
                     size: 50,
                   ),
                 ),
@@ -173,10 +188,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     height: 50,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50.0),
-                      color: Colors.blue,
+                      color: Theme.of(context).primaryColor,
                     ),
                     child: Icon(
                       Icons.bedtime_outlined,
+                      color: Colors.white,
                       size: 35,
                     ),
                   ),
@@ -192,6 +208,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   padding: EdgeInsets.only(top: 15, left: 78),
                   child: Icon(
                     Icons.toggle_off_outlined,
+                    color: Theme.of(context).accentColor,
                     size: 50,
                   ),
                 ),
@@ -206,11 +223,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     height: 50,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50.0),
-                      color: Colors.blue,
+                      color: Theme.of(context).primaryColor,
                     ),
                     child: Icon(
                       Icons.lock_outlined,
                       size: 35,
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -239,11 +257,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     height: 50,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50.0),
-                      color: Colors.blue,
+                      color: Theme.of(context).primaryColor,
                     ),
                     child: Icon(
                       Icons.translate_outlined,
                       size: 35,
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -272,11 +291,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     height: 50,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50.0),
-                      color: Colors.blue,
+                      color: Theme.of(context).primaryColor,
                     ),
                     child: Icon(
                       Icons.verified_user_outlined,
                       size: 35,
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -305,11 +325,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     height: 50,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50.0),
-                      color: Colors.blue,
+                      color: Theme.of(context).primaryColor,
                     ),
                     child: Icon(
                       Icons.help_outline,
                       size: 35,
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -338,11 +359,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     height: 50,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50.0),
-                      color: Colors.blue,
+                      color: Theme.of(context).primaryColor,
                     ),
                     child: Icon(
                       Icons.shopping_bag_outlined,
                       size: 35,
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -374,14 +396,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     alignment: Alignment.center,
                     child: Text(
                       'Terminar Sessão',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
+                      style: TextStyle(
+                        fontFamily: 'Ubuntu',
+                        fontSize: 17,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   width: 160,
                   height: 35,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
-                    color: Colors.grey,
+                    color: Theme.of(context).primaryColor,
                   ),
                 ),
               ),

@@ -41,34 +41,43 @@ class _ClassScreenState extends State<ClassScreen> {
             TableCalendar(
               initialCalendarFormat: CalendarFormat.month,
               calendarStyle: CalendarStyle(
-                todayColor: Colors.blue, //? marca o dia de hoje
-                selectedColor: Colors.yellow, //? marca o dia selecionado
+                todayColor:
+                    Theme.of(context).primaryColor, //? marca o dia de hoje
+                selectedColor: Theme.of(context)
+                    .primaryColorLight, //? marca o dia selecionado
                 outsideWeekendStyle: //? propriedades dos dias do fim-de-semana
-                    TextStyle(color: Colors.blue[200], fontFamily: 'Ubuntu'),
+                    TextStyle(
+                        color: Colors.grey[400],
+                        fontFamily: 'Ubuntu'), //? dias do mes seguinte
                 outsideStyle:
-                    TextStyle(color: Colors.blue[100]), //? dias do mes seguinte
+                    TextStyle(color: Colors.grey[400]), //? dias do mes passado
                 weekdayStyle:
                     TextStyle(fontFamily: 'Ubuntu'), //? dias da semana
                 weekendStyle: //? fins de semana
-                    TextStyle(fontFamily: 'Ubuntu', color: Colors.blue),
+                    TextStyle(
+                        fontFamily: 'Ubuntu',
+                        color: Theme.of(context).accentColor),
                 contentPadding: EdgeInsets.only(
                     top: 20), //? espaço entre o mes e calendario
               ),
               daysOfWeekStyle: DaysOfWeekStyle(
                 weekdayStyle: TextStyle(
                     fontFamily: 'Ubuntu',
-                    color: Colors.grey), //? segunda a sexta
+                    color: Colors.black), //? segunda a sexta
                 weekendStyle: TextStyle(
                     fontFamily: 'Ubuntu',
-                    color: Colors.blue[900]), //? sabado e domingo
+                    color: Theme.of(context).primaryColor), //? sabado e domingo
               ),
               headerStyle: HeaderStyle(
                 //? propriedades do header
-                titleTextStyle: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                titleTextStyle: TextStyle(
+                    fontFamily: 'Ubuntu',
+                    fontSize: 20,
+                    color: Theme.of(context).primaryColor),
                 formatButtonDecoration: BoxDecoration(
                   //? caixa display do calendario
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(20),
+                  color: Theme.of(context).primaryColor,
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 formatButtonTextStyle: TextStyle(
                   //? texto dentro da caixa
@@ -86,13 +95,13 @@ class _ClassScreenState extends State<ClassScreen> {
             Container(
               padding: EdgeInsets.only(left: 30),
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.55,
+              height: MediaQuery.of(context).size.height * 0.56,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular((50)),
                   topRight: Radius.circular((50)),
                 ),
-                color: Colors.blue[900],
+                color: Theme.of(context).primaryColor,
               ),
               child: Stack(
                 children: [
@@ -117,7 +126,7 @@ class _ClassScreenState extends State<ClassScreen> {
                           children: [
                             Icon(
                               CupertinoIcons.check_mark_circled_solid,
-                              color: Colors.green[200],
+                              color: Theme.of(context).accentColor,
                               size: 30,
                             ),
                             Container(
@@ -157,7 +166,7 @@ class _ClassScreenState extends State<ClassScreen> {
                           children: [
                             Icon(
                               CupertinoIcons.clock_solid,
-                              color: Colors.orange[300],
+                              color: Theme.of(context).primaryColorLight,
                               size: 30,
                             ),
                             Container(
@@ -197,7 +206,7 @@ class _ClassScreenState extends State<ClassScreen> {
                           children: [
                             Icon(
                               CupertinoIcons.clock_solid,
-                              color: Colors.orange[300],
+                              color: Theme.of(context).primaryColorLight,
                               size: 30,
                             ),
                             Container(
@@ -237,7 +246,7 @@ class _ClassScreenState extends State<ClassScreen> {
                           children: [
                             Icon(
                               CupertinoIcons.check_mark_circled_solid,
-                              color: Colors.green[200],
+                              color: Theme.of(context).accentColor,
                               size: 30,
                             ),
                             Container(

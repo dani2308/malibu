@@ -32,7 +32,7 @@ class _NewsScreenState extends State<NewsScreen> {
                   width: 350,
                   height: 250,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
+                    border: Border.all(color: Theme.of(context).primaryColor),
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   child: Stack(
@@ -47,14 +47,18 @@ class _NewsScreenState extends State<NewsScreen> {
                         width: 60,
                         height: 20,
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
+                          border:
+                              Border.all(color: Theme.of(context).primaryColor),
                           borderRadius: BorderRadius.circular(10.0),
-                          color: Colors.white,
+                          color: Theme.of(context).primaryColor,
                         ),
                         alignment: Alignment.center,
                         child: Text(
                           'Username',
-                          style: TextStyle(fontFamily: 'Ubuntu', fontSize: 10),
+                          style: TextStyle(
+                              fontFamily: 'Ubuntu',
+                              fontSize: 10,
+                              color: Colors.white),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -64,9 +68,10 @@ class _NewsScreenState extends State<NewsScreen> {
                           width: 350,
                           height: 90,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
+                            border: Border.all(
+                                color: Theme.of(context).primaryColor),
                             borderRadius: BorderRadius.circular(10.0),
-                            color: Colors.white,
+                            color: Theme.of(context).primaryColor,
                           ),
                           child: Column(
                             children: [
@@ -77,7 +82,9 @@ class _NewsScreenState extends State<NewsScreen> {
                                     child: Text(
                                       'Woowwwwww!!!',
                                       style: TextStyle(
-                                          fontFamily: 'Ubuntu', fontSize: 15),
+                                          fontFamily: 'Ubuntu',
+                                          fontSize: 15,
+                                          color: Colors.white),
                                     ),
                                   ),
                                 ],
@@ -85,13 +92,19 @@ class _NewsScreenState extends State<NewsScreen> {
                               Row(
                                 children: [
                                   IconButton(
-                                      icon: Icon(Icons.favorite_border),
+                                      icon: Icon(
+                                        Icons.favorite_border,
+                                        color: Colors.white,
+                                      ),
                                       iconSize: 20,
                                       padding: EdgeInsets.only(left: 20),
                                       alignment: Alignment.bottomLeft,
                                       onPressed: null),
                                   IconButton(
-                                      icon: Icon(Icons.comment_outlined),
+                                      icon: Icon(
+                                        Icons.comment_outlined,
+                                        color: Colors.white,
+                                      ),
                                       iconSize: 20,
                                       padding: EdgeInsets.only(left: 10),
                                       alignment: Alignment.bottomLeft,
@@ -115,28 +128,16 @@ class _NewsScreenState extends State<NewsScreen> {
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     overflow: Overflow.visible,
                     children: [
-                      Container(
-                        width: 60,
-                        height: 20,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        alignment: Alignment.center,
-                        child: Text(
-                          'Username',
-                          style: TextStyle(fontFamily: 'Ubuntu', fontSize: 10),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
                       Align(
                         alignment: Alignment.bottomCenter,
                         child: Container(
                           width: 350,
                           height: 95,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
+                            border: Border.all(
+                                color: Theme.of(context).primaryColor),
                             borderRadius: BorderRadius.circular(10.0),
+                            color: Theme.of(context).primaryColor,
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -148,7 +149,9 @@ class _NewsScreenState extends State<NewsScreen> {
                                     child: Text(
                                       'Woowwwwww!!!',
                                       style: TextStyle(
-                                          fontFamily: 'Ubuntu', fontSize: 15),
+                                          fontFamily: 'Ubuntu',
+                                          fontSize: 15,
+                                          color: Colors.white),
                                     ),
                                   ),
                                 ],
@@ -158,12 +161,18 @@ class _NewsScreenState extends State<NewsScreen> {
                                 child: Row(
                                   children: [
                                     IconButton(
-                                        icon: Icon(Icons.favorite_border),
+                                        icon: Icon(
+                                          Icons.favorite_border,
+                                          color: Colors.white,
+                                        ),
                                         iconSize: 20,
                                         alignment: Alignment.bottomLeft,
                                         onPressed: null),
                                     IconButton(
-                                        icon: Icon(Icons.comment_outlined),
+                                        icon: Icon(
+                                          Icons.comment_outlined,
+                                          color: Colors.white,
+                                        ),
                                         iconSize: 20,
                                         alignment: Alignment.bottomLeft,
                                         onPressed: null),
@@ -172,6 +181,23 @@ class _NewsScreenState extends State<NewsScreen> {
                               ),
                             ],
                           ),
+                        ),
+                      ),
+                      Container(
+                        width: 60,
+                        height: 20,
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.white),
+                            borderRadius: BorderRadius.circular(10.0),
+                            color: Theme.of(context).primaryColor),
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Username',
+                          style: TextStyle(
+                              fontFamily: 'Ubuntu',
+                              fontSize: 10,
+                              color: Colors.white),
+                          textAlign: TextAlign.center,
                         ),
                       ),
                     ],
@@ -187,28 +213,16 @@ class _NewsScreenState extends State<NewsScreen> {
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     overflow: Overflow.visible,
                     children: [
-                      Container(
-                        width: 60,
-                        height: 20,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        alignment: Alignment.center,
-                        child: Text(
-                          'Username',
-                          style: TextStyle(fontFamily: 'Ubuntu', fontSize: 10),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
                       Align(
                         alignment: Alignment.bottomCenter,
                         child: Container(
                           width: 350,
                           height: 95,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
+                            border: Border.all(
+                                color: Theme.of(context).primaryColor),
                             borderRadius: BorderRadius.circular(10.0),
+                            color: Theme.of(context).primaryColor,
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -220,7 +234,9 @@ class _NewsScreenState extends State<NewsScreen> {
                                     child: Text(
                                       'Woowwwwww!!!',
                                       style: TextStyle(
-                                          fontFamily: 'Ubuntu', fontSize: 15),
+                                          fontFamily: 'Ubuntu',
+                                          fontSize: 15,
+                                          color: Colors.white),
                                     ),
                                   ),
                                 ],
@@ -230,12 +246,18 @@ class _NewsScreenState extends State<NewsScreen> {
                                 child: Row(
                                   children: [
                                     IconButton(
-                                        icon: Icon(Icons.favorite_border),
+                                        icon: Icon(
+                                          Icons.favorite_border,
+                                          color: Colors.white,
+                                        ),
                                         iconSize: 20,
                                         alignment: Alignment.bottomLeft,
                                         onPressed: null),
                                     IconButton(
-                                        icon: Icon(Icons.comment_outlined),
+                                        icon: Icon(
+                                          Icons.comment_outlined,
+                                          color: Colors.white,
+                                        ),
                                         iconSize: 20,
                                         alignment: Alignment.bottomLeft,
                                         onPressed: null),
@@ -244,6 +266,23 @@ class _NewsScreenState extends State<NewsScreen> {
                               ),
                             ],
                           ),
+                        ),
+                      ),
+                      Container(
+                        width: 60,
+                        height: 20,
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.white),
+                            borderRadius: BorderRadius.circular(10.0),
+                            color: Theme.of(context).primaryColor),
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Username',
+                          style: TextStyle(
+                              fontFamily: 'Ubuntu',
+                              fontSize: 10,
+                              color: Colors.white),
+                          textAlign: TextAlign.center,
                         ),
                       ),
                     ],
@@ -259,28 +298,16 @@ class _NewsScreenState extends State<NewsScreen> {
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     overflow: Overflow.visible,
                     children: [
-                      Container(
-                        width: 60,
-                        height: 20,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        alignment: Alignment.center,
-                        child: Text(
-                          'Username',
-                          style: TextStyle(fontFamily: 'Ubuntu', fontSize: 10),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
                       Align(
                         alignment: Alignment.bottomCenter,
                         child: Container(
                           width: 350,
                           height: 95,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
+                            border: Border.all(
+                                color: Theme.of(context).primaryColor),
                             borderRadius: BorderRadius.circular(10.0),
+                            color: Theme.of(context).primaryColor,
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -292,7 +319,9 @@ class _NewsScreenState extends State<NewsScreen> {
                                     child: Text(
                                       'Woowwwwww!!!',
                                       style: TextStyle(
-                                          fontFamily: 'Ubuntu', fontSize: 15),
+                                          fontFamily: 'Ubuntu',
+                                          fontSize: 15,
+                                          color: Colors.white),
                                     ),
                                   ),
                                 ],
@@ -302,12 +331,18 @@ class _NewsScreenState extends State<NewsScreen> {
                                 child: Row(
                                   children: [
                                     IconButton(
-                                        icon: Icon(Icons.favorite_border),
+                                        icon: Icon(
+                                          Icons.favorite_border,
+                                          color: Colors.white,
+                                        ),
                                         iconSize: 20,
                                         alignment: Alignment.bottomLeft,
                                         onPressed: null),
                                     IconButton(
-                                        icon: Icon(Icons.comment_outlined),
+                                        icon: Icon(
+                                          Icons.comment_outlined,
+                                          color: Colors.white,
+                                        ),
                                         iconSize: 20,
                                         alignment: Alignment.bottomLeft,
                                         onPressed: null),
@@ -316,6 +351,23 @@ class _NewsScreenState extends State<NewsScreen> {
                               ),
                             ],
                           ),
+                        ),
+                      ),
+                      Container(
+                        width: 60,
+                        height: 20,
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.white),
+                            borderRadius: BorderRadius.circular(10.0),
+                            color: Theme.of(context).primaryColor),
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Username',
+                          style: TextStyle(
+                              fontFamily: 'Ubuntu',
+                              fontSize: 10,
+                              color: Colors.white),
+                          textAlign: TextAlign.center,
                         ),
                       ),
                     ],
@@ -330,7 +382,7 @@ class _NewsScreenState extends State<NewsScreen> {
                   width: 350,
                   height: 250,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
+                    border: Border.all(color: Theme.of(context).primaryColor),
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   child: Stack(
@@ -345,14 +397,18 @@ class _NewsScreenState extends State<NewsScreen> {
                         width: 60,
                         height: 20,
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
+                          border:
+                              Border.all(color: Theme.of(context).primaryColor),
                           borderRadius: BorderRadius.circular(10.0),
-                          color: Colors.white,
+                          color: Theme.of(context).primaryColor,
                         ),
                         alignment: Alignment.center,
                         child: Text(
                           'Username',
-                          style: TextStyle(fontFamily: 'Ubuntu', fontSize: 10),
+                          style: TextStyle(
+                              fontFamily: 'Ubuntu',
+                              fontSize: 10,
+                              color: Colors.white),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -362,9 +418,10 @@ class _NewsScreenState extends State<NewsScreen> {
                           width: 350,
                           height: 90,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
+                            border: Border.all(
+                                color: Theme.of(context).primaryColor),
                             borderRadius: BorderRadius.circular(10.0),
-                            color: Colors.white,
+                            color: Theme.of(context).primaryColor,
                           ),
                           child: Column(
                             children: [
@@ -375,7 +432,9 @@ class _NewsScreenState extends State<NewsScreen> {
                                     child: Text(
                                       'Woowwwwww!!!',
                                       style: TextStyle(
-                                          fontFamily: 'Ubuntu', fontSize: 15),
+                                          fontFamily: 'Ubuntu',
+                                          fontSize: 15,
+                                          color: Colors.white),
                                     ),
                                   ),
                                 ],
@@ -383,13 +442,19 @@ class _NewsScreenState extends State<NewsScreen> {
                               Row(
                                 children: [
                                   IconButton(
-                                      icon: Icon(Icons.favorite_border),
+                                      icon: Icon(
+                                        Icons.favorite_border,
+                                        color: Colors.white,
+                                      ),
                                       iconSize: 20,
                                       padding: EdgeInsets.only(left: 20),
                                       alignment: Alignment.bottomLeft,
                                       onPressed: null),
                                   IconButton(
-                                      icon: Icon(Icons.comment_outlined),
+                                      icon: Icon(
+                                        Icons.comment_outlined,
+                                        color: Colors.white,
+                                      ),
                                       iconSize: 20,
                                       padding: EdgeInsets.only(left: 10),
                                       alignment: Alignment.bottomLeft,
@@ -413,11 +478,17 @@ class _NewsScreenState extends State<NewsScreen> {
                   width: 50,
                   height: 50,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
+                    color: Theme.of(context).primaryColor,
+                    border: Border.all(
+                      color: Theme.of(context).primaryColor,
+                    ),
                     borderRadius: BorderRadius.circular(50.0),
                   ),
                   child: IconButton(
-                      icon: Icon(Icons.create_rounded),
+                      icon: Icon(
+                        Icons.create_rounded,
+                        color: Colors.white,
+                      ),
                       iconSize: 30,
                       alignment: Alignment.center,
                       onPressed: null),

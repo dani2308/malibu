@@ -18,7 +18,10 @@ class _PackScreenState extends State<PackScreen> {
               Row(
                 children: [
                   FlatButton(
-                    child: Icon(Icons.arrow_back_ios_rounded),
+                    child: Icon(
+                      Icons.arrow_back_ios_rounded,
+                      color: Theme.of(context).accentColor,
+                    ),
                     onPressed: () => Navigator.pushNamed(context, ''),
                   ),
                   Text(
@@ -26,20 +29,6 @@ class _PackScreenState extends State<PackScreen> {
                     style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
                   )
                 ],
-              ),
-              Container(
-                alignment: Alignment(2, 0.0),
-                child: Padding(
-                  padding: EdgeInsets.only(top: 30),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Container(
-                      height: 1.0,
-                      width: 355.0,
-                      color: Colors.grey[300],
-                    ),
-                  ),
-                ),
               ),
               Container(
                 child: Align(
@@ -51,7 +40,7 @@ class _PackScreenState extends State<PackScreen> {
                       style: TextStyle(
                         fontFamily: 'Ubuntu',
                         fontSize: 20,
-                        color: Colors.grey[300],
+                        color: Colors.grey[200],
                       ),
                     ),
                   ),
@@ -66,7 +55,7 @@ class _PackScreenState extends State<PackScreen> {
                     child: Container(
                       height: 1.0,
                       width: 355.0,
-                      color: Colors.grey[300],
+                      color: Colors.grey[200],
                     ),
                   ),
                 ),
@@ -95,7 +84,7 @@ class _PackScreenState extends State<PackScreen> {
                     child: Container(
                       height: 1.0,
                       width: 355.0,
-                      color: Colors.grey,
+                      color: Colors.grey[300],
                     ),
                   ),
                 ),
@@ -124,7 +113,7 @@ class _PackScreenState extends State<PackScreen> {
                     child: Container(
                       height: 1.0,
                       width: 355.0,
-                      color: Colors.grey,
+                      color: Colors.grey[300],
                     ),
                   ),
                 ),
@@ -153,7 +142,7 @@ class _PackScreenState extends State<PackScreen> {
                     child: Container(
                       height: 1.0,
                       width: 355.0,
-                      color: Colors.grey,
+                      color: Colors.grey[300],
                     ),
                   ),
                 ),
@@ -182,7 +171,7 @@ class _PackScreenState extends State<PackScreen> {
                     child: Container(
                       height: 1.0,
                       width: 355.0,
-                      color: Colors.grey,
+                      color: Colors.grey[300],
                     ),
                   ),
                 ),
@@ -197,7 +186,7 @@ class _PackScreenState extends State<PackScreen> {
                       style: TextStyle(
                         fontFamily: 'Ubuntu',
                         fontSize: 20,
-                        color: Colors.grey[300],
+                        color: Colors.grey[200],
                       ),
                     ),
                   ),
@@ -212,7 +201,7 @@ class _PackScreenState extends State<PackScreen> {
                     child: Container(
                       height: 1.0,
                       width: 355.0,
-                      color: Colors.grey[300],
+                      color: Colors.grey[200],
                     ),
                   ),
                 ),
@@ -225,9 +214,10 @@ class _PackScreenState extends State<PackScreen> {
                     child: Text(
                       'Aulas Restantes: 5',
                       style: TextStyle(
-                          fontFamily: 'Ubuntu',
-                          fontSize: 15,
-                          color: Colors.grey),
+                        fontFamily: 'Ubuntu',
+                        fontSize: 15,
+                        color: Theme.of(context).accentColor,
+                      ),
                     ),
                   ),
                 ),

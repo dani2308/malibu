@@ -18,7 +18,10 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
               Row(
                 children: [
                   FlatButton(
-                    child: Icon(Icons.arrow_back_ios_rounded),
+                    child: Icon(
+                      Icons.arrow_back_ios_rounded,
+                      color: Theme.of(context).accentColor,
+                    ),
                     onPressed: () => Navigator.pushNamed(context, ''),
                   ),
                   Text(
@@ -49,7 +52,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                     child: Container(
                       height: 1.0,
                       width: 355.0,
-                      color: Colors.grey,
+                      color: Colors.grey[300],
                     ),
                   ),
                 ),
@@ -76,7 +79,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                     child: Container(
                       height: 1.0,
                       width: 355.0,
-                      color: Colors.grey,
+                      color: Colors.grey[300],
                     ),
                   ),
                 ),
@@ -101,6 +104,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                       padding: EdgeInsets.only(left: 15),
                       child: Icon(
                         Icons.toggle_on,
+                        color: Theme.of(context).accentColor,
                         size: 50,
                       ),
                     ),
@@ -116,7 +120,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                     child: Container(
                       height: 1.0,
                       width: 355.0,
-                      color: Colors.grey,
+                      color: Colors.grey[300],
                     ),
                   ),
                 ),

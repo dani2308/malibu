@@ -18,7 +18,10 @@ class _HelpScreenState extends State<HelpScreen> {
               Row(
                 children: [
                   FlatButton(
-                    child: Icon(Icons.arrow_back_ios_rounded),
+                    child: Icon(
+                      Icons.arrow_back_ios_rounded,
+                      color: Theme.of(context).accentColor,
+                    ),
                     onPressed: () => Navigator.pushNamed(context, ''),
                   ),
                   Text(
@@ -50,14 +53,18 @@ class _HelpScreenState extends State<HelpScreen> {
                       alignment: Alignment.center,
                       child: Text(
                         'Ajuda',
-                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
+                        style: TextStyle(
+                          fontFamily: 'Ubuntu',
+                          fontSize: 17,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                     width: 100,
                     height: 30,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.grey,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),

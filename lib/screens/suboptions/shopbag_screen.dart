@@ -18,7 +18,10 @@ class _ShopBagScreenState extends State<ShopBagScreen> {
               Row(
                 children: [
                   FlatButton(
-                    child: Icon(Icons.arrow_back_ios_rounded),
+                    child: Icon(
+                      Icons.arrow_back_ios_rounded,
+                      color: Theme.of(context).accentColor,
+                    ),
                     onPressed: () => Navigator.pushNamed(context, ''),
                   ),
                   Text(
@@ -67,7 +70,10 @@ class _ShopBagScreenState extends State<ShopBagScreen> {
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 50),
-                          child: Icon(Icons.cancel_outlined),
+                          child: Icon(
+                            Icons.cancel_outlined,
+                            color: Theme.of(context).accentColor,
+                          ),
                         ),
                       ],
                     ),
@@ -80,7 +86,7 @@ class _ShopBagScreenState extends State<ShopBagScreen> {
                           child: Container(
                             height: 1.0,
                             width: 355.0,
-                            color: Colors.grey,
+                            color: Colors.grey[300],
                           ),
                         ),
                       ),
@@ -117,7 +123,10 @@ class _ShopBagScreenState extends State<ShopBagScreen> {
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 50),
-                          child: Icon(Icons.cancel_outlined),
+                          child: Icon(
+                            Icons.cancel_outlined,
+                            color: Theme.of(context).accentColor,
+                          ),
                         ),
                       ],
                     ),
@@ -130,7 +139,7 @@ class _ShopBagScreenState extends State<ShopBagScreen> {
                           child: Container(
                             height: 1.0,
                             width: 355.0,
-                            color: Colors.grey,
+                            color: Colors.grey[300],
                           ),
                         ),
                       ),
@@ -167,7 +176,10 @@ class _ShopBagScreenState extends State<ShopBagScreen> {
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 50),
-                          child: Icon(Icons.cancel_outlined),
+                          child: Icon(
+                            Icons.cancel_outlined,
+                            color: Theme.of(context).accentColor,
+                          ),
                         ),
                       ],
                     ),
@@ -180,7 +192,7 @@ class _ShopBagScreenState extends State<ShopBagScreen> {
                           child: Container(
                             height: 1.0,
                             width: 355.0,
-                            color: Colors.grey,
+                            color: Colors.grey[300],
                           ),
                         ),
                       ),
@@ -217,7 +229,10 @@ class _ShopBagScreenState extends State<ShopBagScreen> {
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 50),
-                          child: Icon(Icons.cancel_outlined),
+                          child: Icon(
+                            Icons.cancel_outlined,
+                            color: Theme.of(context).accentColor,
+                          ),
                         ),
                       ],
                     ),
@@ -230,7 +245,7 @@ class _ShopBagScreenState extends State<ShopBagScreen> {
                           child: Container(
                             height: 1.0,
                             width: 355.0,
-                            color: Colors.grey,
+                            color: Colors.grey[300],
                           ),
                         ),
                       ),
@@ -249,12 +264,18 @@ class _ShopBagScreenState extends State<ShopBagScreen> {
                         width: 100,
                         height: 30,
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
+                          border: Border.all(
+                            color: Theme.of(context).primaryColor,
+                          ),
                           borderRadius: BorderRadius.circular(10),
+                          color: Theme.of(context).primaryColor,
                         ),
                         child: Text(
                           'Confirmar',
-                          style: TextStyle(fontSize: 17),
+                          style: TextStyle(
+                            fontSize: 17,
+                            color: Colors.white,
+                          ),
                         ),
                         alignment: Alignment.center,
                       ),

@@ -21,21 +21,30 @@ class _PostCommentScreenState extends State<PostCommentScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     FlatButton(
-                      child: Icon(Icons.arrow_back_ios_rounded),
+                      child: Icon(
+                        Icons.arrow_back_ios_rounded,
+                        color: Theme.of(context).accentColor,
+                      ),
                       onPressed: () => Navigator.pushNamed(context, ''),
                     ),
                     Container(
                       width: 80,
                       height: 30,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black),
-                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: BorderRadius.circular(10),
                       ),
                       alignment: Alignment.center,
                       child: Text(
                         'Postar',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 17),
+                        style: TextStyle(
+                          fontSize: 17,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ],
@@ -49,7 +58,10 @@ class _PostCommentScreenState extends State<PostCommentScreen> {
                       width: 50,
                       height: 50,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Colors.blue),
+                        border: Border.all(
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        color: Theme.of(context).primaryColor,
                         borderRadius: BorderRadius.circular(50.0),
                       ),
                       child: CircleAvatar(
@@ -87,7 +99,10 @@ class _PostCommentScreenState extends State<PostCommentScreen> {
                 child: Row(
                   children: [
                     IconButton(
-                        icon: Icon(Icons.favorite_border),
+                        icon: Icon(
+                          Icons.favorite_border,
+                          color: Theme.of(context).accentColor,
+                        ),
                         iconSize: 20,
                         alignment: Alignment.bottomLeft,
                         onPressed: null),
@@ -103,7 +118,7 @@ class _PostCommentScreenState extends State<PostCommentScreen> {
                     child: Container(
                       height: 1.0,
                       width: 355.0,
-                      color: Colors.grey,
+                      color: Colors.grey[300],
                     ),
                   ),
                 ),
@@ -116,7 +131,10 @@ class _PostCommentScreenState extends State<PostCommentScreen> {
                       width: 40,
                       height: 40,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Colors.blue),
+                        border: Border.all(
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        color: Theme.of(context).primaryColor,
                         borderRadius: BorderRadius.circular(50.0),
                       ),
                       child: CircleAvatar(
@@ -154,7 +172,10 @@ class _PostCommentScreenState extends State<PostCommentScreen> {
                 child: Row(
                   children: [
                     IconButton(
-                        icon: Icon(Icons.favorite_border),
+                        icon: Icon(
+                          Icons.favorite_border,
+                          color: Theme.of(context).accentColor,
+                        ),
                         iconSize: 20,
                         alignment: Alignment.bottomLeft,
                         onPressed: null),
@@ -170,7 +191,7 @@ class _PostCommentScreenState extends State<PostCommentScreen> {
                     child: Container(
                       height: 1.0,
                       width: 355.0,
-                      color: Colors.grey,
+                      color: Colors.grey[300],
                     ),
                   ),
                 ),
@@ -183,7 +204,10 @@ class _PostCommentScreenState extends State<PostCommentScreen> {
                       width: 40,
                       height: 40,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Colors.blue),
+                        border: Border.all(
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        color: Theme.of(context).primaryColor,
                         borderRadius: BorderRadius.circular(50.0),
                       ),
                       child: CircleAvatar(
@@ -221,7 +245,10 @@ class _PostCommentScreenState extends State<PostCommentScreen> {
                 child: Row(
                   children: [
                     IconButton(
-                        icon: Icon(Icons.favorite_border),
+                        icon: Icon(
+                          Icons.favorite_border,
+                          color: Theme.of(context).accentColor,
+                        ),
                         iconSize: 20,
                         alignment: Alignment.bottomLeft,
                         onPressed: null),
@@ -237,7 +264,7 @@ class _PostCommentScreenState extends State<PostCommentScreen> {
                     child: Container(
                       height: 1.0,
                       width: 355.0,
-                      color: Colors.grey,
+                      color: Colors.grey[300],
                     ),
                   ),
                 ),
@@ -250,7 +277,9 @@ class _PostCommentScreenState extends State<PostCommentScreen> {
                       width: 50,
                       height: 50,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Colors.blue),
+                        border: Border.all(
+                          color: Theme.of(context).primaryColor,
+                        ),
                         borderRadius: BorderRadius.circular(50.0),
                       ),
                       child: CircleAvatar(

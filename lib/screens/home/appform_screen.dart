@@ -33,7 +33,10 @@ class _AppformScreenState extends State<AppformScreen> {
                     Row(
                       children: [
                         FlatButton(
-                          child: Icon(Icons.arrow_back_ios_rounded),
+                          child: Icon(
+                            Icons.arrow_back_ios_rounded,
+                            color: Theme.of(context).accentColor,
+                          ),
                           onPressed: () =>
                               Navigator.pushNamed(context, 'register'),
                         ),

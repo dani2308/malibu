@@ -18,7 +18,10 @@ class _PayScreenState extends State<PayScreen> {
               Row(
                 children: [
                   FlatButton(
-                    child: Icon(Icons.arrow_back_ios_rounded),
+                    child: Icon(
+                      Icons.arrow_back_ios_rounded,
+                      color: Theme.of(context).accentColor,
+                    ),
                     onPressed: () => Navigator.pushNamed(context, ''),
                   ),
                   Text(
@@ -66,14 +69,18 @@ class _PayScreenState extends State<PayScreen> {
                       alignment: Alignment.center,
                       child: Text(
                         'Adquirir',
-                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
+                        style: TextStyle(
+                          fontFamily: 'Ubuntu',
+                          fontSize: 17,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                     width: 100,
                     height: 30,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.grey,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),

@@ -35,7 +35,7 @@ class _ForecastScreenState extends State<ForecastScreen> {
                   child: Container(
                     height: 1.0,
                     width: 355.0,
-                    color: Colors.black,
+                    color: Colors.grey[300],
                   ),
                 ),
               ),
@@ -133,7 +133,7 @@ class _ForecastScreenState extends State<ForecastScreen> {
                   child: Container(
                     height: 1.0,
                     width: 355.0,
-                    color: Colors.black,
+                    color: Colors.grey[300],
                   ),
                 ),
               ),
@@ -231,7 +231,7 @@ class _ForecastScreenState extends State<ForecastScreen> {
                   child: Container(
                     height: 1.0,
                     width: 355.0,
-                    color: Colors.black,
+                    color: Colors.grey[300],
                   ),
                 ),
               ),
@@ -332,14 +332,17 @@ class _ForecastScreenState extends State<ForecastScreen> {
                     alignment: Alignment.center,
                     child: Text(
                       'Adicione um Local',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
+                      style: TextStyle(
+                          fontFamily: 'Ubuntu',
+                          fontSize: 17,
+                          color: Colors.white),
                     ),
                   ),
                   width: 170,
-                  height: 35,
+                  height: 30,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
-                    color: Colors.grey,
+                    color: Theme.of(context).primaryColor,
                   ),
                 ),
               ),

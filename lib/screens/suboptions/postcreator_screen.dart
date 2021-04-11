@@ -21,21 +21,30 @@ class _PostCreatorState extends State<PostCreatorScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     FlatButton(
-                      child: Icon(Icons.arrow_back_ios_rounded),
+                      child: Icon(
+                        Icons.arrow_back_ios_rounded,
+                        color: Theme.of(context).accentColor,
+                      ),
                       onPressed: () => Navigator.pushNamed(context, ''),
                     ),
                     Container(
                       width: 80,
                       height: 30,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black),
-                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: BorderRadius.circular(10),
                       ),
                       alignment: Alignment.center,
                       child: Text(
                         'Postar',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 17),
+                        style: TextStyle(
+                          fontSize: 17,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ],
@@ -47,7 +56,10 @@ class _PostCreatorState extends State<PostCreatorScreen> {
                   children: [
                     Text(
                       '+   Adicionar Foto',
-                      style: TextStyle(fontSize: 17),
+                      style: TextStyle(
+                        fontSize: 17,
+                        color: Theme.of(context).primaryColor,
+                      ),
                     ),
                   ],
                 ),
@@ -60,7 +72,9 @@ class _PostCreatorState extends State<PostCreatorScreen> {
                       width: 50,
                       height: 50,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Colors.blue),
+                        border: Border.all(
+                          color: Theme.of(context).primaryColor,
+                        ),
                         borderRadius: BorderRadius.circular(50.0),
                       ),
                       child: CircleAvatar(

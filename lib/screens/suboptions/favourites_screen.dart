@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 class FavouritesScreen extends StatefulWidget {
@@ -16,14 +18,25 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
           child: Column(
             children: [
               Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   FlatButton(
-                    child: Icon(Icons.arrow_back_ios_rounded),
+                    child: Icon(
+                      Icons.arrow_back_ios_rounded,
+                      color: Theme.of(context).accentColor,
+                    ),
                     onPressed: () => Navigator.pushNamed(context, ''),
                   ),
                   Text(
                     'Favoritos',
                     style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 170),
+                    child: Icon(
+                      Icons.shopping_bag_outlined,
+                      color: Theme.of(context).primaryColor,
+                    ),
                   ),
                 ],
               ),
@@ -41,7 +54,9 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                           width: 160,
                           height: 230,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
+                            border: Border.all(
+                              color: Theme.of(context).primaryColor,
+                            ),
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Stack(
@@ -66,15 +81,21 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                 width: 40,
                                 height: 40,
                                 decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.black),
+                                  border: Border.all(
+                                    color: Theme.of(context).primaryColor,
+                                  ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                child: Icon(Icons.add),
+                                child: Icon(
+                                  Icons.add,
+                                  color: Theme.of(context).primaryColor,
+                                ),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(bottom: 45, right: 5),
                                 child: Icon(
                                   Icons.favorite,
+                                  color: Colors.red,
                                   size: 30,
                                 ),
                               ),
@@ -86,7 +107,9 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                           width: 160,
                           height: 230,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
+                            border: Border.all(
+                              color: Theme.of(context).primaryColor,
+                            ),
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Stack(
@@ -97,8 +120,8 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                               Align(
                                 alignment: Alignment.topLeft,
                                 heightFactor: 13.5,
-                                widthFactor: 1.1,
-                                child: Text("SoftBoard - Ocean 7'0"),
+                                widthFactor: 1.3,
+                                child: Text("WetSuit - E-Bomb"),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(bottom: 10, right: 65),
@@ -111,15 +134,21 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                 width: 40,
                                 height: 40,
                                 decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.black),
+                                  border: Border.all(
+                                    color: Theme.of(context).primaryColor,
+                                  ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                child: Icon(Icons.add),
+                                child: Icon(
+                                  Icons.add,
+                                  color: Theme.of(context).primaryColor,
+                                ),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(bottom: 45, right: 5),
                                 child: Icon(
                                   Icons.favorite,
+                                  color: Colors.red,
                                   size: 30,
                                 ),
                               ),
@@ -131,7 +160,9 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                           width: 160,
                           height: 230,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
+                            border: Border.all(
+                              color: Theme.of(context).primaryColor,
+                            ),
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Stack(
@@ -142,8 +173,8 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                               Align(
                                 alignment: Alignment.topLeft,
                                 heightFactor: 13.5,
-                                widthFactor: 1.1,
-                                child: Text("SoftBoard - Ocean 7'0"),
+                                widthFactor: 1.3,
+                                child: Text("WetSuit - E-Bomb"),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(bottom: 10, right: 65),
@@ -156,15 +187,21 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                 width: 40,
                                 height: 40,
                                 decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.black),
+                                  border: Border.all(
+                                    color: Theme.of(context).primaryColor,
+                                  ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                child: Icon(Icons.add),
+                                child: Icon(
+                                  Icons.add,
+                                  color: Theme.of(context).primaryColor,
+                                ),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(bottom: 45, right: 5),
                                 child: Icon(
                                   Icons.favorite,
+                                  color: Colors.red,
                                   size: 30,
                                 ),
                               ),
@@ -180,7 +217,9 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                           width: 160,
                           height: 230,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
+                            border: Border.all(
+                              color: Theme.of(context).primaryColor,
+                            ),
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Stack(
@@ -205,15 +244,21 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                 width: 40,
                                 height: 40,
                                 decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.black),
+                                  border: Border.all(
+                                    color: Theme.of(context).primaryColor,
+                                  ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                child: Icon(Icons.add),
+                                child: Icon(
+                                  Icons.add,
+                                  color: Theme.of(context).primaryColor,
+                                ),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(bottom: 45, right: 5),
                                 child: Icon(
                                   Icons.favorite,
+                                  color: Colors.red,
                                   size: 30,
                                 ),
                               ),
@@ -225,7 +270,9 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                           width: 160,
                           height: 230,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
+                            border: Border.all(
+                              color: Theme.of(context).primaryColor,
+                            ),
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Stack(
@@ -236,8 +283,8 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                               Align(
                                 alignment: Alignment.topLeft,
                                 heightFactor: 13.5,
-                                widthFactor: 1.1,
-                                child: Text("SoftBoard - Ocean 7'0"),
+                                widthFactor: 1.3,
+                                child: Text("WetSuit - E-Bomb"),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(bottom: 10, right: 65),
@@ -250,15 +297,21 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                 width: 40,
                                 height: 40,
                                 decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.black),
+                                  border: Border.all(
+                                    color: Theme.of(context).primaryColor,
+                                  ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                child: Icon(Icons.add),
+                                child: Icon(
+                                  Icons.add,
+                                  color: Theme.of(context).primaryColor,
+                                ),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(bottom: 45, right: 5),
                                 child: Icon(
                                   Icons.favorite,
+                                  color: Colors.red,
                                   size: 30,
                                 ),
                               ),
@@ -270,7 +323,9 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                           width: 160,
                           height: 230,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
+                            border: Border.all(
+                              color: Theme.of(context).primaryColor,
+                            ),
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Stack(
@@ -295,15 +350,21 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                 width: 40,
                                 height: 40,
                                 decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.black),
+                                  border: Border.all(
+                                    color: Theme.of(context).primaryColor,
+                                  ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                child: Icon(Icons.add),
+                                child: Icon(
+                                  Icons.add,
+                                  color: Theme.of(context).primaryColor,
+                                ),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(bottom: 45, right: 5),
                                 child: Icon(
                                   Icons.favorite,
+                                  color: Colors.red,
                                   size: 30,
                                 ),
                               ),
@@ -314,6 +375,9 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                     ),
                   ],
                 ),
+              ),
+              SizedBox(
+                height: 20,
               ),
             ],
           ),

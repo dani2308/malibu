@@ -18,7 +18,10 @@ class _ClassConfirmScreenState extends State<ClassConfirmScreen> {
               Row(
                 children: [
                   FlatButton(
-                    child: Icon(Icons.arrow_back_ios_rounded),
+                    child: Icon(
+                      Icons.arrow_back_ios_rounded,
+                      color: Theme.of(context).accentColor,
+                    ),
                     onPressed: () => Navigator.pushNamed(context, ''),
                   ),
                   Text(
@@ -42,36 +45,64 @@ class _ClassConfirmScreenState extends State<ClassConfirmScreen> {
                     Padding(
                       padding: EdgeInsets.only(left: 75),
                     ),
-                    Container(
-                      width: 100,
-                      height: 100,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.blue),
-                        borderRadius: BorderRadius.circular(50.0),
-                      ),
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/mii.png"),
-                      ),
+                    Column(
+                      children: [
+                        Container(
+                          width: 100,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            borderRadius: BorderRadius.circular(50.0),
+                          ),
+                          child: CircleAvatar(
+                            backgroundImage: AssetImage("assets/mii.png"),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 15,
+                          ),
+                          child: Text(
+                            'Mário',
+                          ),
+                        ),
+                      ],
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 45),
                     ),
-                    Container(
-                      width: 100,
-                      height: 100,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.blue),
-                        borderRadius: BorderRadius.circular(50.0),
-                      ),
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/mii.png"),
-                      ),
+                    Column(
+                      children: [
+                        Container(
+                          width: 100,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            borderRadius: BorderRadius.circular(50.0),
+                          ),
+                          child: CircleAvatar(
+                            backgroundImage: AssetImage("assets/mii.png"),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 15,
+                          ),
+                          child: Text(
+                            'Filipe',
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 75),
+                padding: EdgeInsets.only(top: 65),
                 child: Text(
                   'Aulas para: Iniciantes e Avançados',
                   style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
@@ -110,14 +141,18 @@ class _ClassConfirmScreenState extends State<ClassConfirmScreen> {
                       alignment: Alignment.center,
                       child: Text(
                         'Confirmar',
-                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
+                        style: TextStyle(
+                          fontFamily: 'Ubuntu',
+                          fontSize: 17,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                     width: 100,
                     height: 30,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.grey,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),

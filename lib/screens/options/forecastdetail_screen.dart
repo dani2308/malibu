@@ -18,7 +18,10 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
               Row(
                 children: [
                   FlatButton(
-                    child: Icon(Icons.arrow_back_ios_rounded),
+                    child: Icon(
+                      Icons.arrow_back_ios_rounded,
+                      color: Theme.of(context).accentColor,
+                    ),
                     onPressed: () => Navigator.pushNamed(context, ''),
                   ),
                 ],
@@ -50,13 +53,19 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Icon(Icons.arrow_back_ios_rounded),
+                    Icon(
+                      Icons.arrow_back_ios_rounded,
+                      color: Theme.of(context).accentColor,
+                    ),
                     Text(
                       '9:00',
                       style: TextStyle(fontSize: 30),
                       textAlign: TextAlign.center,
                     ),
-                    Icon(Icons.arrow_forward_ios_rounded),
+                    Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      color: Theme.of(context).accentColor,
+                    ),
                   ],
                 ),
               ),
@@ -66,6 +75,7 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                     padding: EdgeInsets.only(left: 80, top: 50),
                     child: Image.asset(
                       'assets/wave.png',
+                      color: Theme.of(context).accentColor,
                       width: 100.0,
                     ),
                   ),
@@ -92,13 +102,17 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                     padding: EdgeInsets.only(top: 70, left: 60),
                     child: Text(
                       'Período 15',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
+                      style: TextStyle(
+                        fontFamily: 'Ubuntu',
+                        fontSize: 17,
+                      ),
                     ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 70, left: 5),
                     child: Icon(
                       Icons.arrow_forward_ios_rounded,
+                      color: Theme.of(context).accentColor,
                       size: 15,
                     ),
                   ),
@@ -113,6 +127,7 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                     padding: EdgeInsets.only(top: 70, left: 5),
                     child: Icon(
                       Icons.arrow_forward_ios_rounded,
+                      color: Theme.of(context).accentColor,
                       size: 15,
                     ),
                   ),
@@ -131,6 +146,7 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                     padding: EdgeInsets.only(top: 70, left: 5),
                     child: Icon(
                       Icons.arrow_forward_ios_rounded,
+                      color: Theme.of(context).accentColor,
                       size: 15,
                     ),
                   ),
@@ -153,6 +169,7 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                     padding: EdgeInsets.only(top: 70, left: 5),
                     child: Icon(
                       Icons.arrow_forward_ios_rounded,
+                      color: Theme.of(context).accentColor,
                       size: 15,
                     ),
                   ),

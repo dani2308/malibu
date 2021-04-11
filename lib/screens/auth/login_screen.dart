@@ -113,6 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       "Esqueceu a palavra-passe?",
                       style: TextStyle(
                         decoration: TextDecoration.underline,
+                        color: Theme.of(context).primaryColor,
                         fontFamily: 'Ubuntu',
                       ),
                     ),
