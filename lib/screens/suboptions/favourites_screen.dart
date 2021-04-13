@@ -25,17 +25,20 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                       Icons.arrow_back_ios_rounded,
                       color: Theme.of(context).accentColor,
                     ),
-                    onPressed: () => Navigator.pushNamed(context, ''),
+                    onPressed: () => Navigator.pushNamed(context, 'home'),
                   ),
                   Text(
                     'Favoritos',
                     style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 170),
-                    child: Icon(
-                      Icons.shopping_bag_outlined,
-                      color: Theme.of(context).primaryColor,
+                    padding: EdgeInsets.only(left: 160),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.shopping_bag_outlined,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      onPressed: () => Navigator.pushNamed(context, 'shopbag'),
                     ),
                   ),
                 ],

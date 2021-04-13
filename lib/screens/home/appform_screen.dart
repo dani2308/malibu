@@ -379,6 +379,23 @@ class _AppformScreenState extends State<AppformScreen> {
                               fontFamily: 'Ubuntu',
                             ),
                           ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                              left: 25,
+                            ),
+                          ),
+                          FlatButton(
+                            child: Text(
+                              "Termos e Serviços",
+                              style: TextStyle(
+                                fontSize: 15,
+                                decoration: TextDecoration.underline,
+                                color: Theme.of(context).primaryColor,
+                              ),
+                            ),
+                            onPressed: () =>
+                                Navigator.pushNamed(context, 'terms'),
+                          ),
                         ],
                       ),
                     ),

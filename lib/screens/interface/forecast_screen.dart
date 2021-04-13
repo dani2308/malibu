@@ -151,7 +151,8 @@ class _ForecastScreenState extends State<ForecastScreen> {
                 Padding(
                   padding: EdgeInsets.only(top: 65, left: 50),
                   child: FlatButton(
-                    onPressed: () => Navigator.pushNamed(context, ''),
+                    onPressed: () =>
+                        Navigator.pushNamed(context, 'forecastdetail'),
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.0),
@@ -326,7 +327,8 @@ class _ForecastScreenState extends State<ForecastScreen> {
                 bottom: 20.0,
               ),
               child: FlatButton(
-                onPressed: () => Navigator.popAndPushNamed(context, ''),
+                onPressed: () =>
+                    Navigator.popAndPushNamed(context, 'locationchoose'),
                 child: Container(
                   child: Align(
                     alignment: Alignment.center,

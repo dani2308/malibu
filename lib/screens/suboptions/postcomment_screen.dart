@@ -25,7 +25,7 @@ class _PostCommentScreenState extends State<PostCommentScreen> {
                         Icons.arrow_back_ios_rounded,
                         color: Theme.of(context).accentColor,
                       ),
-                      onPressed: () => Navigator.pushNamed(context, ''),
+                      onPressed: () => Navigator.pushNamed(context, 'home'),
                     ),
                     Container(
                       width: 80,

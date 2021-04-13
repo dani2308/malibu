@@ -27,24 +27,34 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 25, left: 33),
-                    child: Icon(
-                      Icons.search_rounded,
-                      color: Theme.of(context).primaryColor,
+                    padding: EdgeInsets.only(top: 12, left: 8),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.search_rounded,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      onPressed: () => Navigator.pushNamed(context, ''),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 25, left: 15),
-                    child: Icon(
-                      Icons.favorite_border,
-                      color: Theme.of(context).primaryColor,
+                    padding: EdgeInsets.only(top: 12, left: 0),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.favorite_border,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      onPressed: () =>
+                          Navigator.pushNamed(context, 'favourites'),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 25, left: 15),
-                    child: Icon(
-                      Icons.shopping_bag_outlined,
-                      color: Theme.of(context).primaryColor,
+                    padding: EdgeInsets.only(top: 12, left: 0),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.shopping_bag_outlined,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      onPressed: () => Navigator.pushNamed(context, 'shopbag'),
                     ),
                   ),
                 ],

@@ -101,81 +101,85 @@ class _NewsScreenState extends State<NewsScreen> {
                                       alignment: Alignment.bottomLeft,
                                       onPressed: null),
                                   IconButton(
+                                    icon: Icon(
+                                      Icons.comment_outlined,
+                                      color: Colors.white,
+                                    ),
+                                    iconSize: 20,
+                                    padding: EdgeInsets.only(left: 10),
+                                    alignment: Alignment.bottomLeft,
+                                    onPressed: () => Navigator.pushNamed(
+                                        context, 'postcomment'),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 25, left: 25),
+                  child: Stack(
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    overflow: Overflow.visible,
+                    children: [
+                      Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Container(
+                          width: 350,
+                          height: 95,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                                color: Theme.of(context).primaryColor),
+                            borderRadius: BorderRadius.circular(10.0),
+                            color: Theme.of(context).primaryColor,
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(top: 25, left: 20),
+                                    child: Text(
+                                      'Woowwwwww!!!',
+                                      style: TextStyle(
+                                          fontFamily: 'Ubuntu',
+                                          fontSize: 15,
+                                          color: Colors.white),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 20),
+                                child: Row(
+                                  children: [
+                                    IconButton(
+                                        icon: Icon(
+                                          Icons.favorite_border,
+                                          color: Colors.white,
+                                        ),
+                                        iconSize: 20,
+                                        alignment: Alignment.bottomLeft,
+                                        onPressed: null),
+                                    IconButton(
                                       icon: Icon(
                                         Icons.comment_outlined,
                                         color: Colors.white,
                                       ),
                                       iconSize: 20,
-                                      padding: EdgeInsets.only(left: 10),
                                       alignment: Alignment.bottomLeft,
-                                      onPressed: null),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(top: 25, left: 25),
-                  child: Stack(
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    overflow: Overflow.visible,
-                    children: [
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Container(
-                          width: 350,
-                          height: 95,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                                color: Theme.of(context).primaryColor),
-                            borderRadius: BorderRadius.circular(10.0),
-                            color: Theme.of(context).primaryColor,
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(top: 25, left: 20),
-                                    child: Text(
-                                      'Woowwwwww!!!',
-                                      style: TextStyle(
-                                          fontFamily: 'Ubuntu',
-                                          fontSize: 15,
-                                          color: Colors.white),
+                                      onPressed: () => Navigator.pushNamed(
+                                          context, 'postcomment'),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 20),
-                                child: Row(
-                                  children: [
-                                    IconButton(
-                                        icon: Icon(
-                                          Icons.favorite_border,
-                                          color: Colors.white,
-                                        ),
-                                        iconSize: 20,
-                                        alignment: Alignment.bottomLeft,
-                                        onPressed: null),
-                                    IconButton(
-                                        icon: Icon(
-                                          Icons.comment_outlined,
-                                          color: Colors.white,
-                                        ),
-                                        iconSize: 20,
-                                        alignment: Alignment.bottomLeft,
-                                        onPressed: null),
                                   ],
                                 ),
                               ),
@@ -254,13 +258,15 @@ class _NewsScreenState extends State<NewsScreen> {
                                         alignment: Alignment.bottomLeft,
                                         onPressed: null),
                                     IconButton(
-                                        icon: Icon(
-                                          Icons.comment_outlined,
-                                          color: Colors.white,
-                                        ),
-                                        iconSize: 20,
-                                        alignment: Alignment.bottomLeft,
-                                        onPressed: null),
+                                      icon: Icon(
+                                        Icons.comment_outlined,
+                                        color: Colors.white,
+                                      ),
+                                      iconSize: 20,
+                                      alignment: Alignment.bottomLeft,
+                                      onPressed: () => Navigator.pushNamed(
+                                          context, 'postcomment'),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -339,13 +345,15 @@ class _NewsScreenState extends State<NewsScreen> {
                                         alignment: Alignment.bottomLeft,
                                         onPressed: null),
                                     IconButton(
-                                        icon: Icon(
-                                          Icons.comment_outlined,
-                                          color: Colors.white,
-                                        ),
-                                        iconSize: 20,
-                                        alignment: Alignment.bottomLeft,
-                                        onPressed: null),
+                                      icon: Icon(
+                                        Icons.comment_outlined,
+                                        color: Colors.white,
+                                      ),
+                                      iconSize: 20,
+                                      alignment: Alignment.bottomLeft,
+                                      onPressed: () => Navigator.pushNamed(
+                                          context, 'postcomment'),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -451,14 +459,16 @@ class _NewsScreenState extends State<NewsScreen> {
                                       alignment: Alignment.bottomLeft,
                                       onPressed: null),
                                   IconButton(
-                                      icon: Icon(
-                                        Icons.comment_outlined,
-                                        color: Colors.white,
-                                      ),
-                                      iconSize: 20,
-                                      padding: EdgeInsets.only(left: 10),
-                                      alignment: Alignment.bottomLeft,
-                                      onPressed: null),
+                                    icon: Icon(
+                                      Icons.comment_outlined,
+                                      color: Colors.white,
+                                    ),
+                                    iconSize: 20,
+                                    padding: EdgeInsets.only(left: 10),
+                                    alignment: Alignment.bottomLeft,
+                                    onPressed: () => Navigator.pushNamed(
+                                        context, 'postcomment'),
+                                  ),
                                 ],
                               ),
                             ],
@@ -485,13 +495,15 @@ class _NewsScreenState extends State<NewsScreen> {
                     borderRadius: BorderRadius.circular(50.0),
                   ),
                   child: IconButton(
-                      icon: Icon(
-                        Icons.create_rounded,
-                        color: Colors.white,
-                      ),
-                      iconSize: 30,
-                      alignment: Alignment.center,
-                      onPressed: null),
+                    icon: Icon(
+                      Icons.create_rounded,
+                      color: Colors.white,
+                    ),
+                    iconSize: 30,
+                    alignment: Alignment.center,
+                    onPressed: () =>
+                        Navigator.pushNamed(context, 'postcreator'),
+                  ),
                 ),
               ),
             ),
