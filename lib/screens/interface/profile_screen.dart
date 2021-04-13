@@ -214,175 +214,189 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ],
             ),
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 40, top: 20),
-                  child: Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50.0),
-                      color: Theme.of(context).primaryColor,
+            FlatButton(
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 25, top: 20),
+                      child: Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50.0),
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        child: Icon(
+                          Icons.lock_outlined,
+                          size: 35,
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 15, left: 20),
+                      child: Text(
+                        'Privacidade',
+                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 15, left: 100),
+                      child: Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        size: 30,
+                      ),
+                    ),
+                  ],
+                ),
+                onPressed: () => Navigator.pushNamed(context, 'privacy')),
+            FlatButton(
+              child: Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 25, top: 20),
+                    child: Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50.0),
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      child: Icon(
+                        Icons.translate_outlined,
+                        size: 35,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 15, left: 20),
+                    child: Text(
+                      'Idioma',
+                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 15, left: 142),
                     child: Icon(
-                      Icons.lock_outlined,
-                      size: 35,
-                      color: Colors.white,
+                      Icons.arrow_forward_ios_rounded,
+                      size: 30,
                     ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 15, left: 20),
-                  child: Text(
-                    'Privacidade',
-                    style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 15, left: 100),
-                  child: Icon(
-                    Icons.arrow_forward_ios_rounded,
-                    size: 30,
-                  ),
-                ),
-              ],
+                ],
+              ),
+              onPressed: () => Navigator.pushNamed(context, 'language'),
             ),
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 40, top: 20),
-                  child: Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50.0),
-                      color: Theme.of(context).primaryColor,
+            FlatButton(
+              child: Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 25, top: 20),
+                    child: Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50.0),
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      child: Icon(
+                        Icons.verified_user_outlined,
+                        size: 35,
+                        color: Colors.white,
+                      ),
                     ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 15, left: 20),
+                    child: Text(
+                      'Segurança',
+                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 15, left: 108),
                     child: Icon(
-                      Icons.translate_outlined,
-                      size: 35,
-                      color: Colors.white,
+                      Icons.arrow_forward_ios_rounded,
+                      size: 30,
                     ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 15, left: 20),
-                  child: Text(
-                    'Idioma',
-                    style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 15, left: 142),
-                  child: Icon(
-                    Icons.arrow_forward_ios_rounded,
-                    size: 30,
-                  ),
-                ),
-              ],
+                ],
+              ),
+              onPressed: () => Navigator.pushNamed(context, ''),
             ),
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 40, top: 20),
-                  child: Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50.0),
-                      color: Theme.of(context).primaryColor,
+            FlatButton(
+              child: Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 25, top: 20),
+                    child: Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50.0),
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      child: Icon(
+                        Icons.help_outline,
+                        size: 35,
+                        color: Colors.white,
+                      ),
                     ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 15, left: 20),
+                    child: Text(
+                      'Ajuda',
+                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 15, left: 150),
                     child: Icon(
-                      Icons.verified_user_outlined,
-                      size: 35,
-                      color: Colors.white,
+                      Icons.arrow_forward_ios_rounded,
+                      size: 30,
                     ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 15, left: 20),
-                  child: Text(
-                    'Segurança',
-                    style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 15, left: 108),
-                  child: Icon(
-                    Icons.arrow_forward_ios_rounded,
-                    size: 30,
-                  ),
-                ),
-              ],
+                ],
+              ),
+              onPressed: () => Navigator.pushNamed(context, 'help'),
             ),
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 40, top: 20),
-                  child: Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50.0),
-                      color: Theme.of(context).primaryColor,
+            FlatButton(
+              child: Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 25, top: 20),
+                    child: Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50.0),
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      child: Icon(
+                        Icons.shopping_bag_outlined,
+                        size: 35,
+                        color: Colors.white,
+                      ),
                     ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 15, left: 20),
+                    child: Text(
+                      'Packs',
+                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 15, left: 150),
                     child: Icon(
-                      Icons.help_outline,
-                      size: 35,
-                      color: Colors.white,
+                      Icons.arrow_forward_ios_rounded,
+                      size: 30,
                     ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 15, left: 20),
-                  child: Text(
-                    'Ajuda',
-                    style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 15, left: 150),
-                  child: Icon(
-                    Icons.arrow_forward_ios_rounded,
-                    size: 30,
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 40, top: 20),
-                  child: Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50.0),
-                      color: Theme.of(context).primaryColor,
-                    ),
-                    child: Icon(
-                      Icons.shopping_bag_outlined,
-                      size: 35,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 15, left: 20),
-                  child: Text(
-                    'Packs',
-                    style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 15, left: 150),
-                  child: Icon(
-                    Icons.arrow_forward_ios_rounded,
-                    size: 30,
-                  ),
-                ),
-              ],
+                ],
+              ),
+              onPressed: () => Navigator.pushNamed(context, 'pack'),
             ),
             Padding(
               padding: EdgeInsets.only(

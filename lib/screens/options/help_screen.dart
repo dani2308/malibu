@@ -22,7 +22,7 @@ class _HelpScreenState extends State<HelpScreen> {
                       Icons.arrow_back_ios_rounded,
                       color: Theme.of(context).accentColor,
                     ),
-                    onPressed: () => Navigator.pushNamed(context, ''),
+                    onPressed: () => Navigator.pushNamed(context, 'home'),
                   ),
                   Text(
                     'Ajuda',

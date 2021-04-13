@@ -25,7 +25,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                       Icons.arrow_back_ios_rounded,
                       color: Theme.of(context).accentColor,
                     ),
-                    onPressed: () => Navigator.pushNamed(context, ''),
+                    onPressed: () => Navigator.pushNamed(context, 'home'),
                   ),
                   Text(
                     'Idioma',
