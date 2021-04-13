@@ -147,20 +147,23 @@ class _PackScreenState extends State<PackScreen> {
                   ),
                 ),
               ),
-              Container(
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 30),
-                    child: Text(
-                      'Mensal',
-                      style: TextStyle(
-                        fontFamily: 'Ubuntu',
-                        fontSize: 20,
+              FlatButton(
+                child: Container(
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 30),
+                      child: Text(
+                        'Mensal',
+                        style: TextStyle(
+                          fontFamily: 'Ubuntu',
+                          fontSize: 20,
+                        ),
                       ),
                     ),
                   ),
                 ),
+                onPressed: () => Navigator.pushNamed(context, 'pay'),
               ),
               Container(
                 alignment: Alignment(2, 0.0),
