@@ -82,286 +82,316 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
               // ! FlatButton.icon();
               Padding(
                 padding: const EdgeInsets.only(
-                  left: 15.0,
+                  left: 8.0,
                   top: 10.0,
                 ),
                 child: Row(
                   children: [
                     Column(
                       children: [
-                        Container(
-                          margin: EdgeInsets.only(left: 15),
-                          width: 160,
-                          height: 230,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Theme.of(context).primaryColor,
+                        FlatButton(
+                          child: Container(
+                            margin: EdgeInsets.only(left: 0),
+                            width: 160,
+                            height: 230,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.bottomRight,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            overflow: Overflow.visible,
-                            children: [
-                              Align(
-                                alignment: Alignment.topLeft,
-                                heightFactor: 13.5,
-                                widthFactor: 1.1,
-                                child: Text("SoftBoard - Ocean 7'0"),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 65),
-                                child: Image.asset(
-                                  'assets/board.png',
-                                  height: 170,
+                            child: Stack(
+                              alignment: Alignment.bottomRight,
+                              clipBehavior: Clip.antiAliasWithSaveLayer,
+                              overflow: Overflow.visible,
+                              children: [
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  heightFactor: 13.5,
+                                  widthFactor: 1.1,
+                                  child: Text("SoftBoard - Ocean 7'0"),
                                 ),
-                              ),
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(bottom: 10, right: 65),
+                                  child: Image.asset(
+                                    'assets/board.png',
+                                    height: 170,
+                                  ),
+                                ),
+                                Container(
+                                  width: 40,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Theme.of(context).primaryColor,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  child: Icon(
+                                    Icons.add,
                                     color: Theme.of(context).primaryColor,
                                   ),
-                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                child: Icon(
-                                  Icons.add,
-                                  color: Theme.of(context).primaryColor,
-                                ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
+                          onPressed: () =>
+                              Navigator.pushNamed(context, 'boardrentchoose'),
                         ),
-                        Container(
-                          margin: EdgeInsets.only(left: 15, top: 15),
-                          width: 160,
-                          height: 230,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Theme.of(context).primaryColor,
+                        FlatButton(
+                          child: Container(
+                            margin: EdgeInsets.only(left: 0, top: 15),
+                            width: 160,
+                            height: 230,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.bottomRight,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            overflow: Overflow.visible,
-                            children: [
-                              Align(
-                                alignment: Alignment.topLeft,
-                                heightFactor: 13.5,
-                                widthFactor: 1.1,
-                                child: Text("SoftBoard - Ocean 7'0"),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 65),
-                                child: Image.asset(
-                                  'assets/board.png',
-                                  height: 170,
+                            child: Stack(
+                              alignment: Alignment.bottomRight,
+                              clipBehavior: Clip.antiAliasWithSaveLayer,
+                              overflow: Overflow.visible,
+                              children: [
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  heightFactor: 13.5,
+                                  widthFactor: 1.1,
+                                  child: Text("SoftBoard - Ocean 7'0"),
                                 ),
-                              ),
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(bottom: 10, right: 65),
+                                  child: Image.asset(
+                                    'assets/board.png',
+                                    height: 170,
+                                  ),
+                                ),
+                                Container(
+                                  width: 40,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Theme.of(context).primaryColor,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  child: Icon(
+                                    Icons.add,
                                     color: Theme.of(context).primaryColor,
                                   ),
-                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                child: Icon(
-                                  Icons.add,
-                                  color: Theme.of(context).primaryColor,
-                                ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
+                          onPressed: () =>
+                              Navigator.pushNamed(context, 'boardrentchoose'),
                         ),
-                        Container(
-                          margin: EdgeInsets.only(left: 15, top: 15),
-                          width: 160,
-                          height: 230,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Theme.of(context).primaryColor,
+                        FlatButton(
+                          child: Container(
+                            margin: EdgeInsets.only(left: 0, top: 15),
+                            width: 160,
+                            height: 230,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.bottomRight,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            overflow: Overflow.visible,
-                            children: [
-                              Align(
-                                alignment: Alignment.topLeft,
-                                heightFactor: 13.5,
-                                widthFactor: 1.1,
-                                child: Text("SoftBoard - Ocean 7'0"),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 65),
-                                child: Image.asset(
-                                  'assets/board.png',
-                                  height: 170,
+                            child: Stack(
+                              alignment: Alignment.bottomRight,
+                              clipBehavior: Clip.antiAliasWithSaveLayer,
+                              overflow: Overflow.visible,
+                              children: [
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  heightFactor: 13.5,
+                                  widthFactor: 1.1,
+                                  child: Text("SoftBoard - Ocean 7'0"),
                                 ),
-                              ),
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(bottom: 10, right: 65),
+                                  child: Image.asset(
+                                    'assets/board.png',
+                                    height: 170,
+                                  ),
+                                ),
+                                Container(
+                                  width: 40,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Theme.of(context).primaryColor,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  child: Icon(
+                                    Icons.add,
                                     color: Theme.of(context).primaryColor,
                                   ),
-                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                child: Icon(
-                                  Icons.add,
-                                  color: Theme.of(context).primaryColor,
-                                ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
+                          onPressed: () =>
+                              Navigator.pushNamed(context, 'boardrentchoose'),
                         ),
                       ],
                     ),
                     Column(
                       children: [
-                        Container(
-                          margin: EdgeInsets.only(left: 15),
-                          width: 160,
-                          height: 230,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Theme.of(context).primaryColor,
+                        FlatButton(
+                          child: Container(
+                            margin: EdgeInsets.only(left: 0),
+                            width: 160,
+                            height: 230,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.bottomRight,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            overflow: Overflow.visible,
-                            children: [
-                              Align(
-                                alignment: Alignment.topLeft,
-                                heightFactor: 13.5,
-                                widthFactor: 1.1,
-                                child: Text("SoftBoard - Ocean 7'0"),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 65),
-                                child: Image.asset(
-                                  'assets/board.png',
-                                  height: 170,
+                            child: Stack(
+                              alignment: Alignment.bottomRight,
+                              clipBehavior: Clip.antiAliasWithSaveLayer,
+                              overflow: Overflow.visible,
+                              children: [
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  heightFactor: 13.5,
+                                  widthFactor: 1.1,
+                                  child: Text("SoftBoard - Ocean 7'0"),
                                 ),
-                              ),
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(bottom: 10, right: 65),
+                                  child: Image.asset(
+                                    'assets/board.png',
+                                    height: 170,
+                                  ),
+                                ),
+                                Container(
+                                  width: 40,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Theme.of(context).primaryColor,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  child: Icon(
+                                    Icons.add,
                                     color: Theme.of(context).primaryColor,
                                   ),
-                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                child: Icon(
-                                  Icons.add,
-                                  color: Theme.of(context).primaryColor,
-                                ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
+                          onPressed: () =>
+                              Navigator.pushNamed(context, 'boardrentchoose'),
                         ),
-                        Container(
-                          margin: EdgeInsets.only(left: 15, top: 15),
-                          width: 160,
-                          height: 230,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Theme.of(context).primaryColor,
+                        FlatButton(
+                          child: Container(
+                            margin: EdgeInsets.only(left: 0, top: 15),
+                            width: 160,
+                            height: 230,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.bottomRight,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            overflow: Overflow.visible,
-                            children: [
-                              Align(
-                                alignment: Alignment.topLeft,
-                                heightFactor: 13.5,
-                                widthFactor: 1.1,
-                                child: Text("SoftBoard - Ocean 7'0"),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 65),
-                                child: Image.asset(
-                                  'assets/board.png',
-                                  height: 170,
+                            child: Stack(
+                              alignment: Alignment.bottomRight,
+                              clipBehavior: Clip.antiAliasWithSaveLayer,
+                              overflow: Overflow.visible,
+                              children: [
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  heightFactor: 13.5,
+                                  widthFactor: 1.1,
+                                  child: Text("SoftBoard - Ocean 7'0"),
                                 ),
-                              ),
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(bottom: 10, right: 65),
+                                  child: Image.asset(
+                                    'assets/board.png',
+                                    height: 170,
+                                  ),
+                                ),
+                                Container(
+                                  width: 40,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Theme.of(context).primaryColor,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  child: Icon(
+                                    Icons.add,
                                     color: Theme.of(context).primaryColor,
                                   ),
-                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                child: Icon(
-                                  Icons.add,
-                                  color: Theme.of(context).primaryColor,
-                                ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
+                          onPressed: () =>
+                              Navigator.pushNamed(context, 'boardrentchoose'),
                         ),
-                        Container(
-                          margin: EdgeInsets.only(left: 15, top: 15),
-                          width: 160,
-                          height: 230,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Theme.of(context).primaryColor,
+                        FlatButton(
+                          child: Container(
+                            margin: EdgeInsets.only(left: 0, top: 15),
+                            width: 160,
+                            height: 230,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.bottomRight,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            overflow: Overflow.visible,
-                            children: [
-                              Align(
-                                alignment: Alignment.topLeft,
-                                heightFactor: 13.5,
-                                widthFactor: 1.1,
-                                child: Text("SoftBoard - Ocean 7'0"),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 65),
-                                child: Image.asset(
-                                  'assets/board.png',
-                                  height: 170,
+                            child: Stack(
+                              alignment: Alignment.bottomRight,
+                              clipBehavior: Clip.antiAliasWithSaveLayer,
+                              overflow: Overflow.visible,
+                              children: [
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  heightFactor: 13.5,
+                                  widthFactor: 1.1,
+                                  child: Text("SoftBoard - Ocean 7'0"),
                                 ),
-                              ),
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(bottom: 10, right: 65),
+                                  child: Image.asset(
+                                    'assets/board.png',
+                                    height: 170,
+                                  ),
+                                ),
+                                Container(
+                                  width: 40,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Theme.of(context).primaryColor,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  child: Icon(
+                                    Icons.add,
                                     color: Theme.of(context).primaryColor,
                                   ),
-                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                child: Icon(
-                                  Icons.add,
-                                  color: Theme.of(context).primaryColor,
-                                ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
+                          onPressed: () =>
+                              Navigator.pushNamed(context, 'boardrentchoose'),
                         ),
                       ],
                     ),
