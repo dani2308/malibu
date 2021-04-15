@@ -74,25 +74,32 @@ class _LanguageScreenState extends State<LanguageScreen> {
               ),
               Padding(
                 padding: EdgeInsets.only(top: 50, left: 50, right: 30),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Português',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
-                    ),
-                    Radio(
-                      value: Language.pt,
-                      groupValue: _lang,
-                      onChanged: (Language value) {
-                        setState(
-                          () {
-                            _lang = value;
-                          },
-                        );
-                      },
-                    ),
-                  ],
+                child: FlatButton(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Português',
+                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                      ),
+                      Radio(
+                        value: Language.pt,
+                        groupValue: _lang,
+                        onChanged: (Language value) {
+                          setState(
+                            () {
+                              _lang = value;
+                            },
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _lang = Language.pt;
+                    });
+                  },
                 ),
               ),
               Container(

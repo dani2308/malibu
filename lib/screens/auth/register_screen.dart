@@ -129,7 +129,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Container(
                         width: 400,
                         height: 75,
-                        color: Theme.of(context).accentColor,
+                        color: Theme.of(context).primaryColor,
                       ),
                       Positioned(
                         top: -25,
@@ -145,7 +145,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           height: 55,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: Theme.of(context).primaryColor,
+                            color: Theme.of(context).accentColor,
                           ),
                         ),
                       )

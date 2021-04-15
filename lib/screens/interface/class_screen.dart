@@ -43,8 +43,8 @@ class _ClassScreenState extends State<ClassScreen> {
               calendarStyle: CalendarStyle(
                 todayColor:
                     Theme.of(context).primaryColor, //? marca o dia de hoje
-                selectedColor: Theme.of(context)
-                    .primaryColorLight, //? marca o dia selecionado
+                selectedColor:
+                    Theme.of(context).accentColor, //? marca o dia selecionado
                 outsideWeekendStyle: //? propriedades dos dias do fim-de-semana
                     TextStyle(
                         color: Colors.grey[400],
@@ -87,7 +87,7 @@ class _ClassScreenState extends State<ClassScreen> {
                 formatButtonShowsNext: false,
               ),
               startingDayOfWeek: StartingDayOfWeek.monday,
-              calendarController: _controller,
+              calendarController: _controller,              
             ),
             SizedBox(
               height: 20,

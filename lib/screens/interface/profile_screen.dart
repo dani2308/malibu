@@ -158,7 +158,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: Icon(
                       Icons.notifications_none,
                       color: Colors.white,
-                      size: 35,
+                      size: 30,
                     ),
                   ),
                 ),
@@ -245,6 +245,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       child: Icon(
                         Icons.arrow_forward_ios_rounded,
                         size: 30,
+                        color: Theme.of(context).accentColor,
                       ),
                     ),
                   ],

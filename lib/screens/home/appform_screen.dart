@@ -42,6 +42,9 @@ class _AppformScreenState extends State<AppformScreen> {
                         ),
                       ],
                     ),
+                    SizedBox(
+                      height: 20,
+                    ),
                     Padding(
                         padding: EdgeInsets.only(left: 50, top: 15),
                         child: Align(
@@ -411,7 +414,7 @@ class _AppformScreenState extends State<AppformScreen> {
                             Container(
                               width: 400,
                               height: 75,
-                              color: Theme.of(context).accentColor,
+                              color: Theme.of(context).primaryColor,
                             ),
                             Positioned(
                               top: -25,
@@ -427,7 +430,7 @@ class _AppformScreenState extends State<AppformScreen> {
                                 height: 55,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: Theme.of(context).primaryColor,
+                                  color: Theme.of(context).accentColor,
                                 ),
                               ),
                             )

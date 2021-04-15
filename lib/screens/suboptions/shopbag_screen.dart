@@ -124,7 +124,7 @@ class _ShopBagScreenState extends State<ShopBagScreen> {
                         Padding(
                           padding: EdgeInsets.only(left: 50),
                           child: Icon(
-                            Icons.cancel_outlined,
+                            Icons.close_rounded,
                             color: Theme.of(context).accentColor,
                           ),
                         ),

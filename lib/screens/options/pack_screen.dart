@@ -148,36 +148,40 @@ class _PackScreenState extends State<PackScreen> {
                 ),
               ),
               FlatButton(
-                child: Container(
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Padding(
-                      padding: EdgeInsets.only(top: 30),
-                      child: Text(
-                        'Mensal',
-                        style: TextStyle(
-                          fontFamily: 'Ubuntu',
-                          fontSize: 20,
+                child: Column(
+                  children: [
+                    Container(
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 30),
+                          child: Text(
+                            'Mensal',
+                            style: TextStyle(
+                              fontFamily: 'Ubuntu',
+                              fontSize: 20,
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
+                    Container(
+                      alignment: Alignment(2, 0.0),
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 30),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          child: Container(
+                            height: 1.0,
+                            width: 355.0,
+                            color: Colors.grey[300],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 onPressed: () => Navigator.pushNamed(context, 'pay'),
-              ),
-              Container(
-                alignment: Alignment(2, 0.0),
-                child: Padding(
-                  padding: EdgeInsets.only(top: 30),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Container(
-                      height: 1.0,
-                      width: 355.0,
-                      color: Colors.grey[300],
-                    ),
-                  ),
-                ),
               ),
               Container(
                 child: Align(
