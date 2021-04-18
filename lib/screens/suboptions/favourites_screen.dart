@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 class FavouritesScreen extends StatefulWidget {
@@ -151,7 +149,7 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                 padding: EdgeInsets.only(bottom: 45, right: 5),
                                 child: Icon(
                                   Icons.favorite,
-                                  color: Colors.red,
+                                  color: Theme.of(context).accentColor,
                                   size: 30,
                                 ),
                               ),
@@ -204,7 +202,7 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                 padding: EdgeInsets.only(bottom: 45, right: 5),
                                 child: Icon(
                                   Icons.favorite,
-                                  color: Colors.red,
+                                  color: Theme.of(context).accentColor,
                                   size: 30,
                                 ),
                               ),
@@ -261,7 +259,7 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                 padding: EdgeInsets.only(bottom: 45, right: 5),
                                 child: Icon(
                                   Icons.favorite,
-                                  color: Colors.red,
+                                  color: Theme.of(context).accentColor,
                                   size: 30,
                                 ),
                               ),
@@ -314,7 +312,7 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                 padding: EdgeInsets.only(bottom: 45, right: 5),
                                 child: Icon(
                                   Icons.favorite,
-                                  color: Colors.red,
+                                  color: Theme.of(context).accentColor,
                                   size: 30,
                                 ),
                               ),
@@ -367,7 +365,7 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                 padding: EdgeInsets.only(bottom: 45, right: 5),
                                 child: Icon(
                                   Icons.favorite,
-                                  color: Colors.red,
+                                  color: Theme.of(context).accentColor,
                                   size: 30,
                                 ),
                               ),

@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: themeLight(),
       // * darkTheme: themeDark(),
-      initialRoute: 'login',
+      initialRoute: 'home',
       onGenerateRoute: RouterHandler.router.generator,
     );
   }

@@ -22,7 +22,7 @@ class _ClassConfirmScreenState extends State<ClassConfirmScreen> {
                       Icons.arrow_back_ios_rounded,
                       color: Theme.of(context).accentColor,
                     ),
-                    onPressed: () => Navigator.pushNamed(context, ''),
+                    onPressed: () => Navigator.pushNamed(context, 'home'),
                   ),
                   Text(
                     'Quarta-feira',
