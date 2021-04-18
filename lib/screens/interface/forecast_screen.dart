@@ -286,10 +286,11 @@ class _ForecastScreenState extends State<ForecastScreen> {
                         borderRadius: BorderRadius.circular(5.0),
                         boxShadow: [
                           BoxShadow(
-                              offset: const Offset(0.0, 0.0),
-                              blurRadius: 0.0,
-                              spreadRadius: 10.0,
-                              color: Colors.white),
+                            offset: const Offset(0.0, 0.0),
+                            blurRadius: 0.0,
+                            spreadRadius: 10.0,
+                            color: Colors.white,
+                          ),
                         ],
                       ),
                       child: Column(
@@ -336,15 +337,23 @@ class _ForecastScreenState extends State<ForecastScreen> {
                       'Adicione um Local',
                       style: TextStyle(
                           fontFamily: 'Ubuntu',
-                          fontSize: 17,
+                          fontSize: 18,
                           color: Colors.white),
                     ),
                   ),
-                  width: 170,
-                  height: 30,
+                  width: 180,
+                  height: 35,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
                     color: Theme.of(context).primaryColor,
+                    boxShadow: [
+                      BoxShadow(
+                        offset: const Offset(0.0, 0.0),
+                        blurRadius: 10.0,
+                        spreadRadius: 3.0,
+                        color: Colors.grey,
+                      ),
+                    ],
                   ),
                 ),
               ),
