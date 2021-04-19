@@ -32,40 +32,43 @@ class _LocationChooseScreenState extends State<LocationChooseScreen> {
               ),
               Padding(
                 padding: EdgeInsets.only(top: 50),
-                child: Container(
-                  width: 320,
-                  height: 30,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Colors.white,
-                    border: Border.all(
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 10, right: 85, top: 2),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Icon(
-                                Icons.search_outlined,
-                                color: Theme.of(context).primaryColor,
-                              ),
-                              Text(
-                                'Pesquisar por um Local',
-                                style: TextStyle(
-                                    fontFamily: 'Ubuntu', fontSize: 17),
-                              ),
-                            ],
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 80, right: 90, top: 2),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Icon(
+                              Icons.search_outlined,
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            Text(
+                              'Pesquisar por um Local',
+                              style:
+                                  TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 10, bottom: 15),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10.0),
+                            child: Container(
+                              height: 1.0,
+                              width: 250.0,
+                              color: Theme.of(context).primaryColor,
+                            ),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),

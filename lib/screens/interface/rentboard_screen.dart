@@ -26,8 +26,49 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                       width: 220,
                     ),
                   ),
+                ],
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Container(
+                      width: 70,
+                      height: 35,
+                      alignment: Alignment.center,
+                      margin: EdgeInsets.only(top: 0, left: 30),
+                      padding: EdgeInsets.all(2.0),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        border: Border.all(
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        borderRadius: BorderRadius.circular(10.0),
+                        boxShadow: [
+                          BoxShadow(
+                            offset: const Offset(0.0, 0.0),
+                            blurRadius: 5.0,
+                            spreadRadius: 2.0,
+                            color: Colors.grey,
+                          ),
+                        ],
+                      ),
+                      child: Text(
+                        'Filtros',
+                        style: TextStyle(color: Colors.white, fontSize: 17),
+                      ),
+                    ),
+                  ),
                   Padding(
-                    padding: EdgeInsets.only(top: 12, left: 8),
+                    padding: EdgeInsets.only(
+                      left: 100,
+                      right: 0,
+                    ),
                     child: IconButton(
                       icon: Icon(
                         Icons.search_rounded,
@@ -37,7 +78,10 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 12, left: 0),
+                    padding: EdgeInsets.only(
+                      left: 0,
+                      right: 0,
+                    ),
                     child: IconButton(
                       icon: Icon(
                         Icons.favorite_border,
@@ -48,7 +92,10 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 12, left: 0),
+                    padding: EdgeInsets.only(
+                      left: 0,
+                      right: 30,
+                    ),
                     child: IconButton(
                       icon: Icon(
                         Icons.shopping_bag_outlined,
@@ -58,23 +105,6 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                     ),
                   ),
                 ],
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Container(
-                  margin: EdgeInsets.only(top: 25, left: 33),
-                  padding: EdgeInsets.all(2.0),
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).primaryColor,
-                    border: Border.all(
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                  child: Text(
-                    'Filtros',
-                    style: TextStyle(color: Colors.white, fontSize: 17),
-                  ),
-                ),
               ),
               SizedBox(
                 height: 40.0,

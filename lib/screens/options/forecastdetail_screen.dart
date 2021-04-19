@@ -184,6 +184,14 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                       style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
                     ),
                   ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 70, left: 5),
+                    child: Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      color: Theme.of(context).accentColor,
+                      size: 15,
+                    ),
+                  ),
                 ],
               ),
               Padding(
