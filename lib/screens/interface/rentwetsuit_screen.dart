@@ -136,11 +136,11 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                               Align(
                                 alignment: Alignment.topLeft,
                                 heightFactor: 13.5,
-                                widthFactor: 1.4,
-                                child: Text("Wetsuit - RipCurl"),
+                                widthFactor: 1.1,
+                                child: Text("RipCurl - Ebomb"),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 55),
+                                padding: EdgeInsets.only(bottom: 10, right: 50),
                                 child: Image.asset(
                                   'assets/realwetsuit.png',
                                   height: 170,
@@ -159,6 +159,18 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                                   Icons.add,
                                   color: Theme.of(context).primaryColor,
                                 ),
+                              ),
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 10, bottom: 10),
+                                    child: Icon(
+                                      Icons.favorite_border,
+                                      color: Theme.of(context).primaryColor,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -185,11 +197,11 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                               Align(
                                 alignment: Alignment.topLeft,
                                 heightFactor: 13.5,
-                                widthFactor: 1.4,
-                                child: Text("Wetsuit - RipCurl"),
+                                widthFactor: 1.1,
+                                child: Text("RipCurl - Ebomb"),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 55),
+                                padding: EdgeInsets.only(bottom: 10, right: 50),
                                 child: Image.asset(
                                   'assets/realwetsuit.png',
                                   height: 170,
@@ -208,6 +220,18 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                                   Icons.add,
                                   color: Theme.of(context).primaryColor,
                                 ),
+                              ),
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 10, bottom: 10),
+                                    child: Icon(
+                                      Icons.favorite_border,
+                                      color: Theme.of(context).primaryColor,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -234,11 +258,11 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                               Align(
                                 alignment: Alignment.topLeft,
                                 heightFactor: 13.5,
-                                widthFactor: 1.4,
-                                child: Text("Wetsuit - RipCurl"),
+                                widthFactor: 1.1,
+                                child: Text("RipCurl - Ebomb"),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 55),
+                                padding: EdgeInsets.only(bottom: 10, right: 50),
                                 child: Image.asset(
                                   'assets/realwetsuit.png',
                                   height: 170,
@@ -257,6 +281,18 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                                   Icons.add,
                                   color: Theme.of(context).primaryColor,
                                 ),
+                              ),
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 10, bottom: 10),
+                                    child: Icon(
+                                      Icons.favorite_border,
+                                      color: Theme.of(context).primaryColor,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -270,7 +306,7 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                     children: [
                       FlatButton(
                         child: Container(
-                          margin: EdgeInsets.only(left: 0),
+                          margin: EdgeInsets.only(left: 0, top: 0),
                           width: 160,
                           height: 230,
                           decoration: BoxDecoration(
@@ -287,11 +323,11 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                               Align(
                                 alignment: Alignment.topLeft,
                                 heightFactor: 13.5,
-                                widthFactor: 1.4,
-                                child: Text("Wetsuit - RipCurl"),
+                                widthFactor: 1.1,
+                                child: Text("RipCurl - Ebomb"),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 55),
+                                padding: EdgeInsets.only(bottom: 10, right: 50),
                                 child: Image.asset(
                                   'assets/realwetsuit.png',
                                   height: 170,
@@ -310,6 +346,18 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                                   Icons.add,
                                   color: Theme.of(context).primaryColor,
                                 ),
+                              ),
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 10, bottom: 10),
+                                    child: Icon(
+                                      Icons.favorite_border,
+                                      color: Theme.of(context).primaryColor,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -336,11 +384,11 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                               Align(
                                 alignment: Alignment.topLeft,
                                 heightFactor: 13.5,
-                                widthFactor: 1.4,
-                                child: Text("Wetsuit - RipCurl"),
+                                widthFactor: 1.1,
+                                child: Text("RipCurl - Ebomb"),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 55),
+                                padding: EdgeInsets.only(bottom: 10, right: 50),
                                 child: Image.asset(
                                   'assets/realwetsuit.png',
                                   height: 170,
@@ -359,6 +407,18 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                                   Icons.add,
                                   color: Theme.of(context).primaryColor,
                                 ),
+                              ),
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 10, bottom: 10),
+                                    child: Icon(
+                                      Icons.favorite_border,
+                                      color: Theme.of(context).primaryColor,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -385,11 +445,11 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                               Align(
                                 alignment: Alignment.topLeft,
                                 heightFactor: 13.5,
-                                widthFactor: 1.4,
-                                child: Text("Wetsuit - RipCurl"),
+                                widthFactor: 1.1,
+                                child: Text("RipCurl - Ebomb"),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 55),
+                                padding: EdgeInsets.only(bottom: 10, right: 50),
                                 child: Image.asset(
                                   'assets/realwetsuit.png',
                                   height: 170,
@@ -408,6 +468,18 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                                   Icons.add,
                                   color: Theme.of(context).primaryColor,
                                 ),
+                              ),
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 10, bottom: 10),
+                                    child: Icon(
+                                      Icons.favorite_border,
+                                      color: Theme.of(context).primaryColor,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),

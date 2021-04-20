@@ -143,7 +143,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                 ),
                                 Padding(
                                   padding:
-                                      EdgeInsets.only(bottom: 10, right: 65),
+                                      EdgeInsets.only(bottom: 10, right: 58),
                                   child: Image.asset(
                                     'assets/board.png',
                                     height: 170,
@@ -162,6 +162,18 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                     Icons.add,
                                     color: Theme.of(context).primaryColor,
                                   ),
+                                ),
+                                Row(
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.only(left: 10, bottom: 10),
+                                      child: Icon(
+                                        Icons.favorite_border,
+                                        color: Theme.of(context).primaryColor,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
@@ -193,7 +205,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                 ),
                                 Padding(
                                   padding:
-                                      EdgeInsets.only(bottom: 10, right: 65),
+                                      EdgeInsets.only(bottom: 10, right: 58),
                                   child: Image.asset(
                                     'assets/board.png',
                                     height: 170,
@@ -212,6 +224,18 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                     Icons.add,
                                     color: Theme.of(context).primaryColor,
                                   ),
+                                ),
+                                Row(
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.only(left: 10, bottom: 10),
+                                      child: Icon(
+                                        Icons.favorite_border,
+                                        color: Theme.of(context).primaryColor,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
@@ -243,7 +267,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                 ),
                                 Padding(
                                   padding:
-                                      EdgeInsets.only(bottom: 10, right: 65),
+                                      EdgeInsets.only(bottom: 10, right: 58),
                                   child: Image.asset(
                                     'assets/board.png',
                                     height: 170,
@@ -262,6 +286,18 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                     Icons.add,
                                     color: Theme.of(context).primaryColor,
                                   ),
+                                ),
+                                Row(
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.only(left: 10, bottom: 10),
+                                      child: Icon(
+                                        Icons.favorite_border,
+                                        color: Theme.of(context).primaryColor,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
@@ -275,7 +311,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                       children: [
                         FlatButton(
                           child: Container(
-                            margin: EdgeInsets.only(left: 0),
+                            margin: EdgeInsets.only(left: 0, top: 0),
                             width: 160,
                             height: 230,
                             decoration: BoxDecoration(
@@ -297,7 +333,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                 ),
                                 Padding(
                                   padding:
-                                      EdgeInsets.only(bottom: 10, right: 65),
+                                      EdgeInsets.only(bottom: 10, right: 58),
                                   child: Image.asset(
                                     'assets/board.png',
                                     height: 170,
@@ -316,6 +352,18 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                     Icons.add,
                                     color: Theme.of(context).primaryColor,
                                   ),
+                                ),
+                                Row(
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.only(left: 10, bottom: 10),
+                                      child: Icon(
+                                        Icons.favorite_border,
+                                        color: Theme.of(context).primaryColor,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
@@ -347,7 +395,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                 ),
                                 Padding(
                                   padding:
-                                      EdgeInsets.only(bottom: 10, right: 65),
+                                      EdgeInsets.only(bottom: 10, right: 58),
                                   child: Image.asset(
                                     'assets/board.png',
                                     height: 170,
@@ -366,6 +414,18 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                     Icons.add,
                                     color: Theme.of(context).primaryColor,
                                   ),
+                                ),
+                                Row(
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.only(left: 10, bottom: 10),
+                                      child: Icon(
+                                        Icons.favorite_border,
+                                        color: Theme.of(context).primaryColor,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
@@ -397,7 +457,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                 ),
                                 Padding(
                                   padding:
-                                      EdgeInsets.only(bottom: 10, right: 65),
+                                      EdgeInsets.only(bottom: 10, right: 58),
                                   child: Image.asset(
                                     'assets/board.png',
                                     height: 170,
@@ -416,6 +476,18 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                     Icons.add,
                                     color: Theme.of(context).primaryColor,
                                   ),
+                                ),
+                                Row(
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.only(left: 10, bottom: 10),
+                                      child: Icon(
+                                        Icons.favorite_border,
+                                        color: Theme.of(context).primaryColor,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),

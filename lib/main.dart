@@ -3,10 +3,13 @@ import 'package:flutter/services.dart';
 import 'package:malibu/theme.dart';
 
 import 'routes.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   RouterHandler.setupRouter();
-  runApp(MyApp());
+  Intl.defaultLocale = 'pt_PT';
+  initializeDateFormatting().then((_) => runApp(MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -14,6 +17,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    initializeDateFormatting('pt_PT');
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,

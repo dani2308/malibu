@@ -88,6 +88,7 @@ class _ClassScreenState extends State<ClassScreen> {
               ),
               startingDayOfWeek: StartingDayOfWeek.monday,
               calendarController: _controller,
+              locale: 'pt_PT',
             ),
             SizedBox(
               height: 20,

@@ -261,14 +261,22 @@ class _ShopBagScreenState extends State<ShopBagScreen> {
                     Align(
                       alignment: Alignment.center,
                       child: Container(
-                        width: 100,
-                        height: 30,
+                        width: 110,
+                        height: 40,
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Theme.of(context).primaryColor,
                           ),
                           borderRadius: BorderRadius.circular(10),
                           color: Theme.of(context).primaryColor,
+                          boxShadow: [
+                            BoxShadow(
+                              offset: const Offset(0.0, 0.0),
+                              blurRadius: 5.0,
+                              spreadRadius: 2.0,
+                              color: Colors.grey,
+                            ),
+                          ],
                         ),
                         child: Text(
                           'Confirmar',
