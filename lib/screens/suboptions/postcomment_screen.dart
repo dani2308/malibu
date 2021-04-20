@@ -28,14 +28,22 @@ class _PostCommentScreenState extends State<PostCommentScreen> {
                       onPressed: () => Navigator.pushNamed(context, 'home'),
                     ),
                     Container(
-                      width: 80,
-                      height: 30,
+                      width: 70,
+                      height: 40,
                       decoration: BoxDecoration(
                         border: Border.all(
                           color: Theme.of(context).primaryColor,
                         ),
                         color: Theme.of(context).primaryColor,
                         borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            offset: const Offset(0.0, 0.0),
+                            blurRadius: 5.0,
+                            spreadRadius: 2.0,
+                            color: Colors.grey,
+                          ),
+                        ],
                       ),
                       alignment: Alignment.center,
                       child: Text(

@@ -63,9 +63,11 @@ class _ClassScreenState extends State<ClassScreen> {
               daysOfWeekStyle: DaysOfWeekStyle(
                 weekdayStyle: TextStyle(
                     fontFamily: 'Ubuntu',
+                    fontSize: 12,
                     color: Colors.black), //? segunda a sexta
                 weekendStyle: TextStyle(
                     fontFamily: 'Ubuntu',
+                    fontSize: 12,
                     color: Theme.of(context).primaryColor), //? sabado e domingo
               ),
               headerStyle: HeaderStyle(
@@ -73,7 +75,7 @@ class _ClassScreenState extends State<ClassScreen> {
                 titleTextStyle: TextStyle(
                     fontFamily: 'Ubuntu',
                     fontSize: 20,
-                    color: Theme.of(context).primaryColor),
+                    color: Theme.of(context).primaryColor),                    
                 formatButtonDecoration: BoxDecoration(
                   //? caixa display do calendario
                   color: Theme.of(context).primaryColor,
@@ -88,7 +90,6 @@ class _ClassScreenState extends State<ClassScreen> {
               ),
               startingDayOfWeek: StartingDayOfWeek.monday,
               calendarController: _controller,
-              locale: 'pt_PT',
             ),
             SizedBox(
               height: 20,

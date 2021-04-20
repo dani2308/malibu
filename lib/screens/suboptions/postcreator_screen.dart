@@ -28,14 +28,22 @@ class _PostCreatorState extends State<PostCreatorScreen> {
                       onPressed: () => Navigator.pushNamed(context, 'home'),
                     ),
                     Container(
-                      width: 80,
-                      height: 30,
+                      width: 70,
+                      height: 40,
                       decoration: BoxDecoration(
                         border: Border.all(
                           color: Theme.of(context).primaryColor,
                         ),
                         color: Theme.of(context).primaryColor,
                         borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            offset: const Offset(0.0, 0.0),
+                            blurRadius: 5.0,
+                            spreadRadius: 2.0,
+                            color: Colors.grey,
+                          ),
+                        ],
                       ),
                       alignment: Alignment.center,
                       child: Text(
@@ -45,20 +53,6 @@ class _PostCreatorState extends State<PostCreatorScreen> {
                           fontSize: 17,
                           color: Colors.white,
                         ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 40, top: 40),
-                child: Row(
-                  children: [
-                    Text(
-                      '+   Adicionar Foto',
-                      style: TextStyle(
-                        fontSize: 17,
-                        color: Theme.of(context).primaryColor,
                       ),
                     ),
                   ],
@@ -86,6 +80,20 @@ class _PostCreatorState extends State<PostCreatorScreen> {
                       child: Text(
                         'Escreva um comentário...',
                         style: TextStyle(fontSize: 17, color: Colors.grey),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 60, top: 40),
+                child: Row(
+                  children: [
+                    Text(
+                      '+   Adicionar Foto',
+                      style: TextStyle(
+                        fontSize: 17,
+                        color: Theme.of(context).primaryColor,
                       ),
                     ),
                   ],
