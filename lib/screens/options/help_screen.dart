@@ -60,11 +60,19 @@ class _HelpScreenState extends State<HelpScreen> {
                         ),
                       ),
                     ),
-                    width: 100,
-                    height: 30,
+                    width: 80,
+                    height: 40,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
                       color: Theme.of(context).primaryColor,
+                      boxShadow: [
+                        BoxShadow(
+                          offset: const Offset(0.0, 0.0),
+                          blurRadius: 5.0,
+                          spreadRadius: 2.0,
+                          color: Colors.grey,
+                        ),
+                      ],
                     ),
                   ),
                 ),

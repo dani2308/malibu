@@ -158,7 +158,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: Icon(
                       Icons.notifications_none,
                       color: Colors.white,
-                      size: 30,
+                      size: 26,
                     ),
                   ),
                 ),
@@ -193,7 +193,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: Icon(
                       Icons.bedtime_outlined,
                       color: Colors.white,
-                      size: 30,
+                      size: 26,
                     ),
                   ),
                 ),
@@ -228,7 +228,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         child: Icon(
                           Icons.lock_outlined,
-                          size: 30,
+                          size: 26,
                           color: Colors.white,
                         ),
                       ),
@@ -265,7 +265,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       child: Icon(
                         Icons.translate_outlined,
-                        size: 30,
+                        size: 26,
                         color: Colors.white,
                       ),
                     ),
@@ -303,7 +303,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       child: Icon(
                         Icons.verified_user_outlined,
-                        size: 30,
+                        size: 26,
                         color: Colors.white,
                       ),
                     ),
@@ -341,7 +341,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       child: Icon(
                         Icons.help_outline,
-                        size: 30,
+                        size: 26,
                         color: Colors.white,
                       ),
                     ),
@@ -379,7 +379,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       child: Icon(
                         Icons.shopping_bag_outlined,
-                        size: 30,
+                        size: 26,
                         color: Colors.white,
                       ),
                     ),
