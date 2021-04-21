@@ -89,69 +89,63 @@ class _AppformScreenState extends State<AppformScreen> {
                       ),
                     ),
                     Padding(
-                        padding: EdgeInsets.only(left: 50, top: 50),
-                        child: Align(
-                            alignment: Alignment.topLeft,
-                            child: Text(
-                              "Nome",
-                              style: TextStyle(
-                                fontSize: 25,
-                                fontFamily: 'Ubuntu',
-                              ),
-                            ))),
-                    Padding(
-                      padding: EdgeInsets.only(left: 10, top: 50),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Container(
-                          height: 1.0,
-                          width: 300.0,
-                          color: Colors.black,
+                      padding: EdgeInsets.only(left: 50, top: 50),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          "Nome",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontFamily: 'Ubuntu',
+                          ),
                         ),
                       ),
                     ),
                     Padding(
-                        padding: EdgeInsets.only(left: 50, top: 50),
-                        child: Align(
-                            alignment: Alignment.topLeft,
-                            child: Text(
-                              "Nome de Utilizador",
-                              style: TextStyle(
-                                fontSize: 25,
-                                fontFamily: 'Ubuntu',
-                              ),
-                            ))),
+                      padding: EdgeInsets.only(left: 50, right: 50),
+                      child: TextFormField(
+                        keyboardType: TextInputType.text,
+                        style: TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
+                      ),
+                    ),
                     Padding(
-                      padding: EdgeInsets.only(left: 10, top: 50),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Container(
-                          height: 1.0,
-                          width: 300.0,
-                          color: Colors.black,
+                      padding: EdgeInsets.only(left: 50, top: 50),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          "Nome de Utilizador",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontFamily: 'Ubuntu',
+                          ),
                         ),
                       ),
                     ),
                     Padding(
-                        padding: EdgeInsets.only(left: 50, top: 50),
-                        child: Align(
-                            alignment: Alignment.topLeft,
-                            child: Text(
-                              "Idade",
-                              style: TextStyle(
-                                fontSize: 25,
-                                fontFamily: 'Ubuntu',
-                              ),
-                            ))),
+                      padding: EdgeInsets.only(left: 50, right: 50),
+                      child: TextFormField(
+                        keyboardType: TextInputType.text,
+                        style: TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
+                      ),
+                    ),
                     Padding(
-                      padding: EdgeInsets.only(left: 10, top: 50),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Container(
-                          height: 1.0,
-                          width: 300.0,
-                          color: Colors.black,
+                      padding: EdgeInsets.only(left: 50, top: 50),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          "Data de Nascimento",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontFamily: 'Ubuntu',
+                          ),
                         ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 50, right: 50),
+                      child: TextFormField(
+                        keyboardType: TextInputType.datetime,
+                        style: TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
                       ),
                     ),
                     Padding(
@@ -166,14 +160,10 @@ class _AppformScreenState extends State<AppformScreen> {
                               ),
                             ))),
                     Padding(
-                      padding: EdgeInsets.only(left: 10, top: 50),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Container(
-                          height: 1.0,
-                          width: 300.0,
-                          color: Colors.black,
-                        ),
+                      padding: EdgeInsets.only(left: 50, right: 50),
+                      child: TextFormField(
+                        keyboardType: TextInputType.text,
+                        style: TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
                       ),
                     ),
                     Padding(

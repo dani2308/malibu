@@ -31,41 +31,30 @@ class _LocationChooseScreenState extends State<LocationChooseScreen> {
                 ],
               ),
               Padding(
-                padding: EdgeInsets.only(top: 50),
+                padding: EdgeInsets.only(top: 30, bottom: 30),
                 child: Align(
                   alignment: Alignment.center,
                   child: Column(
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(left: 80, right: 90, top: 2),
+                        padding: EdgeInsets.only(left: 50, right: 50),
                         child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Icon(
                               Icons.search_outlined,
                               color: Theme.of(context).primaryColor,
                             ),
-                            Text(
-                              'Pesquisar por um Local',
-                              style:
-                                  TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
+                            Flexible(
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  hintText: '   Pesquisar por um Local',
+                                ),
+                                keyboardType: TextInputType.text,
+                                style: TextStyle(
+                                    fontSize: 15, fontFamily: 'Ubuntu'),
+                              ),
                             ),
                           ],
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 10, bottom: 15),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 10.0),
-                            child: Container(
-                              height: 1.0,
-                              width: 250.0,
-                              color: Theme.of(context).primaryColor,
-                            ),
-                          ),
                         ),
                       ),
                     ],

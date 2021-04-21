@@ -294,11 +294,17 @@ class _PostCommentScreenState extends State<PostCommentScreen> {
                         backgroundImage: AssetImage("assets/mii.png"),
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Text(
-                        'Escreva um comentário...',
-                        style: TextStyle(fontSize: 17, color: Colors.grey),
+                    Flexible(
+                      child: Padding(
+                        padding: EdgeInsets.only(right: 50, left: 20),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            hintText: 'Escreve um Comentário',
+                            border: InputBorder.none,
+                          ),
+                          keyboardType: TextInputType.text,
+                          style: TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
+                        ),
                       ),
                     ),
                   ],

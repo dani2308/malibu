@@ -80,6 +80,15 @@ class _ClassScreenState extends State<ClassScreen> {
                   //? caixa display do calendario
                   color: Theme.of(context).primaryColor,
                   borderRadius: BorderRadius.circular(10),
+
+                  boxShadow: [
+                    BoxShadow(
+                      offset: const Offset(0.0, 0.0),
+                      blurRadius: 5.0,
+                      spreadRadius: 1.0,
+                      color: Colors.grey,
+                    ),
+                  ],
                 ),
                 formatButtonTextStyle: TextStyle(
                   //? texto dentro da caixa

@@ -16,7 +16,6 @@ class _LoginScreenState extends State<LoginScreen> {
           minHeight: MediaQuery.of(context).size.height,
         ),
         child: SingleChildScrollView(
-          physics: NeverScrollableScrollPhysics(),
           child: SafeArea(
             child: Column(
               children: [
@@ -67,41 +66,36 @@ class _LoginScreenState extends State<LoginScreen> {
                   padding: EdgeInsets.only(left: 37, top: 60),
                   child: Align(
                     alignment: Alignment.topLeft,
-                    child: Text(
-                      "Email",
-                      style: TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        right: 50,
+                      ),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          labelText: 'Email',
+                        ),
+                        style: TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
+                        keyboardType: TextInputType.emailAddress,
+                      ),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 20, top: 10),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Container(
-                      height: 1.0,
-                      width: 300.0,
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 37, top: 60),
+                  padding: EdgeInsets.only(left: 37, top: 30),
                   child: Align(
                     alignment: Alignment.topLeft,
-                    child: Text(
-                      "Palavra-passe",
-                      style: TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(right: 20, top: 10),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Container(
-                      height: 1.0,
-                      width: 300.0,
-                      color: Colors.black,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        right: 50,
+                      ),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          labelText: 'Palavra-passe',
+                        ),
+                        keyboardType: TextInputType.text,
+                        obscureText: true,
+                        style: TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
+                      ),
                     ),
                   ),
                 ),
@@ -120,42 +114,39 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: 182,
                 ),
-                Padding(
-                  padding: EdgeInsets.only(top: 180),
-                  child: SizedBox(
-                    width: 400,
-                    height: 400,
-                    child: Stack(
-                      clipBehavior: Clip.antiAliasWithSaveLayer,
-                      overflow: Overflow.visible,
-                      children: [
-                        Container(
-                          width: 400,
-                          height: 75,
-                          color: Theme.of(context).primaryColor,
-                        ),
-                        Positioned(
-                          top: -25,
-                          right: 30,
-                          child: Container(
-                            child: FlatButton(
-                              child: Icon(Icons.arrow_forward,
-                                  color: Colors.white),
-                              onPressed: () =>
-                                  Navigator.pushNamed(context, 'home'),
-                            ),
-                            width: 90,
-                            height: 55,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Theme.of(context).accentColor,
-                            ),
+                SizedBox(
+                  width: 400,
+                  height: 75,
+                  child: Stack(
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    overflow: Overflow.visible,
+                    children: [
+                      Container(
+                        width: 400,
+                        height: 75,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      Positioned(
+                        top: -25,
+                        right: 30,
+                        child: Container(
+                          child: FlatButton(
+                            child:
+                                Icon(Icons.arrow_forward, color: Colors.white),
+                            onPressed: () =>
+                                Navigator.pushNamed(context, 'appform'),
                           ),
-                        )
-                      ],
-                    ),
+                          width: 90,
+                          height: 55,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Theme.of(context).accentColor,
+                          ),
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ],
