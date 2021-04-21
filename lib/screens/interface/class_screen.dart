@@ -75,7 +75,7 @@ class _ClassScreenState extends State<ClassScreen> {
                 titleTextStyle: TextStyle(
                     fontFamily: 'Ubuntu',
                     fontSize: 20,
-                    color: Theme.of(context).primaryColor),                    
+                    color: Theme.of(context).primaryColor),
                 formatButtonDecoration: BoxDecoration(
                   //? caixa display do calendario
                   color: Theme.of(context).primaryColor,
@@ -90,6 +90,8 @@ class _ClassScreenState extends State<ClassScreen> {
               ),
               startingDayOfWeek: StartingDayOfWeek.monday,
               calendarController: _controller,
+              onDayLongPressed: (day, events, holidays) =>
+                  Navigator.pushNamed(context, 'classconfirm'),
             ),
             SizedBox(
               height: 20,
