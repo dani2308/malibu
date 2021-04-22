@@ -96,7 +96,7 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    //Post(),
+                                    Post(),
                                   ],
                                 ),
                               ],
@@ -151,14 +151,7 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 10, bottom: 10),
-                                      child: Icon(
-                                        Icons.favorite,
-                                        color: Theme.of(context).accentColor,
-                                      ),
-                                    ),
+                                    Post(),
                                   ],
                                 ),
                               ],
@@ -213,14 +206,7 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 10, bottom: 10),
-                                      child: Icon(
-                                        Icons.favorite,
-                                        color: Theme.of(context).accentColor,
-                                      ),
-                                    ),
+                                    Post(),
                                   ],
                                 ),
                               ],
@@ -279,14 +265,7 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 10, bottom: 10),
-                                      child: Icon(
-                                        Icons.favorite,
-                                        color: Theme.of(context).accentColor,
-                                      ),
-                                    ),
+                                    Post(),
                                   ],
                                 ),
                               ],
@@ -341,14 +320,7 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 10, bottom: 10),
-                                      child: Icon(
-                                        Icons.favorite,
-                                        color: Theme.of(context).accentColor,
-                                      ),
-                                    ),
+                                    Post(),
                                   ],
                                 ),
                               ],
@@ -403,14 +375,7 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 10, bottom: 10),
-                                      child: Icon(
-                                        Icons.favorite,
-                                        color: Theme.of(context).accentColor,
-                                      ),
-                                    ),
+                                    Post(),
                                   ],
                                 ),
                               ],
@@ -431,6 +396,34 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class Post extends StatefulWidget {
+  @override
+  PostState createState() => new PostState();
+}
+
+class PostState extends State<Post> {
+  bool liked = false;
+
+  _pressed() {
+    setState(() {
+      liked = !liked;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: Icon(
+        liked ? Icons.favorite_border : Icons.favorite,
+        color: liked
+            ? Theme.of(context).primaryColor
+            : Theme.of(context).accentColor,
+      ),
+      onPressed: () => _pressed(),
     );
   }
 }

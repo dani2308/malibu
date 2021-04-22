@@ -106,3 +106,31 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+/*class Post extends StatefulWidget {
+  @override
+  PostState createState() => new PostState();
+}
+
+class PostState extends State<Post> {
+  bool liked = false;
+
+  _pressed() {
+    setState(() {
+      liked = !liked;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: Icon(
+        liked ? Icons.favorite_border : Icons.favorite,
+        color: liked
+            ? Theme.of(context).primaryColor
+            : Theme.of(context).accentColor,
+      ),
+      onPressed: () => _pressed(),
+    );
+  }
+}*/
