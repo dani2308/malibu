@@ -165,14 +165,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 10, bottom: 10),
-                                      child: Icon(
-                                        Icons.favorite_border,
-                                        color: Theme.of(context).primaryColor,
-                                      ),
-                                    ),
+                                    Post(),
                                   ],
                                 ),
                               ],
@@ -227,14 +220,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 10, bottom: 10),
-                                      child: Icon(
-                                        Icons.favorite_border,
-                                        color: Theme.of(context).primaryColor,
-                                      ),
-                                    ),
+                                    Post(),
                                   ],
                                 ),
                               ],
@@ -289,14 +275,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 10, bottom: 10),
-                                      child: Icon(
-                                        Icons.favorite_border,
-                                        color: Theme.of(context).primaryColor,
-                                      ),
-                                    ),
+                                    Post(),
                                   ],
                                 ),
                               ],
@@ -355,14 +334,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 10, bottom: 10),
-                                      child: Icon(
-                                        Icons.favorite_border,
-                                        color: Theme.of(context).primaryColor,
-                                      ),
-                                    ),
+                                    Post(),
                                   ],
                                 ),
                               ],
@@ -417,14 +389,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 10, bottom: 10),
-                                      child: Icon(
-                                        Icons.favorite_border,
-                                        color: Theme.of(context).primaryColor,
-                                      ),
-                                    ),
+                                    Post(),
                                   ],
                                 ),
                               ],
@@ -479,14 +444,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 10, bottom: 10),
-                                      child: Icon(
-                                        Icons.favorite_border,
-                                        color: Theme.of(context).primaryColor,
-                                      ),
-                                    ),
+                                    Post(),
                                   ],
                                 ),
                               ],
@@ -507,6 +465,34 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class Post extends StatefulWidget {
+  @override
+  PostState createState() => new PostState();
+}
+
+class PostState extends State<Post> {
+  bool liked = false;
+
+  _pressed() {
+    setState(() {
+      liked = !liked;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: Icon(
+        liked ? Icons.favorite : Icons.favorite_border,
+        color: liked
+            ? Theme.of(context).accentColor
+            : Theme.of(context).primaryColor,
+      ),
+      onPressed: () => _pressed(),
     );
   }
 }

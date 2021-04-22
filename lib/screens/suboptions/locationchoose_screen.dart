@@ -31,23 +31,26 @@ class _LocationChooseScreenState extends State<LocationChooseScreen> {
                 ],
               ),
               Padding(
-                padding: EdgeInsets.only(top: 30, bottom: 30),
+                padding: EdgeInsets.only(top: 30, bottom: 30, left: 20),
                 child: Align(
                   alignment: Alignment.center,
                   child: Column(
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(left: 50, right: 50),
+                        padding: EdgeInsets.only(left: 50, right: 100),
                         child: Row(
                           children: [
-                            Icon(
-                              Icons.search_outlined,
-                              color: Theme.of(context).primaryColor,
+                            Padding(
+                              padding: EdgeInsets.only(right: 10),
+                              child: Icon(
+                                Icons.search_outlined,
+                                color: Theme.of(context).primaryColor,
+                              ),
                             ),
                             Flexible(
                               child: TextFormField(
                                 decoration: InputDecoration(
-                                  hintText: '   Pesquisar por um Local',
+                                  hintText: 'Pesquisar por um Local',
                                 ),
                                 keyboardType: TextInputType.text,
                                 style: TextStyle(

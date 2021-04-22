@@ -96,14 +96,7 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 10, bottom: 10),
-                                      child: Icon(
-                                        Icons.favorite,
-                                        color: Theme.of(context).accentColor,
-                                      ),
-                                    ),
+                                    //Post(),
                                   ],
                                 ),
                               ],
