@@ -106,14 +106,7 @@ class _PostCommentScreenState extends State<PostCommentScreen> {
                 padding: EdgeInsets.only(left: 40),
                 child: Row(
                   children: [
-                    IconButton(
-                        icon: Icon(
-                          Icons.favorite_border,
-                          color: Theme.of(context).accentColor,
-                        ),
-                        iconSize: 20,
-                        alignment: Alignment.bottomLeft,
-                        onPressed: null),
+                    Post(),
                   ],
                 ),
               ),
@@ -179,14 +172,7 @@ class _PostCommentScreenState extends State<PostCommentScreen> {
                 padding: EdgeInsets.only(left: 60),
                 child: Row(
                   children: [
-                    IconButton(
-                        icon: Icon(
-                          Icons.favorite_border,
-                          color: Theme.of(context).accentColor,
-                        ),
-                        iconSize: 20,
-                        alignment: Alignment.bottomLeft,
-                        onPressed: null),
+                    Post(),
                   ],
                 ),
               ),
@@ -252,14 +238,7 @@ class _PostCommentScreenState extends State<PostCommentScreen> {
                 padding: EdgeInsets.only(left: 60),
                 child: Row(
                   children: [
-                    IconButton(
-                        icon: Icon(
-                          Icons.favorite_border,
-                          color: Theme.of(context).accentColor,
-                        ),
-                        iconSize: 20,
-                        alignment: Alignment.bottomLeft,
-                        onPressed: null),
+                    Post(),
                   ],
                 ),
               ),
@@ -314,6 +293,34 @@ class _PostCommentScreenState extends State<PostCommentScreen> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class Post extends StatefulWidget {
+  @override
+  PostState createState() => new PostState();
+}
+
+class PostState extends State<Post> {
+  bool liked = false;
+
+  _pressed() {
+    setState(() {
+      liked = !liked;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: Icon(
+        liked ? Icons.favorite : Icons.favorite_border,
+        color: liked
+            ? Theme.of(context).accentColor
+            : Theme.of(context).accentColor,
+      ),
+      onPressed: () => _pressed(),
     );
   }
 }

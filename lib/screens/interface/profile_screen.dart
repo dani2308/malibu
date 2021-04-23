@@ -170,12 +170,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 45, left: 85),
-                  child: Icon(
-                    Icons.toggle_off_outlined,
-                    color: Theme.of(context).accentColor,
-                    size: 50,
-                  ),
+                  padding: EdgeInsets.only(top: 45, left: 75),
+                  child: Toggle(),
                 ),
               ],
             ),
@@ -205,12 +201,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 15, left: 78),
-                  child: Icon(
-                    Icons.toggle_off_outlined,
-                    color: Theme.of(context).accentColor,
-                    size: 50,
-                  ),
+                  padding: EdgeInsets.only(left: 68),
+                  child: Toggle(),
                 ),
               ],
             ),
@@ -442,6 +434,35 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class Toggle extends StatefulWidget {
+  @override
+  PostState createState() => new PostState();
+}
+
+class PostState extends State<Toggle> {
+  bool toggled = false;
+
+  _pressed() {
+    setState(() {
+      toggled = !toggled;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: Icon(
+        toggled ? Icons.toggle_on : Icons.toggle_off_outlined,
+        color: toggled
+            ? Theme.of(context).accentColor
+            : Theme.of(context).accentColor,
+        size: 50,
+      ),
+      onPressed: () => _pressed(),
     );
   }
 }

@@ -101,12 +101,8 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 15),
-                      child: Icon(
-                        Icons.toggle_on,
-                        color: Theme.of(context).accentColor,
-                        size: 50,
-                      ),
+                      padding: const EdgeInsets.only(bottom: 10, left: 10),
+                      child: Toggle(),
                     ),
                   ],
                 ),
@@ -129,6 +125,35 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class Toggle extends StatefulWidget {
+  @override
+  PostState createState() => new PostState();
+}
+
+class PostState extends State<Toggle> {
+  bool toggled = false;
+
+  _pressed() {
+    setState(() {
+      toggled = !toggled;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: Icon(
+        toggled ? Icons.toggle_on : Icons.toggle_off_outlined,
+        color: toggled
+            ? Theme.of(context).accentColor
+            : Theme.of(context).accentColor,
+        size: 50,
+      ),
+      onPressed: () => _pressed(),
     );
   }
 }

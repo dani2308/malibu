@@ -22,7 +22,7 @@ class _PayScreenState extends State<PayScreen> {
                       Icons.arrow_back_ios_rounded,
                       color: Theme.of(context).accentColor,
                     ),
-                    onPressed: () => Navigator.pushNamed(context, 'home'),
+                    onPressed: () => Navigator.pushNamed(context, 'pack'),
                   ),
                   Text(
                     'Mensal',

@@ -136,7 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             child:
                                 Icon(Icons.arrow_forward, color: Colors.white),
                             onPressed: () =>
-                                Navigator.pushNamed(context, 'appform'),
+                                Navigator.pushNamed(context, 'home'),
                           ),
                           width: 90,
                           height: 55,

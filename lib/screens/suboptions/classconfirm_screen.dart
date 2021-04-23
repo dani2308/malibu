@@ -140,7 +140,7 @@ class _ClassConfirmScreenState extends State<ClassConfirmScreen> {
                     child: Align(
                       alignment: Alignment.center,
                       child: Text(
-                        'Confirmar',
+                        'Agendar',
                         style: TextStyle(
                           fontFamily: 'Ubuntu',
                           fontSize: 17,
