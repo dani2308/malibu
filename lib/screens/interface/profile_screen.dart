@@ -8,6 +8,96 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  createShowDialog(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(
+            'Terminar Sessão',
+            style: TextStyle(
+              fontFamily: 'Ubuntu',
+            ),
+          ),
+          content: Text(
+            'Deseja mesmo Terminar Sessão?',
+            style: TextStyle(
+              fontFamily: 'Ubuntu',
+            ),
+          ),
+          actions: [
+            MaterialButton(
+              onPressed: () {
+                Navigator.pushNamed(context, 'login');
+              },
+              child: Container(
+                alignment: Alignment.center,
+                width: 50,
+                height: 30,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    5.0,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      offset: const Offset(0.0, 0.0),
+                      blurRadius: 3.0,
+                      spreadRadius: 1.0,
+                      color: Colors.grey,
+                    ),
+                  ],
+                  color: Theme.of(context).accentColor,
+                ),
+                child: Text(
+                  'Sim',
+                  style: TextStyle(
+                    fontFamily: 'Ubuntu',
+                    fontSize: 17,
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            MaterialButton(
+              onPressed: () {
+                Navigator.of(context).pop('Terminar Sessão');
+              },
+              child: Container(
+                alignment: Alignment.center,
+                width: 50,
+                height: 30,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    5.0,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      offset: const Offset(0.0, 0.0),
+                      blurRadius: 3.0,
+                      spreadRadius: 1.0,
+                      color: Colors.grey,
+                    ),
+                  ],
+                  color: Colors.grey,
+                ),
+                child: Text(
+                  'Não',
+                  style: TextStyle(
+                    fontFamily: 'Ubuntu',
+                    fontSize: 17,
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -395,41 +485,47 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               onPressed: () => Navigator.pushNamed(context, 'pack'),
             ),
-            Padding(
-              padding: EdgeInsets.only(
-                top: 50,
-                bottom: 20.0,
-              ),
-              child: FlatButton(
-                onPressed: () => Navigator.popAndPushNamed(context, ''),
-                child: Container(
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      'Terminar Sessão',
-                      style: TextStyle(
-                        fontFamily: 'Ubuntu',
-                        fontSize: 17,
-                        color: Colors.white,
-                      ),
+            SizedBox(
+              height: 50,
+            ),
+            Align(
+              alignment: Alignment.center,
+              child: Container(
+                width: 170,
+                height: 40,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Theme.of(context).primaryColor,
+                  ),
+                  borderRadius: BorderRadius.circular(10),
+                  color: Theme.of(context).primaryColor,
+                  boxShadow: [
+                    BoxShadow(
+                      offset: const Offset(0.0, 0.0),
+                      blurRadius: 5.0,
+                      spreadRadius: 2.0,
+                      color: Colors.grey,
+                    ),
+                  ],
+                ),
+                alignment: Alignment.center,
+                child: FlatButton(
+                  child: Text(
+                    'Terminar Sessão',
+                    style: TextStyle(
+                      fontSize: 17,
+                      color: Colors.white,
+                      fontFamily: 'Ubuntu',
                     ),
                   ),
-                  width: 160,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Theme.of(context).primaryColor,
-                    boxShadow: [
-                      BoxShadow(
-                        offset: const Offset(0.0, 0.0),
-                        blurRadius: 5.0,
-                        spreadRadius: 2.0,
-                        color: Colors.grey,
-                      ),
-                    ],
-                  ),
+                  onPressed: () {
+                    createShowDialog(context);
+                  },
                 ),
               ),
+            ),
+            SizedBox(
+              height: 20,
             ),
           ],
         ),

@@ -8,6 +8,63 @@ class ShopBagScreen extends StatefulWidget {
 }
 
 class _ShopBagScreenState extends State<ShopBagScreen> {
+  createShowDialog(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(
+            'Confirmado',
+            style: TextStyle(
+              fontFamily: 'Ubuntu',
+            ),
+          ),
+          content: Text(
+            'O seu pedido foi confirmado com Sucesso!',
+            style: TextStyle(
+              fontFamily: 'Ubuntu',
+            ),
+          ),
+          actions: [
+            MaterialButton(
+              onPressed: () {
+                Navigator.of(context).pop('Confirmado');
+              },
+              child: Container(
+                alignment: Alignment.center,
+                width: 50,
+                height: 30,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    5.0,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      offset: const Offset(0.0, 0.0),
+                      blurRadius: 3.0,
+                      spreadRadius: 1.0,
+                      color: Colors.grey,
+                    ),
+                  ],
+                  color: Theme.of(context).accentColor,
+                ),
+                child: Text(
+                  'Ok',
+                  style: TextStyle(
+                    fontFamily: 'Ubuntu',
+                    fontSize: 17,
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -261,7 +318,7 @@ class _ShopBagScreenState extends State<ShopBagScreen> {
                     Align(
                       alignment: Alignment.center,
                       child: Container(
-                        width: 110,
+                        width: 120,
                         height: 40,
                         decoration: BoxDecoration(
                           border: Border.all(
@@ -278,14 +335,20 @@ class _ShopBagScreenState extends State<ShopBagScreen> {
                             ),
                           ],
                         ),
-                        child: Text(
-                          'Confirmar',
-                          style: TextStyle(
-                            fontSize: 17,
-                            color: Colors.white,
-                          ),
-                        ),
                         alignment: Alignment.center,
+                        child: FlatButton(
+                          child: Text(
+                            'Confirmar',
+                            style: TextStyle(
+                              fontSize: 17,
+                              color: Colors.white,
+                              fontFamily: 'Ubuntu',
+                            ),
+                          ),
+                          onPressed: () {
+                            createShowDialog(context);
+                          },
+                        ),
                       ),
                     ),
                     SizedBox(

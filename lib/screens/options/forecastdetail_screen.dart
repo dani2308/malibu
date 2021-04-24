@@ -8,6 +8,64 @@ class ForecastDetailScreen extends StatefulWidget {
 }
 
 class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
+  
+  createShowDialog(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(
+            'Período',
+            style: TextStyle(
+              fontFamily: 'Ubuntu',
+            ),
+          ),
+          content: Text(
+            'O Período é o intervalo de tempo, em segundos, entre duas ondulações.',
+            style: TextStyle(
+              fontFamily: 'Ubuntu',
+            ),
+          ),
+          actions: [
+            MaterialButton(
+              onPressed: () {
+                Navigator.of(context).pop('Período');
+              },
+              child: Container(
+                alignment: Alignment.center,
+                width: 50,
+                height: 30,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    5.0,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      offset: const Offset(0.0, 0.0),
+                      blurRadius: 3.0,
+                      spreadRadius: 1.0,
+                      color: Colors.grey,
+                    ),
+                  ],
+                  color: Theme.of(context).accentColor,
+                ),
+                child: Text(
+                  'Ok',
+                  style: TextStyle(
+                    fontFamily: 'Ubuntu',
+                    fontSize: 17,
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,106 +154,159 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                   ),
                 ],
               ),
-              Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(top: 70, left: 60),
-                    child: Text(
-                      'Período 15',
-                      style: TextStyle(
-                        fontFamily: 'Ubuntu',
-                        fontSize: 17,
+              Padding(
+                padding: const EdgeInsets.only(top: 30, left: 50, right: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: FlatButton(
+                        child: Row(
+                          children: [
+                            Text(
+                              'Período 15',
+                              style: TextStyle(
+                                fontFamily: 'Ubuntu',
+                                fontSize: 17,
+                              ),
+                            ),
+                            Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: Theme.of(context).accentColor,
+                              size: 15,
+                            ),
+                          ],
+                        ),
+                        onPressed: () {
+                          createShowDialog(context);
+                        },
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 70, left: 5),
-                    child: Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: Theme.of(context).accentColor,
-                      size: 15,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 70, left: 50),
-                    child: Text(
-                      'Vento SSW 20',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 70, left: 5),
-                    child: Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: Theme.of(context).accentColor,
-                      size: 15,
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(top: 70, left: 60),
-                    child: Text(
-                      'Energia 900',
-                      style: TextStyle(fontSize: 17),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 70, left: 5),
-                    child: Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: Theme.of(context).accentColor,
-                      size: 15,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 70, left: 40),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Maré Alta 2:15',
-                          style: TextStyle(fontSize: 17),
+                    Container(
+                      child: FlatButton(
+                        child: Row(
+                          children: [
+                            Text(
+                              'Vento SSW 20',
+                              style: TextStyle(
+                                fontFamily: 'Ubuntu',
+                                fontSize: 17,
+                              ),
+                            ),
+                            Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: Theme.of(context).accentColor,
+                              size: 15,
+                            ),
+                          ],
                         ),
-                        Text(
-                          'Maré Baixa 8:27',
-                          style: TextStyle(fontSize: 17),
-                        )
-                      ],
+                        onPressed: () {
+                          createShowDialog(context);
+                        },
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 70, left: 5),
-                    child: Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: Theme.of(context).accentColor,
-                      size: 15,
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 30, top: 70),
-                    child: Text(
-                      'Swell',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 70, left: 5),
-                    child: Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: Theme.of(context).accentColor,
-                      size: 15,
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 20),
+                padding: const EdgeInsets.only(top: 30, left: 50, right: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: FlatButton(
+                        child: Row(
+                          children: [
+                            Text(
+                              'Energia 900',
+                              style: TextStyle(
+                                fontFamily: 'Ubuntu',
+                                fontSize: 17,
+                              ),
+                            ),
+                            Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: Theme.of(context).accentColor,
+                              size: 15,
+                            ),
+                          ],
+                        ),
+                        onPressed: () {
+                          createShowDialog(context);
+                        },
+                      ),
+                    ),
+                    Container(
+                      child: FlatButton(
+                        child: Row(
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  'Maré Alta 2:15',
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    fontFamily: 'Ubuntu',
+                                  ),
+                                ),
+                                Text(
+                                  'Maré Baixa 8:27',
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    fontFamily: 'Ubuntu',
+                                  ),
+                                )
+                              ],
+                            ),
+                            Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: Theme.of(context).accentColor,
+                              size: 15,
+                            ),
+                          ],
+                        ),
+                        onPressed: () {
+                          createShowDialog(context);
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 30, right: 30, left: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      child: FlatButton(
+                        child: Row(
+                          children: [
+                            Text(
+                              'Swell',
+                              style: TextStyle(
+                                fontFamily: 'Ubuntu',
+                                fontSize: 17,
+                              ),
+                            ),
+                            Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: Theme.of(context).accentColor,
+                              size: 15,
+                            ),
+                          ],
+                        ),
+                        onPressed: () {
+                          createShowDialog(context);
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 10),
                 child: Image.asset('assets/swell.png'),
               ),
             ],
