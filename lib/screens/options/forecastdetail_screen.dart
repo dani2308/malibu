@@ -8,20 +8,19 @@ class ForecastDetailScreen extends StatefulWidget {
 }
 
 class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
-  
-  createShowDialog(BuildContext context) {
+  createShowDialog(BuildContext context, String title, String content) {
     return showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
           title: Text(
-            'Período',
+            title,
             style: TextStyle(
               fontFamily: 'Ubuntu',
             ),
           ),
           content: Text(
-            'O Período é o intervalo de tempo, em segundos, entre duas ondulações.',
+            content,
             style: TextStyle(
               fontFamily: 'Ubuntu',
             ),
@@ -29,7 +28,7 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
           actions: [
             MaterialButton(
               onPressed: () {
-                Navigator.of(context).pop('Período');
+                Navigator.of(context).pop();
               },
               child: Container(
                 alignment: Alignment.center,
@@ -178,7 +177,11 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                           ],
                         ),
                         onPressed: () {
-                          createShowDialog(context);
+                          return createShowDialog(
+                            context,
+                            'Periodo',
+                            'O Período é o intervalo de tempo, em segundos, entre duas ondulações.',
+                          );
                         },
                       ),
                     ),
@@ -201,7 +204,11 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                           ],
                         ),
                         onPressed: () {
-                          createShowDialog(context);
+                          return createShowDialog(
+                            context,
+                            'Vento SSW 20',
+                            'O vento é um dos formadores das ondas e influência o swell. É também um dos fatores mais importantes para o surf! ',
+                          );
                         },
                       ),
                     ),
@@ -232,7 +239,11 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                           ],
                         ),
                         onPressed: () {
-                          createShowDialog(context);
+                          return createShowDialog(
+                            context,
+                            'Energia',
+                            'A energia é uma função entre o tamanho e o período de uma onda e indica o poder da mesma.',
+                          );
                         },
                       ),
                     ),
@@ -266,7 +277,11 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                           ],
                         ),
                         onPressed: () {
-                          createShowDialog(context);
+                          return createShowDialog(
+                            context,
+                            'Marés',
+                            'As marés são movimentações da água dos oceanos geradas por forças gravitacionais do Sol e da Lua. Esses movimentos ocorrem aproximadamente de 6,2 em 6,2 horas. Depende de zona para zona a melhor altura da maré em que se tem as melhores condições para surfar.',
+                          );
                         },
                       ),
                     ),
@@ -298,7 +313,11 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                           ],
                         ),
                         onPressed: () {
-                          createShowDialog(context);
+                          return createShowDialog(
+                            context,
+                            'Swell',
+                            'O Swell é um tipo de formação de ondas, para além das formadas pelos ventos, estas são formadas em tempestades oceânicas.',
+                          );
                         },
                       ),
                     ),
