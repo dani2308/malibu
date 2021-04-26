@@ -37,32 +37,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                 children: [
                   Align(
                     alignment: Alignment.topLeft,
-                    child: Container(
-                      width: 70,
-                      height: 35,
-                      alignment: Alignment.center,
-                      margin: EdgeInsets.only(top: 0, left: 30),
-                      padding: EdgeInsets.all(2.0),
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor,
-                        border: Border.all(
-                          color: Theme.of(context).primaryColor,
-                        ),
-                        borderRadius: BorderRadius.circular(10.0),
-                        boxShadow: [
-                          BoxShadow(
-                            offset: const Offset(0.0, 0.0),
-                            blurRadius: 5.0,
-                            spreadRadius: 2.0,
-                            color: Colors.grey,
-                          ),
-                        ],
-                      ),
-                      child: Text(
-                        'Filtros',
-                        style: TextStyle(color: Colors.white, fontSize: 17),
-                      ),
-                    ),
+                    child: PopupMenu(),
                   ),
                   Padding(
                     padding: EdgeInsets.only(
@@ -493,6 +468,64 @@ class PostState extends State<Post> {
             : Theme.of(context).primaryColor,
       ),
       onPressed: () => _pressed(),
+    );
+  }
+}
+
+enum MenuOption { Nome, Preco, Relevancia }
+
+class PopupMenu extends StatelessWidget {
+  const PopupMenu({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return PopupMenuButton(
+      child: Container(
+        width: 88,
+        height: 35,
+        alignment: Alignment.center,
+        margin: EdgeInsets.only(top: 0, left: 30),
+        padding: EdgeInsets.all(2.0),
+        decoration: BoxDecoration(
+          color: Theme.of(context).primaryColor,
+          border: Border.all(
+            color: Theme.of(context).primaryColor,
+          ),
+          borderRadius: BorderRadius.circular(10.0),
+          boxShadow: [
+            BoxShadow(
+              offset: const Offset(0.0, 0.0),
+              blurRadius: 5.0,
+              spreadRadius: 2.0,
+              color: Colors.grey,
+            ),
+          ],
+        ),
+        child: Text(
+          'Filtros',
+          style: TextStyle(
+            fontSize: 17,
+            color: Colors.white,
+            fontFamily: 'Ubuntu',
+          ),
+        ),
+      ),
+      itemBuilder: (BuildContext context) {
+        return <PopupMenuEntry<MenuOption>>[
+          PopupMenuItem(
+            child: Text('Nome'),
+            value: MenuOption.Nome,
+          ),
+          PopupMenuItem(
+            child: Text('Preco'),
+            value: MenuOption.Preco,
+          ),
+          PopupMenuItem(
+            child: Text('Relevancia'),
+            value: MenuOption.Relevancia,
+          ),
+        ];
+      },
     );
   }
 }
