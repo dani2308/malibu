@@ -71,15 +71,7 @@ class _BoardRentChooseScreenState extends State<BoardRentChooseScreen> {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                            left: 20.0,
-                          ),
-                          child: Icon(
-                            Icons.favorite_border,
-                            color: Colors.white,
-                          ),
-                        ),
+                        Post(),
                       ],
                     ),
                     SizedBox(
@@ -180,6 +172,34 @@ class _BoardRentChooseScreenState extends State<BoardRentChooseScreen> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class Post extends StatefulWidget {
+  @override
+  PostState createState() => new PostState();
+}
+
+class PostState extends State<Post> {
+  bool liked = false;
+
+  _pressed() {
+    setState(
+      () {
+        liked = !liked;
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: Icon(
+        liked ? Icons.favorite : Icons.favorite_border,
+        color: liked ? Theme.of(context).accentColor : Colors.white,
+      ),
+      onPressed: () => _pressed(),
     );
   }
 }
