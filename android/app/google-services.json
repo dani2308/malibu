@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "31499658380",
+    "project_id": "malibu-dfr23",
+    "storage_bucket": "malibu-dfr23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31499658380:android:120c1943986693c4fe07a9",
+        "android_client_info": {
+          "package_name": "com.dfr23.malibu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31499658380-71cj4m3422gfq1v4jos41jp4qqfcjs19.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADDsB_vW6O7D1FQ1-sUt3GeoiIorWE_-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "31499658380-71cj4m3422gfq1v4jos41jp4qqfcjs19.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
