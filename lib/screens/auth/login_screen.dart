@@ -8,6 +8,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  String email = '';
+  String password = '';
+
   createShowDialog(BuildContext context) {
     return showDialog(
       context: context,
@@ -121,94 +124,109 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: 37, top: 60),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                        right: 50,
-                      ),
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          labelText: 'Email',
-                        ),
-                        style: TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
-                        keyboardType: TextInputType.emailAddress,
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 37, top: 30),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                        right: 50,
-                      ),
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          labelText: 'Palavra-passe',
-                        ),
-                        keyboardType: TextInputType.text,
-                        obscureText: true,
-                        style: TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 23, top: 25),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: FlatButton(
-                        child: Text(
-                          "Esqueceu-se da palavra-passe?",
-                          style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            color: Theme.of(context).primaryColor,
-                            fontFamily: 'Ubuntu',
+                Form(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 37, top: 60),
+                        child: Align(
+                          alignment: Alignment.topLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                              right: 50,
+                            ),
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                labelText: 'Email',
+                              ),
+                              style:
+                                  TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
+                              keyboardType: TextInputType.emailAddress,
+                              onChanged: (val) {
+                                setState(() => email = val);
+                              },
+                            ),
                           ),
                         ),
-                        onPressed: () {
-                          createShowDialog(context);
-                        }),
-                  ),
-                ),
-                SizedBox(
-                  height: 150,
-                ),
-                SizedBox(
-                  width: 400,
-                  height: 75,
-                  child: Stack(
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    overflow: Overflow.visible,
-                    children: [
-                      Container(
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 37, top: 30),
+                        child: Align(
+                          alignment: Alignment.topLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                              right: 50,
+                            ),
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                labelText: 'Palavra-passe',
+                              ),
+                              keyboardType: TextInputType.text,
+                              obscureText: true,
+                              style:
+                                  TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
+                              onChanged: (val) {
+                                setState(() => password = val);
+                              },
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 23, top: 25),
+                        child: Align(
+                          alignment: Alignment.topLeft,
+                          child: FlatButton(
+                              child: Text(
+                                "Esqueceu-se da palavra-passe?",
+                                style: TextStyle(
+                                  decoration: TextDecoration.underline,
+                                  color: Theme.of(context).primaryColor,
+                                  fontFamily: 'Ubuntu',
+                                ),
+                              ),
+                              onPressed: () {
+                                createShowDialog(context);
+                              },),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 150,
+                      ),
+                      SizedBox(
                         width: 400,
                         height: 75,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                      Positioned(
-                        top: -25,
-                        right: 30,
-                        child: Container(
-                          child: FlatButton(
-                            child:
-                                Icon(Icons.arrow_forward, color: Colors.white),
-                            onPressed: () =>
-                                Navigator.pushNamed(context, 'home'),
-                          ),
-                          width: 90,
-                          height: 55,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Theme.of(context).accentColor,
-                          ),
+                        child: Stack(
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
+                          overflow: Overflow.visible,
+                          children: [
+                            Container(
+                              width: 400,
+                              height: 75,
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            Positioned(
+                              top: -25,
+                              right: 30,
+                              child: Container(
+                                child: FlatButton(
+                                    child: Icon(Icons.arrow_forward,
+                                        color: Colors.white),
+                                    onPressed: () async {
+                                      print(email);
+                                      print(password);
+                                    },),
+                                width: 90,
+                                height: 55,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Theme.of(context).accentColor,
+                                ),
+                              ),
+                            )
+                          ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
