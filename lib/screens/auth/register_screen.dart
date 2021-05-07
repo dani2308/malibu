@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class RegisterScreen extends StatefulWidget {
   RegisterScreen({Key key}) : super(key: key);
@@ -7,10 +8,41 @@ class RegisterScreen extends StatefulWidget {
   _RegisterScreenState createState() => _RegisterScreenState();
 }
 
+class User {
+  final String uid;
+
+  User({this.uid});
+}
+
 class _RegisterScreenState extends State<RegisterScreen> {
+  final _formkey = GlobalKey<FormState>();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
   String email = '';
   String password = '';
   String passwordagain = '';
+  String error = '';
+
+  User _userFromFirebaseUser(FirebaseUser user) {
+    return user != null ? User(uid: user.uid) : null;
+  }
+
+  Stream<User> get user {
+    return _auth.onAuthStateChanged.map(_userFromFirebaseUser);
+  }
+
+  Future registerEmailAndPassword(
+      String email, String password, String passwordagain) async {
+    try {
+      AuthResult result = await _auth.createUserWithEmailAndPassword(
+          email: email, password: password, passwordagain: passwordagain);
+      FirebaseUser user = result.user;
+      return _userFromFirebaseUser(user);
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,6 +97,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
               Form(
+                key: _formkey,
                 child: Column(
                   children: [
                     Padding(
@@ -76,6 +109,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             right: 50,
                           ),
                           child: TextFormField(
+                            validator: (val) =>
+                                val.isEmpty ? 'Introduza um Email' : null,
                             decoration: InputDecoration(
                               labelText: 'Email',
                             ),
@@ -98,6 +133,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             right: 50,
                           ),
                           child: TextFormField(
+                            validator: (val) => val.length < 6
+                                ? 'Introduza uma Password com mais de 6 carateres'
+                                : null,
                             decoration: InputDecoration(
                               labelText: 'Palavra-passe',
                             ),
@@ -158,9 +196,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 child: Icon(Icons.arrow_forward,
                                     color: Colors.white),
                                 onPressed: () async {
-                                  print(email);
-                                  print(password);
-                                  print(passwordagain);
+                                  if (_formkey.currentState.validate()) {
+                                    dynamic result =
+                                        await _auth.registerEmailAndPassword(
+                                            email, password);
+                                    if (result == null) {
+                                      setState(() =>
+                                          error = 'Insira um Email Válido!');
+                                    }
+                                  }
                                 },
                               ),
                               width: 90,
