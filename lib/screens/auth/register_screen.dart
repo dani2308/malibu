@@ -23,7 +23,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   String passwordagain = '';
   String error = '';
 
-  User _userFromFirebaseUser(FirebaseUser user) {
+  User _userFromFirebaseUser(User user) {
     return user != null ? User(uid: user.uid) : null;
   }
 
@@ -34,9 +34,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Future registerEmailAndPassword(
       String email, String password, String passwordagain) async {
     try {
-      AuthResult result = await _auth.createUserWithEmailAndPassword(
+      UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password, passwordagain: passwordagain);
-      FirebaseUser user = result.user;
+      User user = result.user;
       return _userFromFirebaseUser(user);
     } catch (e) {
       print(e.toString());

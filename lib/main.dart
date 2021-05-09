@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:malibu/theme.dart';
+import 'package:provider/provider.dart';
+import 'package:provider/provider.dart';
 
 import 'routes.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -23,12 +25,15 @@ class MyApp extends StatelessWidget {
         statusBarColor: Colors.transparent,
       ),
     );
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: themeLight(),
-      // * darkTheme: themeDark(),
-      initialRoute: 'login',
-      onGenerateRoute: RouterHandler.router.generator,
+    return StreamProvider.value(
+      value: AuthService().user,
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: themeLight(),
+        // * darkTheme: themeDark(),
+        initialRoute: 'login',
+        onGenerateRoute: RouterHandler.router.generator,
+      ),
     );
   }
 }
