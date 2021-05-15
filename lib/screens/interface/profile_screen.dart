@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:malibu/screens/auth/authentication.dart';
 
 class ProfileScreen extends StatefulWidget {
   ProfileScreen({Key key}) : super(key: key);
@@ -28,7 +29,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           actions: [
             MaterialButton(
               onPressed: () {
-                Navigator.pushNamed(context, 'login');
+                context.read<AuthenticationService>().signOut();
               },
               child: Container(
                 alignment: Alignment.center,
