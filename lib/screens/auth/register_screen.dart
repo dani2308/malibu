@@ -157,7 +157,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   context.read<AuthenticationService>().signIn(
                                     email: emailController.text.trim(),
                                     password: passwordController.text.trim(),
-                                  )
+                                  ),
                                 },
                               ),
                               width: 90,
