@@ -28,9 +28,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           actions: [
             MaterialButton(
-              onPressed: () {
-                context.read<AuthenticationService>().signOut();
-              },
+              onPressed: () {},
               child: Container(
                 alignment: Alignment.center,
                 width: 50,

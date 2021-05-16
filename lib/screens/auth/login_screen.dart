@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:malibu/screens/auth/authentication.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key key}) : super(key: key);
@@ -212,9 +213,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                 child: FlatButton(
                                     child: Icon(Icons.arrow_forward,
                                         color: Colors.white),
-                                    onPressed: () async {
-                                      print(email);
-                                      print(password);
+                                    onPressed: () {
+                                      
                                     },),
                                 width: 90,
                                 height: 55,

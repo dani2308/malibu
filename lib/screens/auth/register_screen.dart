@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:malibu/screens/auth/authentication.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class RegisterScreen extends StatefulWidget {
   RegisterScreen({Key key}) : super(key: key);
@@ -154,10 +155,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 child: Icon(Icons.arrow_forward,
                                     color: Colors.white),
                                 onPressed: (){
-                                  context.read<AuthenticationService>().signIn(
-                                    email: emailController.text.trim(),
-                                    password: passwordController.text.trim(),
-                                  ),
+                                  
                                 },
                               ),
                               width: 90,
