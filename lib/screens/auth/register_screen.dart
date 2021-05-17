@@ -10,6 +10,12 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  final _formkey = GlobalKey<FormState>();
+  final AuthenticationService _auth = AuthenticationService();
+  String email = "";
+  String password = "";
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,6 +69,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
               Form(
+                key: _formkey,
                 child: Column(
                   children: [
                     Padding(
@@ -74,6 +81,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             right: 50,
                           ),
                           child: TextFormField(
+                            controller: _emailController,
                             validator: (val) =>
                                 val.isEmpty ? 'Introduza um Email' : null,
                             decoration: InputDecoration(
@@ -96,6 +104,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             right: 50,
                           ),
                           child: TextFormField(
+                            controller: _passwordController,
                             validator: (val) => val.length < 6
                                 ? 'Introduza uma Password com mais de 6 carateres'
                                 : null,
@@ -111,7 +120,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
                     ),
-                    Padding(
+                    /*Padding(
                       padding: EdgeInsets.only(left: 37, top: 30),
                       child: Align(
                         alignment: Alignment.topLeft,
@@ -131,9 +140,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ),
                         ),
                       ),
-                    ),
+                    ),*/
                     SizedBox(
-                      height: 132,
+                      height: 217,
                     ),
                     SizedBox(
                       width: 400,
@@ -154,8 +163,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               child: FlatButton(
                                 child: Icon(Icons.arrow_forward,
                                     color: Colors.white),
-                                onPressed: (){
-                                  
+                                onPressed: () async {
+                                  if (_formkey.currentState.validate()) {
+                                    creatUser();
+                                  }
                                 },
                               ),
                               width: 90,
@@ -177,5 +188,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
       ),
     );
+  }
+
+  void creatUser() async {
+    dynamic credential =
+        await _auth.signUp(_emailController.text, _passwordController.text);
+    if (credential == null) {
+      print('O email não é válido');
+    } else {
+      print(credential.toString());
+      _emailController.clear();
+      _passwordController.clear();
+      Navigator.pop(context);
+    }
   }
 }
