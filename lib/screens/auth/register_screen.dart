@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:malibu/screens/auth/authentication.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:provider/provider.dart';
 
 class RegisterScreen extends StatefulWidget {
   RegisterScreen({Key key}) : super(key: key);
@@ -11,11 +12,10 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   final _formkey = GlobalKey<FormState>();
-  final AuthenticationService _auth = AuthenticationService();
-  String email = "";
-  String password = "";
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,7 +81,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             right: 50,
                           ),
                           child: TextFormField(
-                            controller: _emailController,
+                            controller: emailController,
                             validator: (val) =>
                                 val.isEmpty ? 'Introduza um Email' : null,
                             decoration: InputDecoration(
@@ -104,7 +104,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             right: 50,
                           ),
                           child: TextFormField(
-                            controller: _passwordController,
+                            controller: passwordController,
                             validator: (val) => val.length < 6
                                 ? 'Introduza uma Password com mais de 6 carateres'
                                 : null,
@@ -163,10 +163,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               child: FlatButton(
                                 child: Icon(Icons.arrow_forward,
                                     color: Colors.white),
-                                onPressed: () async {
-                                  if (_formkey.currentState.validate()) {
-                                    creatUser();
-                                  }
+                                onPressed: () {
+                                  context.read<AuthenticationService>().signUp(
+                                        emailController.text.trim(),
+                                        passwordController.text.trim(),
+                                      );
                                 },
                               ),
                               width: 90,
@@ -188,18 +189,5 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
       ),
     );
-  }
-
-  void creatUser() async {
-    dynamic credential =
-        await _auth.signUp(_emailController.text, _passwordController.text);
-    if (credential == null) {
-      print('O email não é válido');
-    } else {
-      print(credential.toString());
-      _emailController.clear();
-      _passwordController.clear();
-      Navigator.pop(context);
-    }
   }
 }

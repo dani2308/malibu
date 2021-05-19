@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:malibu/screens/auth/authentication.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key key}) : super(key: key);
@@ -9,8 +10,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  String email = '';
-  String password = '';
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
 
   createShowDialog(BuildContext context) {
     return showDialog(
@@ -143,9 +144,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               style:
                                   TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
                               keyboardType: TextInputType.emailAddress,
-                              onChanged: (val) {
-                                setState(() => email = val);
-                              },
+                              /*onChanged: (val) {
+                                setState(() => emailController = val);
+                              },*/
                             ),
                           ),
                         ),
@@ -166,9 +167,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               obscureText: true,
                               style:
                                   TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
-                              onChanged: (val) {
+                              /*onChanged: (val) {
                                 setState(() => password = val);
-                              },
+                              },*/
                             ),
                           ),
                         ),
@@ -178,17 +179,18 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Align(
                           alignment: Alignment.topLeft,
                           child: FlatButton(
-                              child: Text(
-                                "Esqueceu-se da palavra-passe?",
-                                style: TextStyle(
-                                  decoration: TextDecoration.underline,
-                                  color: Theme.of(context).primaryColor,
-                                  fontFamily: 'Ubuntu',
-                                ),
+                            child: Text(
+                              "Esqueceu-se da palavra-passe?",
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                color: Theme.of(context).primaryColor,
+                                fontFamily: 'Ubuntu',
                               ),
-                              onPressed: () {
-                                createShowDialog(context);
-                              },),
+                            ),
+                            onPressed: () {
+                              createShowDialog(context);
+                            },
+                          ),
                         ),
                       ),
                       SizedBox(
@@ -211,11 +213,17 @@ class _LoginScreenState extends State<LoginScreen> {
                               right: 30,
                               child: Container(
                                 child: FlatButton(
-                                    child: Icon(Icons.arrow_forward,
-                                        color: Colors.white),
-                                    onPressed: () {
-                                      
-                                    },),
+                                  child: Icon(Icons.arrow_forward,
+                                      color: Colors.white),
+                                  onPressed: () {
+                                    context
+                                        .read<AuthenticationService>()
+                                        .signIn(
+                                          emailController.text.trim(),
+                                          passwordController.text.trim(),
+                                        );
+                                  },
+                                ),
                                 width: 90,
                                 height: 55,
                                 decoration: BoxDecoration(
