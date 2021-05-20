@@ -120,27 +120,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
                     ),
-                    /*Padding(
-                      padding: EdgeInsets.only(left: 37, top: 30),
-                      child: Align(
-                        alignment: Alignment.topLeft,
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                            right: 50,
-                          ),
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              labelText: 'Palavra-passe Novamente',
-                            ),
-                            keyboardType: TextInputType.text,
-                            obscureText: true,
-                            style:
-                                TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
-                            onChanged: (val) {},
-                          ),
-                        ),
-                      ),
-                    ),*/
                     SizedBox(
                       height: 217,
                     ),

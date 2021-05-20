@@ -216,12 +216,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   child: Icon(Icons.arrow_forward,
                                       color: Colors.white),
                                   onPressed: () {
-                                    context
-                                        .read<AuthenticationService>()
-                                        .signIn(
-                                          emailController.text.trim(),
-                                          passwordController.text.trim(),
-                                        );
+                                    
                                   },
                                 ),
                                 width: 90,
