@@ -138,6 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               right: 50,
                             ),
                             child: TextFormField(
+                              controller: emailController,
                               decoration: InputDecoration(
                                 labelText: 'Email',
                               ),
@@ -160,6 +161,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               right: 50,
                             ),
                             child: TextFormField(
+                              controller: passwordController,
                               decoration: InputDecoration(
                                 labelText: 'Palavra-passe',
                               ),
@@ -216,7 +218,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                   child: Icon(Icons.arrow_forward,
                                       color: Colors.white),
                                   onPressed: () {
-                                    
+                                    context
+                                        .read<AuthenticationService>()
+                                        .signIn(
+                                          emailController.text.trim(),
+                                          passwordController.text.trim(),
+                                        );
                                   },
                                 ),
                                 width: 90,
