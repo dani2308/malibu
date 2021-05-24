@@ -86,69 +86,7 @@ class _BoardRentChooseScreenState extends State<BoardRentChooseScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Row(
-                            children: [
-                              Container(
-                                width: 30,
-                                height: 30,
-                                child: FlatButton(
-                                  onPressed: () => {},
-                                  color: Theme.of(context).accentColor,
-                                  padding: EdgeInsets.all(10.0),
-                                  child: Icon(
-                                    Icons.remove,
-                                    color: Colors.white,
-                                    size: 12.0,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 5.0,
-                              ),
-                              Container(
-                                width: 24,
-                                height: 24,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: Theme.of(context).accentColor,
-                                  ),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    "1",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 5.0,
-                              ),
-                              Container(
-                                width: 30,
-                                height: 30,
-                                child: FlatButton(
-                                  onPressed: () => {},
-                                  color: Theme.of(context).accentColor,
-                                  padding: EdgeInsets.all(10.0),
-                                  child: Icon(
-                                    Icons.add,
-                                    color: Colors.white,
-                                    size: 12.0,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Text(
-                            "15.00€",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 23.0,
-                              color: Colors.white,
-                            ),
-                          ),
+                          CountQntd(),
                         ],
                       ),
                     ),
@@ -200,6 +138,99 @@ class PostState extends State<Post> {
         color: liked ? Theme.of(context).accentColor : Colors.white,
       ),
       onPressed: () => _pressed(),
+    );
+  }
+}
+
+class CountQntd extends StatefulWidget {
+  CountQntd({Key key}) : super(key: key);
+
+  @override
+  _CountQntdState createState() => _CountQntdState();
+}
+
+class _CountQntdState extends State<CountQntd> {
+  var total = 15.00;
+  var valor = 15.00;
+  int _itemcount = 1;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          width: 30,
+          height: 30,
+          child: FlatButton(
+            onPressed: () => {
+              if (_itemcount > 1)
+                {
+                  setState(() => _itemcount--),
+                  valor -= total,
+                },
+            },
+            color: Theme.of(context).accentColor,
+            padding: EdgeInsets.all(10.0),
+            child: Icon(
+              Icons.remove,
+              color: Colors.white,
+              size: 12.0,
+            ),
+          ),
+        ),
+        SizedBox(
+          width: 5.0,
+        ),
+        Container(
+          width: 24,
+          height: 24,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Theme.of(context).accentColor,
+            ),
+          ),
+          child: Center(
+            child: Text(
+              "$_itemcount",
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ),
+        SizedBox(
+          width: 5.0,
+        ),
+        Container(
+          width: 30,
+          height: 30,
+          child: FlatButton(
+            onPressed: () => {
+              setState(
+                () => _itemcount++,
+              ),
+              valor += total,
+            },
+            color: Theme.of(context).accentColor,
+            padding: EdgeInsets.all(10.0),
+            child: Icon(
+              Icons.add,
+              color: Colors.white,
+              size: 12.0,
+            ),
+          ),
+        ),
+        SizedBox(
+          width: 125,
+        ),
+        Text(
+          "$valor €",
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 23.0,
+            color: Colors.white,
+          ),
+        ),
+      ],
     );
   }
 }

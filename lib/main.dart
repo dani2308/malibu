@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:malibu/screens/auth/authentication.dart';
 import 'package:malibu/screens/auth/login_screen.dart';
+import 'package:malibu/screens/home/appform_screen.dart';
 import 'package:malibu/screens/home/home_screen.dart';
 import 'package:malibu/theme.dart';
 import 'package:provider/provider.dart';
@@ -60,7 +61,7 @@ class AuthenticationWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     final firebaseUser = context.watch<User>();
     if (firebaseUser != null) {
-      return HomeScreen();
+      return AppformScreen();
     } else {
       return LoginScreen();
     }

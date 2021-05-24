@@ -65,6 +65,7 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
     );
   }
 
+  var hour = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,18 +111,34 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Icon(
-                      Icons.arrow_back_ios_rounded,
-                      color: Theme.of(context).accentColor,
+                    IconButton(
+                      icon: Icon(
+                        Icons.arrow_back_ios_rounded,
+                        color: Theme.of(context).accentColor,
+                      ),
+                      onPressed: () => {
+                        if (hour <= 24 && hour >= 1)
+                          {
+                            setState(() => hour--),
+                          }
+                      },
                     ),
                     Text(
-                      '9:00',
+                      '$hour:00',
                       style: TextStyle(fontSize: 30),
                       textAlign: TextAlign.center,
                     ),
-                    Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: Theme.of(context).accentColor,
+                    IconButton(
+                      icon: Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: Theme.of(context).accentColor,
+                      ),
+                      onPressed: () => {
+                        if (hour <= 23 && hour >= 0)
+                          {
+                            setState(() => hour++),
+                          }
+                      },
                     ),
                   ],
                 ),
