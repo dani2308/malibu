@@ -75,6 +75,7 @@ class _AppformScreenState extends State<AppformScreen> {
   Gender _mf = Gender.f;
   Swim _sl = Swim.s;
   bool checkBoxValue = false;
+  int idade;
   final _formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -186,7 +187,7 @@ class _AppformScreenState extends State<AppformScreen> {
                             child: Align(
                               alignment: Alignment.topLeft,
                               child: Text(
-                                "Data de Nascimento",
+                                "Idade",
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontFamily: 'Ubuntu',
@@ -197,10 +198,17 @@ class _AppformScreenState extends State<AppformScreen> {
                           Padding(
                             padding: EdgeInsets.only(left: 50, right: 50),
                             child: TextFormField(
-                              validator: (val) => val.isEmpty
-                                  ? 'Introduza uma Idade válida!'
-                                  : null,
-                              keyboardType: TextInputType.datetime,
+                              validator: (val) {
+                                if (val.isEmpty) {
+                                  return "Introduza uma idade válida!";
+                                } else if (int.tryParse(val) < 1 ||
+                                    int.tryParse(val) > 99) {
+                                  return "Introduza uma idade válida";
+                                } else {
+                                  val = idade.toString();
+                                }
+                              },
+                              keyboardType: TextInputType.number,
                               style:
                                   TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
                             ),
