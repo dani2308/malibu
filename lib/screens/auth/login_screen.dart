@@ -118,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      "NOME",
+                      "Daniel",
                       style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,

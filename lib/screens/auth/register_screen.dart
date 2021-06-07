@@ -147,6 +147,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         emailController.text.trim(),
                                         passwordController.text.trim(),
                                       );
+                                  Navigator.pushNamed(context, 'appform');
                                 },
                               ),
                               width: 90,

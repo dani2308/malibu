@@ -53,7 +53,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                             Flexible(
                               child: TextFormField(
                                 decoration: InputDecoration(
-                                  hintText: 'Pesquisar por um Local',
+                                  hintText: 'Pesquisar por um Idioma',
                                 ),
                                 keyboardType: TextInputType.text,
                                 style: TextStyle(
