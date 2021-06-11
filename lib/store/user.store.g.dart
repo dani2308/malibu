@@ -12,13 +12,13 @@ mixin _$UserMob on _UserMobBase, Store {
   final _$userAtom = Atom(name: '_UserMobBase.user');
 
   @override
-  dynamic get user {
+  User get user {
     _$userAtom.reportRead();
     return super.user;
   }
 
   @override
-  set user(dynamic value) {
+  set user(User value) {
     _$userAtom.reportWrite(value, super.user, () {
       super.user = value;
     });
@@ -27,7 +27,7 @@ mixin _$UserMob on _UserMobBase, Store {
   final _$_UserMobBaseActionController = ActionController(name: '_UserMobBase');
 
   @override
-  void setUser(dynamic user) {
+  void setUser(User user) {
     final _$actionInfo = _$_UserMobBaseActionController.startAction(
         name: '_UserMobBase.setUser');
     try {

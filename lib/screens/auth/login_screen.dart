@@ -180,7 +180,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         padding: EdgeInsets.only(left: 23, top: 25),
                         child: Align(
                           alignment: Alignment.topLeft,
-                          child: FlatButton(
+                          child: TextButton(
                             child: Text(
                               "Esqueceu-se da palavra-passe?",
                               style: TextStyle(

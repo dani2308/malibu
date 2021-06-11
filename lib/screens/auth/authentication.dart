@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 
 class AuthenticationService {
   final FirebaseAuth _firebaseAuth;
@@ -13,9 +12,9 @@ class AuthenticationService {
 
   Future<String> signIn(String email, String password) async {
     try {
-      await _firebaseAuth.signInWithEmailAndPassword(
+      UserCredential user = await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
-      print(email);
+      print(user);
       return "Signed in";
     } on FirebaseAuthException catch (e) {
       return e.message;

@@ -1,5 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mobx/mobx.dart';
-import 'package:malibu/models/user.model.dart';
 part 'user.store.g.dart';
 
 class UserMob = _UserMobBase with _$UserMob;

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:malibu/screens/home/app_form_service.dart';
+import 'package:provider/provider.dart';
+import 'package:malibu/store/user.store.dart';
 
 class AppformScreen extends StatefulWidget {
   AppformScreen({Key key}) : super(key: key);
@@ -77,8 +80,12 @@ class _AppformScreenState extends State<AppformScreen> {
   bool checkBoxValue = false;
   int idade;
   final _formkey = GlobalKey<FormState>();
+  final TextEditingController nameController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+    final UserMob userMob = Provider.of<UserMob>(context);
+
     return Scaffold(
       body: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
@@ -178,6 +185,7 @@ class _AppformScreenState extends State<AppformScreen> {
                               validator: (val) =>
                                   val.isEmpty ? 'Introduza um Nome!' : null,
                               keyboardType: TextInputType.text,
+                              controller: nameController,
                               style:
                                   TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
                             ),
@@ -520,6 +528,14 @@ class _AppformScreenState extends State<AppformScreen> {
                                           } else if (_formkey.currentState
                                                   .validate() &&
                                               checkBoxValue != false) {
+                                            await AppFormService().submitForm(
+                                              nameController.text,
+                                              idade,
+                                              _sl,
+                                              _mf,
+                                              _site,
+                                              _site1,
+                                            );
                                             Navigator.pushNamed(
                                                 context, 'home');
                                           }

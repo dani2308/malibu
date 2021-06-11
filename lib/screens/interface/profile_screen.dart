@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:malibu/screens/auth/authentication.dart';
+import 'package:malibu/store/user.store.dart';
 import 'package:provider/provider.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -43,7 +44,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   boxShadow: [
                     BoxShadow(
                       offset: const Offset(0.0, 0.0),
-                      blurRadius: 3.0,
+                      blurRadius: 1.0,
                       spreadRadius: 1.0,
                       color: Colors.grey,
                     ),
@@ -76,7 +77,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   boxShadow: [
                     BoxShadow(
                       offset: const Offset(0.0, 0.0),
-                      blurRadius: 3.0,
+                      blurRadius: 1.0,
                       spreadRadius: 1.0,
                       color: Colors.grey,
                     ),
@@ -102,6 +103,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final UserMob userMob = Provider.of<UserMob>(context);
+
     return SingleChildScrollView(
       child: SafeArea(
         child: Column(
@@ -163,7 +166,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               child: Padding(
                 padding: EdgeInsets.only(top: 15),
                 child: Text(
-                  'Daniel Rodrigues',
+                  "${userMob.user.displayName}",
                   style: TextStyle(
                       fontFamily: 'Ubuntu',
                       fontSize: 20,
@@ -504,8 +507,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   boxShadow: [
                     BoxShadow(
                       offset: const Offset(0.0, 0.0),
-                      blurRadius: 5.0,
-                      spreadRadius: 2.0,
+                      blurRadius: 1.0,
+                      spreadRadius: 1.0,
                       color: Colors.grey,
                     ),
                   ],

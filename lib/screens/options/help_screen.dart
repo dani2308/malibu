@@ -41,7 +41,7 @@ class _HelpScreenState extends State<HelpScreen> {
                   boxShadow: [
                     BoxShadow(
                       offset: const Offset(0.0, 0.0),
-                      blurRadius: 3.0,
+                      blurRadius: 1.0,
                       spreadRadius: 1.0,
                       color: Colors.grey,
                     ),
@@ -115,8 +115,8 @@ class _HelpScreenState extends State<HelpScreen> {
                     boxShadow: [
                       BoxShadow(
                         offset: const Offset(0.0, 0.0),
-                        blurRadius: 5.0,
-                        spreadRadius: 2.0,
+                        blurRadius: 1.0,
+                        spreadRadius: 1.0,
                         color: Colors.grey,
                       ),
                     ],

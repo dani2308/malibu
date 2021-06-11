@@ -1,5 +1,6 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:malibu/screens/auth/loading_screen.dart';
 import 'package:malibu/screens/home/home_screen.dart';
 import 'package:malibu/screens/auth/login_screen.dart';
 import 'package:malibu/screens/auth/register_screen.dart';
@@ -124,6 +125,10 @@ class RouterHandler {
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           TermsScreen());
 
+  static final Handler _authHandlerScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          LoadingScreen());
+
   static void setupRouter() {
     router.define(
       'home',
@@ -220,6 +225,10 @@ class RouterHandler {
     router.define(
       'terms',
       handler: _termsScreen,
+    );
+    router.define(
+      'loading',
+      handler: _authHandlerScreen,
     );
   }
 }
