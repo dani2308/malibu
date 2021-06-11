@@ -355,9 +355,11 @@ class _LanguageScreenState extends State<LanguageScreen> {
                     ],
                   ),
                   onPressed: () {
-                    setState(() {
-                      _lang = Language.it;
-                    });
+                    setState(
+                      () {
+                        _lang = Language.it;
+                      },
+                    );
                   },
                 ),
               ),

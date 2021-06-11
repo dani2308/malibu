@@ -82,7 +82,6 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
             SizedBox(
               height: 40.0,
             ),
-            // ! FlatButton.icon();
             Padding(
               padding: const EdgeInsets.only(
                 left: 8.0,
@@ -444,9 +443,11 @@ class PostState extends State<Post> {
   bool liked = false;
 
   _pressed() {
-    setState(() {
-      liked = !liked;
-    });
+    setState(
+      () {
+        liked = !liked;
+      },
+    );
   }
 
   @override

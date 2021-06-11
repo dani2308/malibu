@@ -1,14 +1,8 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:malibu/providers/theme_provider.dart';
 import 'package:malibu/screens/auth/authentication.dart';
-import 'package:malibu/screens/auth/login_screen.dart';
-import 'package:malibu/screens/home/appform_screen.dart';
-import 'package:malibu/screens/home/home_screen.dart';
-import 'package:malibu/screens/interface/profile_screen.dart';
-import 'package:malibu/theme.dart';
 import 'package:provider/provider.dart';
 import 'routes.dart';
 import 'package:intl/date_symbol_data_local.dart';

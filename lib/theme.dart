@@ -5,7 +5,6 @@ ThemeData themeLight() {
     primaryColor: const Color(0xff023E73),
     accentColor: const Color(0xff049DBF),
     primaryColorLight: const Color(0xff07F2F2),
-    // ! Analisar depois
     // backgroundColor: const Color(0xffFFFFFF),
     textTheme: TextTheme(
       bodyText1: TextStyle(

@@ -6,7 +6,6 @@ import 'package:malibu/screens/interface/forecast_screen.dart';
 import 'package:malibu/screens/interface/profile_screen.dart';
 import 'package:malibu/screens/interface/rentboard_screen.dart';
 import 'package:malibu/screens/interface/rentwetsuit_screen.dart';
-import 'package:malibu/theme.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
@@ -30,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-    });
+    },);
   }
 
   @override
@@ -107,30 +106,3 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-/*class Post extends StatefulWidget {
-  @override
-  PostState createState() => new PostState();
-}
-
-class PostState extends State<Post> {
-  bool liked = false;
-
-  _pressed() {
-    setState(() {
-      liked = !liked;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: Icon(
-        liked ? Icons.favorite_border : Icons.favorite,
-        color: liked
-            ? Theme.of(context).primaryColor
-            : Theme.of(context).accentColor,
-      ),
-      onPressed: () => _pressed(),
-    );
-  }
-}*/

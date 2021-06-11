@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:malibu/theme.dart';
 
 class BoardRentChooseScreen extends StatefulWidget {
   BoardRentChooseScreen({Key key}) : super(key: key);

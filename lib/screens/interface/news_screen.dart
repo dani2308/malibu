@@ -506,9 +506,11 @@ class PostState extends State<Post> {
   bool liked = false;
 
   _pressed() {
-    setState(() {
-      liked = !liked;
-    });
+    setState(
+      () {
+        liked = !liked;
+      },
+    );
   }
 
   @override

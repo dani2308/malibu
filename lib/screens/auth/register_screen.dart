@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:malibu/screens/auth/authentication.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -23,6 +22,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
         child: SafeArea(
           child: Column(
             children: [
+              SizedBox(
+                height: 20,
+              ),
               Row(
                 children: [
                   FlatButton(
@@ -121,7 +123,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ),
                     SizedBox(
-                      height: 217,
+                      height: 273,
                     ),
                     SizedBox(
                       width: 400,

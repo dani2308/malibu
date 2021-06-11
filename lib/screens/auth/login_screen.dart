@@ -81,6 +81,9 @@ class _LoginScreenState extends State<LoginScreen> {
           child: SafeArea(
             child: Column(
               children: [
+                SizedBox(
+                  height: 20,
+                ),
                 Row(
                   children: [
                     FlatButton(
@@ -94,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       width: 10.0,
                     ),
-                    FlatButton(
+                    TextButton(
                       child: Text(
                         "Registar",
                         style: TextStyle(fontFamily: 'Ubuntu'),
@@ -145,9 +148,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               style:
                                   TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
                               keyboardType: TextInputType.emailAddress,
-                              /*onChanged: (val) {
-                                setState(() => emailController = val);
-                              },*/
                             ),
                           ),
                         ),
@@ -169,9 +169,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               obscureText: true,
                               style:
                                   TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
-                              /*onChanged: (val) {
-                                setState(() => password = val);
-                              },*/
                             ),
                           ),
                         ),
@@ -196,7 +193,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 150,
+                        height: 205,
                       ),
                       SizedBox(
                         width: 400,
@@ -214,7 +211,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               top: -25,
                               right: 30,
                               child: Container(
-                                child: FlatButton(
+                                child: TextButton(
                                   child: Icon(Icons.arrow_forward,
                                       color: Colors.white),
                                   onPressed: () {

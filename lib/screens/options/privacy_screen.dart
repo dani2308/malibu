@@ -138,9 +138,11 @@ class PostState extends State<Toggle> {
   bool toggled = false;
 
   _pressed() {
-    setState(() {
-      toggled = !toggled;
-    });
+    setState(
+      () {
+        toggled = !toggled;
+      },
+    );
   }
 
   @override

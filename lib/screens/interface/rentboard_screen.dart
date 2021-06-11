@@ -83,8 +83,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
               ),
               SizedBox(
                 height: 40.0,
-              ),
-              // ! FlatButton.icon();
+              ),              
               Padding(
                 padding: const EdgeInsets.only(
                   left: 8.0,

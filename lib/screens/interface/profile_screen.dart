@@ -1,5 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:malibu/screens/auth/authentication.dart';
 import 'package:malibu/store/user.store.dart';
 import 'package:provider/provider.dart';
 
@@ -30,8 +30,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           actions: [
             MaterialButton(
-              onPressed: () {
-                context.read<AuthenticationService>().signOut();
+              onPressed: () {                
               },
               child: Container(
                 alignment: Alignment.center,
@@ -104,7 +103,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     final UserMob userMob = Provider.of<UserMob>(context);
-
     return SingleChildScrollView(
       child: SafeArea(
         child: Column(
@@ -166,7 +164,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               child: Padding(
                 padding: EdgeInsets.only(top: 15),
                 child: Text(
-                  "${userMob.user.displayName}",
+                  "${userMob.user.email}",
                   style: TextStyle(
                       fontFamily: 'Ubuntu',
                       fontSize: 20,
@@ -524,7 +522,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ),
                   onPressed: () {
-                    createShowDialog(context);
+                    FirebaseAuth.instance.signOut();
+                    Navigator.popAndPushNamed(context, 'login');
                   },
                 ),
               ),
