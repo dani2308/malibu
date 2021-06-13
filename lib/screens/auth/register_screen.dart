@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:malibu/screens/auth/authentication.dart';
 import 'package:provider/provider.dart';
@@ -123,7 +124,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ),
                     SizedBox(
-                      height: 273,
+                      height: 197,
                     ),
                     SizedBox(
                       width: 400,
@@ -145,11 +146,29 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 child: Icon(Icons.arrow_forward,
                                     color: Colors.white),
                                 onPressed: () {
-                                  context.read<AuthenticationService>().signUp(
+                                  /*context.read<AuthenticationService>().signUp(
                                         emailController.text.trim(),
-                                        passwordController.text.trim(),
-                                      );
-                                  Navigator.pushNamed(context, 'appform');
+                                        passwordController.text.trim(),*/
+                                  final String email =
+                                      emailController.text.trim();
+                                  final String password =
+                                      passwordController.text.trim();
+
+                                  if (email.isEmpty) {
+                                    print("Email is Empty");
+                                  } else {
+                                    if (password.isEmpty) {
+                                      print("Password is Empty");
+                                    } else {
+                                      context
+                                          .read<AuthenticationService>()
+                                          .signUp(
+                                            email,
+                                            password,
+                                          );
+                                      Navigator.pushNamed(context, 'appform');
+                                    }
+                                  }
                                 },
                               ),
                               width: 90,

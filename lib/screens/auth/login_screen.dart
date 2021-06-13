@@ -111,24 +111,24 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      "Bem-vindo de volta,",
+                      "Bem-vindo de volta!",
                       style: TextStyle(fontSize: 25, fontFamily: 'Ubuntu'),
                     ),
                   ),
                 ),
-                Padding(
+                /*Padding(
                   padding: EdgeInsets.only(left: 37, top: 10),
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      "Daniel",
+                      "User",
                       style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'Ubuntu'),
                     ),
                   ),
-                ),
+                ),*/
                 Form(
                   child: Column(
                     children: [
@@ -193,7 +193,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 205,
+                        height: 168,
                       ),
                       SizedBox(
                         width: 400,
@@ -215,12 +215,32 @@ class _LoginScreenState extends State<LoginScreen> {
                                   child: Icon(Icons.arrow_forward,
                                       color: Colors.white),
                                   onPressed: () {
-                                    context
+                                    /*context
                                         .read<AuthenticationService>()
                                         .signIn(
                                           emailController.text.trim(),
                                           passwordController.text.trim(),
-                                        );
+                                        );*/
+                                    final String email =
+                                        emailController.text.trim();
+                                    final String password =
+                                        passwordController.text.trim();
+
+                                    if (email.isEmpty) {
+                                      print("Email is Empty");
+                                    } else {
+                                      if (password.isEmpty) {
+                                        print("Password is Empty");
+                                      } else {
+                                        context
+                                            .read<AuthenticationService>()
+                                            .signIn(
+                                              email,
+                                              password,
+                                            );
+                                        Navigator.pushNamed(context, 'home');
+                                      }
+                                    }
                                   },
                                 ),
                                 width: 90,
