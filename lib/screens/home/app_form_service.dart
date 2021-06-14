@@ -10,17 +10,20 @@ class AppFormService {
     Awnswer awnswer,
     Awnswer1 awnswer1,
   ) async {
-    CollectionReference users = FirebaseFirestore.instance.collection('users');
+    CollectionReference users = FirebaseFirestore.instance.collection('Users');
 
+    print("Chegou aqui");
     await users.add(
       {
         'name': name,
         'idade': idade,
-        'gender': gender,
+        'gender': gender.toString(),
         'new_in_school': awnswer.toString(),
         'practices_sport': awnswer1.toString(),
         'swim': swim.toString(),
       },
     );
+
+    print("Chegou key");
   }
 }

@@ -30,8 +30,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           actions: [
             MaterialButton(
-              onPressed: () {                
-              },
+              onPressed: () {},
               child: Container(
                 alignment: Alignment.center,
                 width: 50,
@@ -164,6 +163,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               child: Padding(
                 padding: EdgeInsets.only(top: 15),
                 child: Text(
+                  //"AAA",
                   "${userMob.user.email}",
                   style: TextStyle(
                       fontFamily: 'Ubuntu',

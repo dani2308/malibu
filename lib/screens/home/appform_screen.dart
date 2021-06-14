@@ -213,10 +213,13 @@ class _AppformScreenState extends State<AppformScreen> {
                                     int.tryParse(val) > 99) {
                                   return "Introduza uma idade válida";
                                 } else {
-                                  val = idade.toString();
+                                  setState(
+                                    () {
+                                      idade = int.parse(val);
+                                    },
+                                  );
                                 }
                               },
-                              keyboardType: TextInputType.number,
                               style:
                                   TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
                             ),
