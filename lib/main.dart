@@ -24,37 +24,40 @@ class MyApp extends StatelessWidget {
   const MyApp({Key key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    initializeDateFormatting('pt_PT');
-    SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-      ),
-    );
-
-    return MultiProvider(
-      providers: [
-        Provider<UserMob>(
-          create: (_) => userMob,
-        ),
-        Provider<AuthenticationService>(
-          create: (_) => AuthenticationService(FirebaseAuth.instance),
-        ),
-        StreamProvider(
-          initialData: null,
-          create: (context) =>
-              context.read<AuthenticationService>().authStateChanges,
-        ),
-      ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        themeMode: ThemeMode.system,
-        theme: MyThemes.lightTheme,
-        darkTheme: MyThemes.darkTheme,
-        // * darkTheme: themeDark(),
-        initialRoute: 'loading',
-        onGenerateRoute: RouterHandler.router.generator,
-      ),
-    );
-  }
+  Widget build(BuildContext context) => ChangeNotifierProvider(
+        create: (context) => ThemeProvider(),
+        builder: (context, _) {
+          final themeProvider = Provider.of<ThemeProvider>(context);
+          initializeDateFormatting('pt_PT');
+          SystemChrome.setSystemUIOverlayStyle(
+            SystemUiOverlayStyle(
+              statusBarColor: Colors.transparent,
+            ),
+          );
+          return MultiProvider(
+            providers: [
+              Provider<UserMob>(
+                create: (_) => userMob,
+              ),
+              Provider<AuthenticationService>(
+                create: (_) => AuthenticationService(FirebaseAuth.instance),
+              ),
+              StreamProvider(
+                initialData: null,
+                create: (context) =>
+                    context.read<AuthenticationService>().authStateChanges,
+              ),
+            ],
+            child: MaterialApp(
+              debugShowCheckedModeBanner: false,
+              themeMode: themeProvider.themeMode,
+              theme: MyThemes.lightTheme,
+              darkTheme: MyThemes.darkTheme,
+              // * darkTheme: themeDark(),
+              initialRoute: 'loading',
+              onGenerateRoute: RouterHandler.router.generator,
+            ),
+          );
+        },
+      );
 }

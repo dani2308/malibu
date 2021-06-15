@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:malibu/store/user.store.dart';
+import 'package:malibu/widgets/changethemebutton.dart';
 import 'package:provider/provider.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -163,8 +164,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               child: Padding(
                 padding: EdgeInsets.only(top: 15),
                 child: Text(
-                  //"AAA",
-                  "${userMob.user.email}",
+                  "AAA",
+                  //"${userMob.user.email}",
                   style: TextStyle(
                       fontFamily: 'Ubuntu',
                       fontSize: 20,
@@ -264,7 +265,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 45, left: 75),
-                  child: Toggle(),
+                  child: Switch.adaptive(value: null, onChanged: null),
                 ),
               ],
             ),
@@ -295,7 +296,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 68),
-                  child: Toggle(),
+                  //child: Toggle(),
+                  child: ChangeThemeButtonWidget(),
                 ),
               ],
             ),
