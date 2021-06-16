@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:malibu/theme.dart';
 
 class HelpScreen extends StatefulWidget {
   HelpScreen({Key key}) : super(key: key);
@@ -46,7 +47,7 @@ class _HelpScreenState extends State<HelpScreen> {
                       color: Colors.grey,
                     ),
                   ],
-                  color: Theme.of(context).accentColor,
+                  color: Theme.of(context).primaryColor,
                 ),
                 child: Text(
                   'OK',

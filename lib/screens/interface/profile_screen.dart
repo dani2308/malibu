@@ -112,7 +112,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Padding(
                   padding: EdgeInsets.only(left: 20, top: 30),
                   child: Image.asset(
-                    'assets/logo.png',
+                    'assets/logo_text_color.png',
                     width: 220,
                   ),
                 ),

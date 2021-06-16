@@ -20,7 +20,7 @@ class _ForecastScreenState extends State<ForecastScreen> {
                 Padding(
                   padding: EdgeInsets.only(left: 20, top: 30),
                   child: Image.asset(
-                    'assets/logo.png',
+                    'assets/logo_text_color.png',
                     width: 220,
                   ),
                 ),
@@ -73,7 +73,10 @@ class _ForecastScreenState extends State<ForecastScreen> {
                           ),
                           Text(
                             "Forecast",
-                            style: TextStyle(fontFamily: 'Ubuntu'),
+                            style: TextStyle(
+                              fontFamily: 'Ubuntu',
+                              color: Colors.black,
+                            ),
                           ),
                         ],
                       ),
@@ -103,7 +106,10 @@ class _ForecastScreenState extends State<ForecastScreen> {
                           ),
                           Text(
                             "Em direto",
-                            style: TextStyle(fontFamily: 'Ubuntu'),
+                            style: TextStyle(
+                              fontFamily: 'Ubuntu',
+                              color: Colors.black,
+                            ),
                           ),
                         ],
                       ),
@@ -172,7 +178,10 @@ class _ForecastScreenState extends State<ForecastScreen> {
                           ),
                           Text(
                             "Forecast",
-                            style: TextStyle(fontFamily: 'Ubuntu'),
+                            style: TextStyle(
+                              fontFamily: 'Ubuntu',
+                              color: Colors.black,
+                            ),
                           ),
                         ],
                       ),
@@ -202,7 +211,10 @@ class _ForecastScreenState extends State<ForecastScreen> {
                           ),
                           Text(
                             "Em direto",
-                            style: TextStyle(fontFamily: 'Ubuntu'),
+                            style: TextStyle(
+                              fontFamily: 'Ubuntu',
+                              color: Colors.black,
+                            ),
                           ),
                         ],
                       ),
@@ -270,7 +282,10 @@ class _ForecastScreenState extends State<ForecastScreen> {
                           ),
                           Text(
                             "Forecast",
-                            style: TextStyle(fontFamily: 'Ubuntu'),
+                            style: TextStyle(
+                              fontFamily: 'Ubuntu',
+                              color: Colors.black,
+                            ),
                           ),
                         ],
                       ),
@@ -301,7 +316,10 @@ class _ForecastScreenState extends State<ForecastScreen> {
                           ),
                           Text(
                             "Em direto",
-                            style: TextStyle(fontFamily: 'Ubuntu'),
+                            style: TextStyle(
+                              fontFamily: 'Ubuntu',
+                              color: Colors.black,
+                            ),
                           ),
                         ],
                       ),
@@ -336,9 +354,10 @@ class _ForecastScreenState extends State<ForecastScreen> {
                     child: Text(
                       'Adicione um Local',
                       style: TextStyle(
-                          fontFamily: 'Ubuntu',
-                          fontSize: 18,
-                          color: Colors.white),
+                        fontFamily: 'Ubuntu',
+                        fontSize: 18,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   width: 190,

@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:malibu/screens/auth/authentication.dart';
 import 'package:provider/provider.dart';
@@ -146,9 +145,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 child: Icon(Icons.arrow_forward,
                                     color: Colors.white),
                                 onPressed: () {
-                                  /*context.read<AuthenticationService>().signUp(
-                                        emailController.text.trim(),
-                                        passwordController.text.trim(),*/
                                   final String email =
                                       emailController.text.trim();
                                   final String password =

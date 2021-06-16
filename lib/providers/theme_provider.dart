@@ -16,7 +16,7 @@ class MyThemes {
     scaffoldBackgroundColor: Colors.grey.shade900,
     primaryColor: const Color(0xff049DBF),
     accentColor: const Color(0xFFFFFFFF),
-    primaryColorLight: const Color(0xff07F2aa),
+    primaryColorLight: const Color(0xff07F2aa),        
     colorScheme: ColorScheme.dark(),
   );
 

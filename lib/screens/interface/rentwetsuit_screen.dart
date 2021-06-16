@@ -21,7 +21,7 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                 Padding(
                   padding: EdgeInsets.only(left: 20, top: 30),
                   child: Image.asset(
-                    'assets/logo.png',
+                    'assets/logo_text_color.png',
                     width: 220,
                   ),
                 ),
@@ -331,7 +331,9 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                                 alignment: Alignment.topLeft,
                                 heightFactor: 13.5,
                                 widthFactor: 1.1,
-                                child: Text("RipCurl - Ebomb"),
+                                child: Text(
+                                  "RipCurl - Ebomb",
+                                ),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(bottom: 10, right: 50),
@@ -457,7 +459,7 @@ class PostState extends State<Post> {
         liked ? Icons.favorite : Icons.favorite_border,
         color: liked
             ? Theme.of(context).accentColor
-            : Theme.of(context).primaryColor,
+            : Theme.of(context).accentColor,
       ),
       onPressed: () => _pressed(),
     );

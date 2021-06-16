@@ -22,7 +22,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                   Padding(
                     padding: EdgeInsets.only(left: 20, top: 30),
                     child: Image.asset(
-                      'assets/logo.png',
+                      'assets/logo_text_color.png',
                       width: 220,
                     ),
                   ),
@@ -83,7 +83,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
               ),
               SizedBox(
                 height: 40.0,
-              ),              
+              ),
               Padding(
                 padding: const EdgeInsets.only(
                   left: 8.0,

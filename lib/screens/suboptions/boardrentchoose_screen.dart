@@ -171,7 +171,7 @@ class _CountQntdState extends State<CountQntd> {
             padding: EdgeInsets.all(10.0),
             child: Icon(
               Icons.remove,
-              color: Colors.white,
+              color: Theme.of(context).primaryColor,
               size: 12.0,
             ),
           ),
@@ -213,7 +213,7 @@ class _CountQntdState extends State<CountQntd> {
             padding: EdgeInsets.all(10.0),
             child: Icon(
               Icons.add,
-              color: Colors.white,
+              color: Theme.of(context).primaryColor,
               size: 12.0,
             ),
           ),

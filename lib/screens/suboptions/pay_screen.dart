@@ -46,7 +46,7 @@ class _PayScreenState extends State<PayScreen> {
                       color: Colors.grey,
                     ),
                   ],
-                  color: Theme.of(context).accentColor,
+                  color: Theme.of(context).primaryColor,
                 ),
                 child: Text(
                   'Ok',

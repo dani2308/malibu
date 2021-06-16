@@ -31,7 +31,7 @@ class _ClassScreenState extends State<ClassScreen> {
                 Padding(
                   padding: EdgeInsets.only(left: 20, top: 30, bottom: 30),
                   child: Image.asset(
-                    'assets/logo.png',
+                    'assets/logo_text_color.png',
                     width: 220,
                   ),
                 ),
@@ -42,8 +42,8 @@ class _ClassScreenState extends State<ClassScreen> {
               calendarStyle: CalendarStyle(
                 todayColor:
                     Theme.of(context).primaryColor, //? marca o dia de hoje
-                selectedColor:
-                    Theme.of(context).accentColor, //? marca o dia selecionado
+                selectedColor: Theme.of(context)
+                    .primaryColorLight, //? marca o dia selecionado
                 outsideWeekendStyle: //? propriedades dos dias do fim-de-semana
                     TextStyle(
                         color: Colors.grey[400],
@@ -63,7 +63,7 @@ class _ClassScreenState extends State<ClassScreen> {
                 weekdayStyle: TextStyle(
                     fontFamily: 'Ubuntu',
                     fontSize: 12,
-                    color: Colors.black), //? segunda a sexta
+                    color: Theme.of(context).primaryColor), //? segunda a sexta
                 weekendStyle: TextStyle(
                     fontFamily: 'Ubuntu',
                     fontSize: 12,

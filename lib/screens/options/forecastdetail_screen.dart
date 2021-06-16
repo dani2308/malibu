@@ -46,7 +46,7 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                       color: Colors.grey,
                     ),
                   ],
-                  color: Theme.of(context).accentColor,
+                  color: Theme.of(context).primaryColor,
                 ),
                 child: Text(
                   'Ok',

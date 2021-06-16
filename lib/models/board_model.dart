@@ -7,7 +7,8 @@ class AppFormService {
     double price,
     String description,
   ) async {
-    CollectionReference boards = FirebaseFirestore.instance.collection('Boards');
+    CollectionReference boards =
+        FirebaseFirestore.instance.collection('Boards');
 
     print("Chegou aqui");
     await boards.add(

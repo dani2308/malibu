@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
               theme: MyThemes.lightTheme,
               darkTheme: MyThemes.darkTheme,
               // * darkTheme: themeDark(),
-              initialRoute: 'loading',
+              initialRoute: 'home',
               onGenerateRoute: RouterHandler.router.generator,
             ),
           );
