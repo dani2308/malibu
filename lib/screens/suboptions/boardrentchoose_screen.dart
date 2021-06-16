@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_pro/carousel_pro.dart';
 
 class BoardRentChooseScreen extends StatefulWidget {
   BoardRentChooseScreen({Key key}) : super(key: key);
@@ -26,11 +27,41 @@ class _BoardRentChooseScreenState extends State<BoardRentChooseScreen> {
                   ),
                 ],
               ),
-              Padding(
-                padding: EdgeInsets.only(top: 20),
-                child: Image.asset(
-                  'assets/board.png',
-                  width: 60,
+              SizedBox(
+                height: 20,
+              ),
+              SizedBox(
+                height: 300.0,
+                //width: 300.0,
+                child: Carousel(
+                  images: [
+                    Image.asset(
+                      'assets/board.png',
+                      height: 10,
+                    ),
+                    Image.asset(
+                      'assets/board.png',
+                      height: 10,
+                    ),
+                    Image.asset(
+                      'assets/board.png',
+                      height: 10,
+                    ),
+                    Image.asset(
+                      'assets/board.png',
+                      height: 10,
+                    ),
+                    Image.asset(
+                      'assets/board.png',
+                      height: 10,
+                    ),
+                  ],
+                  dotSize: 10.0,
+                  indicatorBgPadding: 8.0,
+                  animationDuration: Duration(seconds: 2),
+                  dotBgColor: Colors.transparent,
+                  dotColor: Theme.of(context).accentColor,
+                  dotIncreasedColor: Theme.of(context).accentColor,
                 ),
               ),
               SizedBox(
