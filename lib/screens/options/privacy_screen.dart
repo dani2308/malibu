@@ -8,6 +8,64 @@ class PrivacyScreen extends StatefulWidget {
 }
 
 class _PrivacyScreenState extends State<PrivacyScreen> {
+  createShowDialog(BuildContext context, String title, String content) {
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(
+            title,
+            style: TextStyle(
+              fontFamily: 'Ubuntu',
+            ),
+          ),
+          content: Text(
+            content,
+            style: TextStyle(
+              fontFamily: 'Ubuntu',
+            ),
+          ),
+          actions: [
+            MaterialButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Container(
+                alignment: Alignment.center,
+                width: 50,
+                height: 30,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    5.0,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      offset: const Offset(0.0, 0.0),
+                      blurRadius: 1.0,
+                      spreadRadius: 1.0,
+                      color: Colors.grey,
+                    ),
+                  ],
+                  color: Theme.of(context).primaryColor,
+                ),
+                child: Text(
+                  'Ok',
+                  style: TextStyle(
+                    fontFamily: 'Ubuntu',
+                    fontSize: 17,
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  bool _value = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,57 +89,75 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                 ],
               ),
               Container(
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(top: 70, left: 50),
-                      child: Text(
-                        'Trocar email associado',
-                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                child: FlatButton(
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(top: 70, right: 90),
+                        child: Text(
+                          'Trocar email associado',
+                          style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                alignment: Alignment(2, 0.0),
-                child: Padding(
-                  padding: EdgeInsets.only(top: 30),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Container(
-                      height: 1.0,
-                      width: 355.0,
-                      color: Colors.grey[300],
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(top: 70, left: 50),
-                      child: Text(
-                        'Trocar palavra-passe',
-                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                      Container(
+                        alignment: Alignment(2, 0.0),
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 30, left: 20),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 0.0),
+                            child: Container(
+                              height: 1.0,
+                              width: 355.0,
+                              color: Colors.grey[300],
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
+                  onPressed: () {
+                    return createShowDialog(
+                      context,
+                      'Aviso',
+                      'Será redirecionado para o nosso website!',
+                    );
+                  },
                 ),
               ),
               Container(
-                alignment: Alignment(2, 0.0),
-                child: Padding(
-                  padding: EdgeInsets.only(top: 30),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Container(
-                      height: 1.0,
-                      width: 355.0,
-                      color: Colors.grey[300],
-                    ),
+                child: FlatButton(
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(top: 70, right: 100),
+                        child: Text(
+                          'Trocar palavra-passe',
+                          style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment(2, 0.0),
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 30, left: 20),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 0.0),
+                            child: Container(
+                              height: 1.0,
+                              width: 355.0,
+                              color: Colors.grey[300],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
+                  onPressed: () {
+                    return createShowDialog(
+                      context,
+                      'Aviso',
+                      'Será redirecionado para o nosso website!',
+                    );
+                  },
                 ),
               ),
               Container(
@@ -101,8 +177,18 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 10, left: 10),
-                      child: Toggle(),
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Switch.adaptive(
+                        value: _value,
+                        onChanged: (bool value) {
+                          setState(
+                            () {
+                              _value = value;
+                              if (value == false) {}
+                            },
+                          );
+                        },
+                      ),
                     ),
                   ],
                 ),
@@ -110,9 +196,9 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
               Container(
                 alignment: Alignment(2, 0.0),
                 child: Padding(
-                  padding: EdgeInsets.only(top: 30),
+                  padding: EdgeInsets.only(top: 30, left: 20),
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10.0),
+                    padding: EdgeInsets.symmetric(horizontal: 0.0),
                     child: Container(
                       height: 1.0,
                       width: 355.0,
@@ -129,7 +215,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
   }
 }
 
-class Toggle extends StatefulWidget {
+/* class Toggle extends StatefulWidget {
   @override
   PostState createState() => new PostState();
 }
@@ -158,4 +244,4 @@ class PostState extends State<Toggle> {
       onPressed: () => _pressed(),
     );
   }
-}
+}*/

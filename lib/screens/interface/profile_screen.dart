@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:malibu/store/user.store.dart';
 import 'package:malibu/widgets/changethemebutton.dart';
 import 'package:provider/provider.dart';
@@ -12,6 +13,39 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  FlutterLocalNotificationsPlugin localNotification;
+  bool _value = false;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    var androidInitialize = new AndroidInitializationSettings('boardlogo');
+    var iOSInitialize = new IOSInitializationSettings();
+    var initializationSettings = new InitializationSettings(
+        android: androidInitialize, iOS: iOSInitialize);
+    localNotification = new FlutterLocalNotificationsPlugin();
+    localNotification.initialize(initializationSettings);
+  }
+
+  Future _showNotification() async {
+    var androidDetails = new AndroidNotificationDetails(
+      "channelId",
+      "Local Notification",
+      "Descrição",
+      importance: Importance.high,
+    );
+    var iosDetails = new IOSNotificationDetails();
+    var generalNotificationsDetails = new NotificationDetails(
+      android: androidDetails,
+      iOS: iosDetails,
+    );
+    await localNotification.show(
+        0,
+        "Notificações Ativas!",
+        "As notificações estão ativas a partir de agora. Caso queira deixar de receber, basta desativar a opção das notificações.",
+        generalNotificationsDetails);
+  }
+
   createShowDialog(BuildContext context) {
     return showDialog(
       context: context,
@@ -265,7 +299,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 45, left: 75),
-                  child: Switch.adaptive(value: null, onChanged: null),
+                  child: Switch.adaptive(
+                    value: _value,
+                    onChanged: (bool value) {
+                      setState(
+                        () {
+                          _value = value;
+                          if (value == true) {
+                            _showNotification();
+                          }
+                        },
+                      );
+                    },
+                  ),
                 ),
               ],
             ),
@@ -296,7 +342,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 68),
-                  //child: Toggle(),
                   child: ChangeThemeButtonWidget(),
                 ),
               ],
@@ -412,7 +457,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ],
               ),
-              onPressed: () => Navigator.pushNamed(context, ''),
+              onPressed: () => Navigator.pushNamed(context, 'security'),
             ),
             FlatButton(
               child: Row(

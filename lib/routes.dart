@@ -25,6 +25,8 @@ import 'package:malibu/screens/suboptions/postcomment_screen.dart';
 import 'package:malibu/screens/suboptions/favourites_screen.dart';
 import 'package:malibu/screens/suboptions/shopbag_screen.dart';
 import 'package:malibu/screens/suboptions/terms_screen.dart';
+import 'package:malibu/screens/options/security_screen.dart';
+import 'package:malibu/screens/options/livecam_screen.dart';
 
 class RouterHandler {
   static FluroRouter router = FluroRouter();
@@ -129,6 +131,14 @@ class RouterHandler {
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           LoadingScreen());
 
+  static final Handler _securityScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          SecurityScreen());
+
+  static final Handler _livecamScreen = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          LiveCamScreen());
+
   static void setupRouter() {
     router.define(
       'home',
@@ -229,6 +239,14 @@ class RouterHandler {
     router.define(
       'loading',
       handler: _authHandlerScreen,
+    );
+    router.define(
+      'security',
+      handler: _securityScreen,
+    );
+    router.define(
+      'livecam',
+      handler: _livecamScreen,
     );
   }
 }

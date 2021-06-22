@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:malibu/screens/auth/authentication.dart';
+import 'package:malibu/screens/auth/local_auth.dart';
 import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -107,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 37, top: 120),
+                  padding: EdgeInsets.only(left: 37, top: 100),
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: Text(
@@ -193,7 +194,43 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 168,
+                        height: 50,
+                      ),
+                      Container(
+                        width: 300,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        child: TextButton(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.fingerprint,
+                                color: Colors.white,
+                              ),
+                              Text(
+                                'Touch ID',
+                                style: TextStyle(
+                                  fontFamily: 'Ubuntu',
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                          onPressed: () async {
+                            final isAuthenticated =
+                                await LocalAuthApi.authenticate();
+                            if (isAuthenticated) {
+                              Navigator.pushNamed(context, 'home');
+                            }
+                          },
+                        ),
+                      ),
+                      SizedBox(
+                        height: 88,
                       ),
                       SizedBox(
                         width: 400,

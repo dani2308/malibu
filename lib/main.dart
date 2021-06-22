@@ -23,6 +23,7 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({Key key}) : super(key: key);
 
+  
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
         create: (context) => ThemeProvider(),
@@ -54,7 +55,7 @@ class MyApp extends StatelessWidget {
               theme: MyThemes.lightTheme,
               darkTheme: MyThemes.darkTheme,
               // * darkTheme: themeDark(),
-              initialRoute: 'home',
+              initialRoute: 'login',
               onGenerateRoute: RouterHandler.router.generator,
             ),
           );

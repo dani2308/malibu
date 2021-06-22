@@ -60,92 +60,113 @@ class _PackScreenState extends State<PackScreen> {
                   ),
                 ),
               ),
-              Container(
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 30),
-                    child: Text(
-                      '3 aulas',
-                      style: TextStyle(
-                        fontFamily: 'Ubuntu',
-                        fontSize: 20,
+              FlatButton(
+                child: Column(
+                  children: [
+                    Container(
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 30),
+                          child: Text(
+                            '3 aulas',
+                            style: TextStyle(
+                              fontFamily: 'Ubuntu',
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-              ),
-              Container(
-                alignment: Alignment(2, 0.0),
-                child: Padding(
-                  padding: EdgeInsets.only(top: 30),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Container(
-                      height: 1.0,
-                      width: 355.0,
-                      color: Colors.grey[300],
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 30),
-                    child: Text(
-                      '5 aulas',
-                      style: TextStyle(
-                        fontFamily: 'Ubuntu',
-                        fontSize: 20,
+                    Container(
+                      alignment: Alignment(2, 0.0),
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 30),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          child: Container(
+                            height: 1.0,
+                            width: 355.0,
+                            color: Colors.grey[300],
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
+                onPressed: () => Navigator.pushNamed(context, 'pay'),
               ),
-              Container(
-                alignment: Alignment(2, 0.0),
-                child: Padding(
-                  padding: EdgeInsets.only(top: 30),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Container(
-                      height: 1.0,
-                      width: 355.0,
-                      color: Colors.grey[300],
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 30),
-                    child: Text(
-                      '10 aulas',
-                      style: TextStyle(
-                        fontFamily: 'Ubuntu',
-                        fontSize: 20,
+              FlatButton(
+                child: Column(
+                  children: [
+                    Container(
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 30),
+                          child: Text(
+                            '5 aulas',
+                            style: TextStyle(
+                              fontFamily: 'Ubuntu',
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-              ),
-              Container(
-                alignment: Alignment(2, 0.0),
-                child: Padding(
-                  padding: EdgeInsets.only(top: 30),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Container(
-                      height: 1.0,
-                      width: 355.0,
-                      color: Colors.grey[300],
+                    Container(
+                      alignment: Alignment(2, 0.0),
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 30),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          child: Container(
+                            height: 1.0,
+                            width: 355.0,
+                            color: Colors.grey[300],
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
+                onPressed: () => Navigator.pushNamed(context, 'pay'),
+              ),
+              FlatButton(
+                child: Column(
+                  children: [
+                    Container(
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 30),
+                          child: Text(
+                            '10 aulas',
+                            style: TextStyle(
+                              fontFamily: 'Ubuntu',
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      alignment: Alignment(2, 0.0),
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 30),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          child: Container(
+                            height: 1.0,
+                            width: 355.0,
+                            color: Colors.grey[300],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                onPressed: () => Navigator.pushNamed(context, 'pay'),
               ),
               FlatButton(
                 child: Column(

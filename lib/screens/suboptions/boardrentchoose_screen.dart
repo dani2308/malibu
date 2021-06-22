@@ -32,7 +32,6 @@ class _BoardRentChooseScreenState extends State<BoardRentChooseScreen> {
               ),
               SizedBox(
                 height: 300.0,
-                //width: 300.0,
                 child: Carousel(
                   images: [
                     Image.asset(
