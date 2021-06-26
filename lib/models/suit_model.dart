@@ -1,24 +1,17 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class AppFormService {
-  submitForm(
-    String image,
-    String name,
-    double price,
-    String description,
-  ) async {
-    CollectionReference suits = FirebaseFirestore.instance.collection('Suits');
+class BoardManager {
+  final CollectionReference suitList =
+      FirebaseFirestore.instance.collection('Suits');
 
-    print("Chegou aqui");
-    await suits.add(
+  Future boardData(
+      String name, String image, String description, String id) async {
+    return await suitList.doc(id).set(
       {
-        'image': image,
         'name': name,
-        'price': price,
+        'image': image,
         'description': description,
       },
     );
-
-    print("Chegou key");
   }
 }

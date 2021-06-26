@@ -10,6 +10,7 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 import 'package:malibu/store/user.store.dart';
 
+
 final UserMob userMob = UserMob();
 
 Future<void> main() async {
@@ -23,7 +24,6 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({Key key}) : super(key: key);
 
-  
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
         create: (context) => ThemeProvider(),
@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
               theme: MyThemes.lightTheme,
               darkTheme: MyThemes.darkTheme,
               // * darkTheme: themeDark(),
-              initialRoute: 'login',
+              initialRoute: 'loading',
               onGenerateRoute: RouterHandler.router.generator,
             ),
           );

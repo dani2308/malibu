@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:malibu/models/classes_model.dart';
 
 class ClassConfirmScreen extends StatefulWidget {
   ClassConfirmScreen({Key key}) : super(key: key);
@@ -8,6 +9,12 @@ class ClassConfirmScreen extends StatefulWidget {
 }
 
 class _ClassConfirmScreenState extends State<ClassConfirmScreen> {
+  String teacher1 = 'Mário';
+  String teacher2 = 'Filipe';
+  String type = 'Aulas para: Iniciantes e Avançados';
+  String spot = 'Local: Matosinhos';
+  String encounter = 'Ponto de Encontro: Malibu Escola de Surf';
+  String hour = 'Horário: 10:00 às 11:30';
   createShowDialog(BuildContext context) {
     return showDialog(
       context: context,
@@ -122,7 +129,7 @@ class _ClassConfirmScreenState extends State<ClassConfirmScreen> {
                             top: 15,
                           ),
                           child: Text(
-                            'Mário',
+                            '$teacher1',
                           ),
                         ),
                       ],
@@ -150,7 +157,7 @@ class _ClassConfirmScreenState extends State<ClassConfirmScreen> {
                             top: 15,
                           ),
                           child: Text(
-                            'Filipe',
+                            '$teacher2',
                           ),
                         ),
                       ],
@@ -161,28 +168,28 @@ class _ClassConfirmScreenState extends State<ClassConfirmScreen> {
               Padding(
                 padding: EdgeInsets.only(top: 65),
                 child: Text(
-                  'Aulas para: Iniciantes e Avançados',
+                  '$type',
                   style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: 50),
                 child: Text(
-                  'Local: Matosinhos',
+                  '$spot',
                   style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: 15),
                 child: Text(
-                  'Ponto de Encontro: Malibu Escola de Surf',
+                  '$encounter',
                   style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: 50),
                 child: Text(
-                  'Horário: 10:00 às 11:30',
+                  '$hour',
                   style: TextStyle(fontFamily: 'Ubuntu', fontSize: 17),
                 ),
               ),
@@ -219,8 +226,17 @@ class _ClassConfirmScreenState extends State<ClassConfirmScreen> {
                         fontFamily: 'Ubuntu',
                       ),
                     ),
-                    onPressed: () {
+                    onPressed: () async {
                       createShowDialog(context);
+                      await ClassSubmitService().classSumbit(
+                        teacher1,
+                        teacher2,
+                        type,
+                        spot,
+                        encounter,
+                        hour,
+                      );
+                      Navigator.pushNamed(context, 'home');
                     },
                   ),
                 ),

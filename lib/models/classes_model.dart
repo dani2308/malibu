@@ -1,8 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class AppFormService {
-  submitForm(
-    String teachers,
+class ClassSubmitService {
+  classSumbit(
+    String teacher1,
+    String teacher2,
     String type,
     String spot,
     String encounter,
@@ -14,7 +15,8 @@ class AppFormService {
     print("Chegou aqui");
     await classes.add(
       {
-        'teachers': teachers,
+        'teacher1': teacher1,
+        'teacher2': teacher2,
         'type': type,
         'spot': spot,
         'encounter': encounter,

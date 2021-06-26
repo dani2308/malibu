@@ -459,7 +459,7 @@ class PostState extends State<Post> {
         liked ? Icons.favorite : Icons.favorite_border,
         color: liked
             ? Theme.of(context).accentColor
-            : Theme.of(context).accentColor,
+            : Theme.of(context).primaryColor,
       ),
       onPressed: () => _pressed(),
     );

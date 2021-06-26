@@ -117,19 +117,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
-                /*Padding(
-                  padding: EdgeInsets.only(left: 37, top: 10),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      "User",
-                      style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Ubuntu'),
-                    ),
-                  ),
-                ),*/
                 Form(
                   child: Column(
                     children: [

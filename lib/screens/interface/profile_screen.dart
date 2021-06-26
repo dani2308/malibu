@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:malibu/store/user.store.dart';
 import 'package:malibu/widgets/changethemebutton.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +16,8 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  PickedFile _imageFile;
+  final ImagePicker _picker = ImagePicker();
   FlutterLocalNotificationsPlugin localNotification;
   bool _value = false;
   @override
@@ -135,6 +140,138 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   @override
+  Widget imageProfile() {
+    return Align(
+      alignment: Alignment.center,
+      child: Padding(
+        padding: EdgeInsets.only(top: 50),
+        child: Stack(
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          overflow: Overflow.visible,
+          children: [
+            Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Theme.of(context).primaryColor,
+                ),
+                borderRadius: BorderRadius.circular(50.0),
+              ),
+              child: CircleAvatar(
+                backgroundImage: _imageFile == null
+                    ? AssetImage("assets/mii.png")
+                    : FileImage(
+                        File(
+                          _imageFile.path,
+                        ),
+                      ),
+              ),
+            ),
+            Positioned(
+              bottom: 0,
+              right: 10,
+              child: InkWell(
+                onTap: () {
+                  showBottomSheet(
+                    context: context,
+                    builder: ((builder) => bottomSheet()),
+                  );
+                },
+                child: Container(
+                  width: 25,
+                  height: 25,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50.0),
+                    color: Theme.of(context).primaryColor,
+                  ),
+                  child: Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget bottomSheet() {
+    return Container(
+      height: 100.0,
+      width: 500.0,
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(top: 10.0),
+            child: Text(
+              "Escolha uma foto de Perfil",
+              style: TextStyle(
+                  fontSize: 17.0, fontFamily: 'Ubuntu', color: Colors.white),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              FlatButton.icon(
+                onPressed: () {
+                  takePhoto(ImageSource.camera);
+                },
+                icon: Icon(
+                  Icons.camera,
+                  color: Colors.white,
+                ),
+                label: Text(
+                  'Câmara',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              FlatButton.icon(
+                onPressed: () {
+                  takePhoto(ImageSource.gallery);
+                },
+                icon: Icon(
+                  Icons.image,
+                  color: Colors.white,
+                ),
+                label: Text(
+                  'Galeria',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            offset: const Offset(0.0, 0.0),
+            blurRadius: 1.0,
+            spreadRadius: 1.0,
+            color: Theme.of(context).primaryColor,
+          ),
+        ],
+      ),
+    );
+  }
+
+  void takePhoto(ImageSource source) async {
+    final pickedFile = await _picker.getImage(
+      source: source,
+    );
+    setState(() {
+      _imageFile = pickedFile;
+    });
+  }
+
   Widget build(BuildContext context) {
     final UserMob userMob = Provider.of<UserMob>(context);
     return SingleChildScrollView(
@@ -152,54 +289,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ],
             ),
-            Align(
-              alignment: Alignment.center,
-              child: Padding(
-                padding: EdgeInsets.only(top: 50),
-                child: Stack(
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  overflow: Overflow.visible,
-                  children: [
-                    Container(
-                      width: 100,
-                      height: 100,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Theme.of(context).primaryColor,
-                        ),
-                        borderRadius: BorderRadius.circular(50.0),
-                      ),
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/mii.png"),
-                      ),
-                    ),
-                    Positioned(
-                      bottom: 0,
-                      right: 10,
-                      child: Container(
-                        width: 25,
-                        height: 25,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50.0),
-                          color: Theme.of(context).primaryColor,
-                        ),
-                        child: Icon(
-                          Icons.add,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            imageProfile(),
             Align(
               alignment: Alignment.center,
               child: Padding(
                 padding: EdgeInsets.only(top: 15),
                 child: Text(
-                  "AAA",
-                  //"${userMob.user.email}",
+                  "${userMob.user.email}",
                   style: TextStyle(
                       fontFamily: 'Ubuntu',
                       fontSize: 20,
@@ -213,11 +309,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Align(
                   child: Padding(
                     padding: EdgeInsets.only(top: 15),
-                    child: Text(
-                      'Dani_23',
-                      style: TextStyle(
-                        fontFamily: 'Ubuntu',
-                        fontSize: 15,
+                    child: Container(
+                      height: 20,
+                      width: 110,
+                      child: TextField(
+                        textAlign: TextAlign.center,
+                        decoration: InputDecoration(
+                          hintText: '${userMob.user.email}',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Ubuntu',
+                          fontSize: 15,
+                        ),
                       ),
                     ),
                   ),
