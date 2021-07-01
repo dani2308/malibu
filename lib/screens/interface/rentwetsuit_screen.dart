@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:malibu/store/user.store.dart';
 
 class RentWetsuitScreen extends StatefulWidget {
   RentWetsuitScreen({Key key}) : super(key: key);
@@ -10,428 +13,210 @@ class RentWetsuitScreen extends StatefulWidget {
 class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-          child: SafeArea(
-        child: Column(
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 20, top: 30),
-                  child: Image.asset(
-                    'assets/logo_text_color.png',
-                    width: 220,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: PopupMenu(),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: 100,
-                    right: 0,
-                  ),
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.search_rounded,
-                      color: Theme.of(context).primaryColor,
+    // Widget _buildLoadingBar() {
+    //   return const Scaffold(
+    //     body: Center(
+    //       child: CircularProgressIndicator(),
+    //     ),
+    //   );
+    // }
+
+    final UserMob _userMob = Provider.of<UserMob>(context);
+    return StreamBuilder<QuerySnapshot>(
+      stream: FirebaseFirestore.instance.collection('Suits').snapshots(),
+      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        // print(
+          //snapshot.data.docs.first.get('name'),
+        // );
+
+        //if (!snapshot.hasData) return _buildLoadingBar();
+        if (snapshot.data.docs == null) {
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        } else {
+          return Scaffold(
+            body: SingleChildScrollView(
+              child: SafeArea(
+                child: Column(
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 20, top: 30),
+                          child: Image.asset(
+                            'assets/logo_text_color.png',
+                            width: 220,
+                          ),
+                        ),
+                      ],
                     ),
-                    onPressed: () => Navigator.pushNamed(context, ''),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: 0,
-                    right: 0,
-                  ),
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.favorite_border,
-                      color: Theme.of(context).primaryColor,
+                    SizedBox(
+                      height: 40,
                     ),
-                    onPressed: () => Navigator.pushNamed(context, 'favourites'),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: 0,
-                    right: 30,
-                  ),
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.shopping_bag_outlined,
-                      color: Theme.of(context).primaryColor,
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: PopupMenu(),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 100,
+                            right: 0,
+                          ),
+                          child: IconButton(
+                            icon: Icon(
+                              Icons.search_rounded,
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            onPressed: () => Navigator.pushNamed(context, ''),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 0,
+                            right: 0,
+                          ),
+                          child: IconButton(
+                            icon: Icon(
+                              Icons.favorite_border,
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            onPressed: () =>
+                                Navigator.pushNamed(context, 'favourites'),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 0,
+                            right: 30,
+                          ),
+                          child: IconButton(
+                            icon: Icon(
+                              Icons.shopping_bag_outlined,
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            onPressed: () =>
+                                Navigator.pushNamed(context, 'shopbag'),
+                          ),
+                        ),
+                      ],
                     ),
-                    onPressed: () => Navigator.pushNamed(context, 'shopbag'),
-                  ),
+                    SizedBox(
+                      height: 40.0,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 8.0,
+                        top: 10.0,
+                      ),
+                      child: GridView.count(
+                        scrollDirection: Axis.vertical,
+                        shrinkWrap: true,
+                        crossAxisCount: 2,
+                        children: [
+                          for (var suit in snapshot.data.docs) ...[
+                            FlatButton(
+                              child: Container(
+                                margin: EdgeInsets.only(left: 0, bottom: 10),
+                                width: 160,
+                                height: 230,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Theme.of(context).primaryColor,
+                                  ),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                child: Stack(
+                                  alignment: Alignment.bottomRight,
+                                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                                  overflow: Overflow.visible,
+                                  children: [
+                                    Align(
+                                      alignment: Alignment.topLeft,
+                                      heightFactor: 13.5,
+                                      widthFactor: 1.1,
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(
+                                            left: 10, top: 5),
+                                        child: Text(suit.get('name')),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                          bottom: 10, right: 58),
+                                      child: Image.network(
+                                        suit.get('image'),
+                                        height: 170,
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 40,
+                                      height: 40,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      child: IconButton(
+                                        icon: Icon(Icons.add),
+                                        color: Theme.of(context).primaryColor,
+                                        onPressed: () async {
+                                          var userEmail = _userMob.user.email;
+
+                                          FirebaseFirestore.instance
+                                              .collection('Cart')
+                                              .add(
+                                            {
+                                              'user_email': userEmail,
+                                              'product': {
+                                                'name': suit.get('name'),
+                                                'description':
+                                                    suit.get('description'),
+                                                'image': suit.get('image'),
+                                                'id': suit.get('id')
+                                              }
+                                            },
+                                          ).then(
+                                            (value) {
+                                              Navigator.popAndPushNamed(
+                                                  context, 'shopbag');
+                                            },
+                                          );
+                                        },
+                                      ),
+                                    ),
+                                    Row(
+                                      children: [
+                                        Post(),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              onPressed: () => Navigator.pushNamed(
+                                  context, 'boardrentchoose'),
+                            ),
+                          ]
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            SizedBox(
-              height: 40.0,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 8.0,
-                top: 10.0,
-              ),
-              child: Row(
-                children: [
-                  Column(
-                    children: [
-                      FlatButton(
-                        child: Container(
-                          margin: EdgeInsets.only(left: 0),
-                          width: 160,
-                          height: 230,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.bottomRight,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            overflow: Overflow.visible,
-                            children: [
-                              Align(
-                                alignment: Alignment.topLeft,
-                                heightFactor: 13.5,
-                                widthFactor: 1.1,
-                                child: Text("RipCurl - Ebomb"),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 50),
-                                child: Image.asset(
-                                  'assets/realwetsuit.png',
-                                  height: 170,
-                                ),
-                              ),
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: Theme.of(context).primaryColor,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                child: Icon(
-                                  Icons.add,
-                                  color: Theme.of(context).primaryColor,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Post(),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                        onPressed: () =>
-                            Navigator.pushNamed(context, 'boardrentchoose'),
-                      ),
-                      FlatButton(
-                        child: Container(
-                          margin: EdgeInsets.only(left: 0, top: 15),
-                          width: 160,
-                          height: 230,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.bottomRight,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            overflow: Overflow.visible,
-                            children: [
-                              Align(
-                                alignment: Alignment.topLeft,
-                                heightFactor: 13.5,
-                                widthFactor: 1.1,
-                                child: Text("RipCurl - Ebomb"),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 50),
-                                child: Image.asset(
-                                  'assets/realwetsuit.png',
-                                  height: 170,
-                                ),
-                              ),
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: Theme.of(context).primaryColor,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                child: Icon(
-                                  Icons.add,
-                                  color: Theme.of(context).primaryColor,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Post(),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                        onPressed: () =>
-                            Navigator.pushNamed(context, 'boardrentchoose'),
-                      ),
-                      FlatButton(
-                        child: Container(
-                          margin: EdgeInsets.only(left: 0, top: 15),
-                          width: 160,
-                          height: 230,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.bottomRight,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            overflow: Overflow.visible,
-                            children: [
-                              Align(
-                                alignment: Alignment.topLeft,
-                                heightFactor: 13.5,
-                                widthFactor: 1.1,
-                                child: Text("RipCurl - Ebomb"),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 50),
-                                child: Image.asset(
-                                  'assets/realwetsuit.png',
-                                  height: 170,
-                                ),
-                              ),
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: Theme.of(context).primaryColor,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                child: Icon(
-                                  Icons.add,
-                                  color: Theme.of(context).primaryColor,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Post(),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                        onPressed: () =>
-                            Navigator.pushNamed(context, 'boardrentchoose'),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      FlatButton(
-                        child: Container(
-                          margin: EdgeInsets.only(left: 0, top: 0),
-                          width: 160,
-                          height: 230,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.bottomRight,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            overflow: Overflow.visible,
-                            children: [
-                              Align(
-                                alignment: Alignment.topLeft,
-                                heightFactor: 13.5,
-                                widthFactor: 1.1,
-                                child: Text("RipCurl - Ebomb"),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 50),
-                                child: Image.asset(
-                                  'assets/realwetsuit.png',
-                                  height: 170,
-                                ),
-                              ),
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: Theme.of(context).primaryColor,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                child: Icon(
-                                  Icons.add,
-                                  color: Theme.of(context).primaryColor,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Post(),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                        onPressed: () =>
-                            Navigator.pushNamed(context, 'boardrentchoose'),
-                      ),
-                      FlatButton(
-                        child: Container(
-                          margin: EdgeInsets.only(left: 0, top: 15),
-                          width: 160,
-                          height: 230,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.bottomRight,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            overflow: Overflow.visible,
-                            children: [
-                              Align(
-                                alignment: Alignment.topLeft,
-                                heightFactor: 13.5,
-                                widthFactor: 1.1,
-                                child: Text(
-                                  "RipCurl - Ebomb",
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 50),
-                                child: Image.asset(
-                                  'assets/realwetsuit.png',
-                                  height: 170,
-                                ),
-                              ),
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: Theme.of(context).primaryColor,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                child: Icon(
-                                  Icons.add,
-                                  color: Theme.of(context).primaryColor,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Post(),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                        onPressed: () =>
-                            Navigator.pushNamed(context, 'boardrentchoose'),
-                      ),
-                      FlatButton(
-                        child: Container(
-                          margin: EdgeInsets.only(left: 0, top: 15),
-                          width: 160,
-                          height: 230,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.bottomRight,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            overflow: Overflow.visible,
-                            children: [
-                              Align(
-                                alignment: Alignment.topLeft,
-                                heightFactor: 13.5,
-                                widthFactor: 1.1,
-                                child: Text("RipCurl - Ebomb"),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, right: 50),
-                                child: Image.asset(
-                                  'assets/realwetsuit.png',
-                                  height: 170,
-                                ),
-                              ),
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: Theme.of(context).primaryColor,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                child: Icon(
-                                  Icons.add,
-                                  color: Theme.of(context).primaryColor,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Post(),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                        onPressed: () =>
-                            Navigator.pushNamed(context, 'boardrentchoose'),
-                      ),
-                    ],
-                  ),
-                ],
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
-          ],
-        ),
-      )),
+          );
+        }
+      },
     );
   }
 }

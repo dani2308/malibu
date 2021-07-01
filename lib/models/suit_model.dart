@@ -1,17 +1,26 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+class Suits {
+  String id;
+  String name;
+  String description;
+  String image;
 
-class BoardManager {
-  final CollectionReference suitList =
-      FirebaseFirestore.instance.collection('Suits');
+  Suits({this.id, this.name, this.description, this.image});
 
-  Future boardData(
-      String name, String image, String description, String id) async {
-    return await suitList.doc(id).set(
-      {
-        'name': name,
-        'image': image,
-        'description': description,
-      },
-    );
+  Suits.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    name = json['name'];
+    description = json['description'];
+    image = json['image'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+
+    data['id'] = this.id;
+    data['name'] = this.name;
+    data['description'] = this.description;
+    data['image'] = this.image;
+
+    return data;
   }
 }

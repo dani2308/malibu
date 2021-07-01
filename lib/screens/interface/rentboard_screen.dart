@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-import 'package:malibu/models/board_model.dart';
 import 'package:provider/provider.dart';
 import 'package:malibu/store/user.store.dart';
 
@@ -119,7 +118,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                           for (var board in snapshot.data.docs) ...[
                             FlatButton(
                               child: Container(
-                                margin: EdgeInsets.only(left: 0),
+                                margin: EdgeInsets.only(left: 0, bottom: 10),
                                 width: 160,
                                 height: 230,
                                 decoration: BoxDecoration(
@@ -137,7 +136,11 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                       alignment: Alignment.topLeft,
                                       heightFactor: 13.5,
                                       widthFactor: 1.1,
-                                      child: Text(board.get('name')),
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(
+                                            left: 10, top: 5),
+                                        child: Text(board.get('name')),
+                                      ),
                                     ),
                                     Padding(
                                       padding: EdgeInsets.only(
