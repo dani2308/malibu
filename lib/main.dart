@@ -10,7 +10,6 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 import 'package:malibu/store/user.store.dart';
 
-
 final UserMob userMob = UserMob();
 
 Future<void> main() async {

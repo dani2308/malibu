@@ -9,6 +9,7 @@ class SecurityScreen extends StatefulWidget {
 
 class _SecurityScreenState extends State<SecurityScreen> {
   bool _value = true;
+  bool _value1 = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,6 +77,39 @@ class _SecurityScreenState extends State<SecurityScreen> {
                       color: Colors.grey[300],
                     ),
                   ),
+                ),
+              ),
+              Container(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(top: 30, left: 50, bottom: 12),
+                      child: Container(
+                        width: 350,
+                        constraints:
+                            BoxConstraints(maxWidth: 250, maxHeight: 130),
+                        child: Text(
+                          'Encriptação de Dados',
+                          style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10, top: 20),
+                      child: Switch.adaptive(
+                        value: _value1,
+                        onChanged: (bool value) {
+                          setState(
+                            () {
+                              _value1 = value;
+                              if (value == false) {}
+                            },
+                          );
+                        },
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
