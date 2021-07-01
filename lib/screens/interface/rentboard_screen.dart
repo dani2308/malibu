@@ -25,188 +25,188 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
     final UserMob _userMob = Provider.of<UserMob>(context);
 
     return StreamBuilder<QuerySnapshot>(
-        stream: FirebaseFirestore.instance.collection('Boards').snapshots(),
-        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          print(snapshot.data.docs.first.get('name'));
+      stream: FirebaseFirestore.instance.collection('Boards').snapshots(),
+      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        print(snapshot.data.docs.first.get('name'));
 
-          if (!snapshot.hasData) return _buildLoadingBar();
+        if (!snapshot.hasData) return _buildLoadingBar();
 
-          return Scaffold(
-            body: SingleChildScrollView(
-              child: SafeArea(
-                child: Column(
+        return SingleChildScrollView(
+          child: SafeArea(
+            child: Column(
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 20, top: 30),
-                          child: Image.asset(
-                            'assets/logo_text_color.png',
-                            width: 220,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: PopupMenu(),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                            left: 100,
-                            right: 0,
-                          ),
-                          child: IconButton(
-                            icon: Icon(
-                              Icons.search_rounded,
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            onPressed: () => Navigator.pushNamed(context, ''),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                            left: 0,
-                            right: 0,
-                          ),
-                          child: IconButton(
-                            icon: Icon(
-                              Icons.favorite_border,
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            onPressed: () =>
-                                Navigator.pushNamed(context, 'favourites'),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                            left: 0,
-                            right: 30,
-                          ),
-                          child: IconButton(
-                            icon: Icon(
-                              Icons.shopping_bag_outlined,
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            onPressed: () =>
-                                Navigator.pushNamed(context, 'shopbag'),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 40.0,
-                    ),
                     Padding(
-                      padding: const EdgeInsets.only(
-                        left: 8.0,
-                        top: 10.0,
+                      padding: EdgeInsets.only(left: 20, top: 30),
+                      child: Image.asset(
+                        'assets/logo_text_color.png',
+                        width: 220,
                       ),
-                      child: GridView.count(
-                        scrollDirection: Axis.vertical,
-                        shrinkWrap: true,
-                        crossAxisCount: 2,
-                        children: [
-                          for (var board in snapshot.data.docs) ...[
-                            FlatButton(
-                              child: Container(
-                                margin: EdgeInsets.only(left: 0, bottom: 10),
-                                width: 160,
-                                height: 230,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: Theme.of(context).primaryColor,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                child: Stack(
-                                  alignment: Alignment.bottomRight,
-                                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                                  overflow: Overflow.visible,
-                                  children: [
-                                    Align(
-                                      alignment: Alignment.topLeft,
-                                      heightFactor: 13.5,
-                                      widthFactor: 1.1,
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 10, top: 5),
-                                        child: Text(board.get('name')),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.only(
-                                          bottom: 10, right: 58),
-                                      child: Image.network(
-                                        board.get('image'),
-                                        height: 170,
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 40,
-                                      height: 40,
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Theme.of(context).primaryColor,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                      ),
-                                      child: IconButton(
-                                          icon: Icon(Icons.add),
-                                          color: Theme.of(context).primaryColor,
-                                          onPressed: () async {
-                                            var userEmail = _userMob.user.email;
-
-                                            FirebaseFirestore.instance
-                                                .collection('Cart')
-                                                .add({
-                                              'user_email': userEmail,
-                                              'product': {
-                                                'name': board.get('name'),
-                                                'description':
-                                                    board.get('description'),
-                                                'image': board.get('image'),
-                                                'id': board.get('id')
-                                              }
-                                            }).then((value) {
-                                              Navigator.popAndPushNamed(
-                                                  context, 'shopbag');
-                                            });
-                                          }),
-                                    ),
-                                    Row(
-                                      children: [
-                                        Post(),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              onPressed: () => Navigator.pushNamed(
-                                  context, 'boardrentchoose'),
-                            ),
-                          ]
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
                     ),
                   ],
                 ),
-              ),
+                SizedBox(
+                  height: 40,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: PopupMenu(),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 100,
+                        right: 0,
+                      ),
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.search_rounded,
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        onPressed: () => Navigator.pushNamed(context, ''),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 0,
+                        right: 0,
+                      ),
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.favorite_border,
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        onPressed: () =>
+                            Navigator.pushNamed(context, 'favourites'),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 0,
+                        right: 30,
+                      ),
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.shopping_bag_outlined,
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        onPressed: () =>
+                            Navigator.pushNamed(context, 'shopbag'),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 40.0,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 8.0,
+                    top: 10.0,
+                  ),
+                  child: GridView.count(
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    crossAxisCount: 2,
+                    children: [
+                      for (var board in snapshot.data.docs) ...[
+                        FlatButton(
+                          child: Container(
+                            margin: EdgeInsets.only(left: 0, bottom: 10),
+                            width: 160,
+                            height: 230,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            child: Stack(
+                              alignment: Alignment.bottomRight,
+                              clipBehavior: Clip.antiAliasWithSaveLayer,
+                              overflow: Overflow.visible,
+                              children: [
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  //heightFactor: 13.5,
+                                  // widthFactor: 1.1,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 10, top: 5, right: 10),
+                                    child: Text(board.get('name')),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 10),
+                                  child: Align(
+                                    alignment: Alignment.center,
+                                    child: Image.network(
+                                      board.get('image'),
+                                      height: 130,
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: 40,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Theme.of(context).primaryColor,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  child: IconButton(
+                                      icon: Icon(Icons.add),
+                                      color: Theme.of(context).primaryColor,
+                                      onPressed: () async {
+                                        var userEmail = _userMob.user.email;
+
+                                        FirebaseFirestore.instance
+                                            .collection('Cart')
+                                            .add({
+                                          'user_email': userEmail,
+                                          'product': {
+                                            'name': board.get('name'),
+                                            'description':
+                                                board.get('description'),
+                                            'image': board.get('image'),
+                                            'id': board.get('id')
+                                          }
+                                        }).then((value) {
+                                          Navigator.popAndPushNamed(
+                                              context, 'shopbag');
+                                        });
+                                      }),
+                                ),
+                                Row(
+                                  children: [
+                                    Post(),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          onPressed: () =>
+                              Navigator.pushNamed(context, 'boardrentchoose'),
+                        ),
+                      ]
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+              ],
             ),
-          );
-        });
+          ),
+        );
+      },
+    );
   }
 }
 

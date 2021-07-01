@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:malibu/store/user.store.dart';
 
 class ForecastScreen extends StatefulWidget {
   ForecastScreen({Key key}) : super(key: key);
@@ -11,377 +14,210 @@ class ForecastScreen extends StatefulWidget {
 class _ForecastScreenState extends State<ForecastScreen> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: SafeArea(
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 20, top: 30),
-                  child: Image.asset(
-                    'assets/logo_text_color.png',
-                    width: 220,
-                  ),
-                ),
-              ],
-            ),
-            Container(
-              alignment: Alignment(2, 0.0),
-              child: Padding(
-                padding: EdgeInsets.only(top: 50),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10.0),
-                  child: Container(
-                    height: 1.0,
-                    width: 355.0,
-                    color: Colors.grey[300],
-                  ),
-                ),
-              ),
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(top: 40, left: 33),
-                  child: Text('1.2', style: TextStyle(fontSize: 25)),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 40, left: 50),
-                  child: Icon(Icons.location_on, size: 35),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 65, left: 50),
-                  child: FlatButton(
-                    onPressed: () =>
-                        Navigator.pushNamed(context, 'forecastdetail'),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.0),
-                        boxShadow: [
-                          BoxShadow(
-                              offset: const Offset(0.0, 0.0),
-                              blurRadius: 0.0,
-                              spreadRadius: 10.0,
-                              color: Colors.white),
-                        ],
-                      ),
-                      child: Column(
-                        children: [
-                          Icon(
-                            Icons.brightness_low_outlined,
-                            color: Colors.black,
-                          ),
-                          Text(
-                            "Forecast",
-                            style: TextStyle(
-                              fontFamily: 'Ubuntu',
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 65, left: 0),
-                  child: FlatButton(
-                    onPressed: () => Navigator.pushNamed(context, 'livecam'),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.0),
-                        boxShadow: [
-                          BoxShadow(
-                              offset: const Offset(0.0, 0.0),
-                              blurRadius: 0.0,
-                              spreadRadius: 10.0,
-                              color: Colors.white),
-                        ],
-                      ),
-                      child: Column(
-                        children: [
-                          Icon(
-                            Icons.videocam,
-                            color: Colors.black,
-                          ),
-                          Text(
-                            "Em direto",
-                            style: TextStyle(
-                              fontFamily: 'Ubuntu',
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 45),
-                  child: Text('m', style: TextStyle(fontSize: 15)),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 45),
-                  child: Text('Matosinhos', style: TextStyle(fontSize: 15)),
-                ),
-              ],
-            ),
-            Container(
-              alignment: Alignment(2, 0.0),
-              child: Padding(
-                padding: EdgeInsets.only(top: 50),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10.0),
-                  child: Container(
-                    height: 1.0,
-                    width: 355.0,
-                    color: Colors.grey[300],
-                  ),
-                ),
-              ),
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(top: 40, left: 33),
-                  child: Text('2.1', style: TextStyle(fontSize: 25)),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 40, left: 50),
-                  child: Icon(Icons.location_on, size: 35),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 65, left: 50),
-                  child: FlatButton(
-                    onPressed: () =>
-                        Navigator.pushNamed(context, 'forecastdetail'),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.0),
-                        boxShadow: [
-                          BoxShadow(
-                              offset: const Offset(0.0, 0.0),
-                              blurRadius: 0.0,
-                              spreadRadius: 10.0,
-                              color: Colors.white),
-                        ],
-                      ),
-                      child: Column(
-                        children: [
-                          Icon(
-                            Icons.brightness_low_outlined,
-                            color: Colors.black,
-                          ),
-                          Text(
-                            "Forecast",
-                            style: TextStyle(
-                              fontFamily: 'Ubuntu',
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 65, left: 0),
-                  child: FlatButton(
-                    onPressed: () => Navigator.pushNamed(context, 'livecam'),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.0),
-                        boxShadow: [
-                          BoxShadow(
-                              offset: const Offset(0.0, 0.0),
-                              blurRadius: 0.0,
-                              spreadRadius: 10.0,
-                              color: Colors.white),
-                        ],
-                      ),
-                      child: Column(
-                        children: [
-                          Icon(
-                            Icons.videocam,
-                            color: Colors.black,
-                          ),
-                          Text(
-                            "Em direto",
-                            style: TextStyle(
-                              fontFamily: 'Ubuntu',
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 45),
-                  child: Text('m', style: TextStyle(fontSize: 15)),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 50),
-                  child: Text('Canidelo', style: TextStyle(fontSize: 15)),
-                ),
-              ],
-            ),
-            Container(
-              alignment: Alignment(2, 0.0),
-              child: Padding(
-                padding: EdgeInsets.only(top: 50),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10.0),
-                  child: Container(
-                    height: 1.0,
-                    width: 355.0,
-                    color: Colors.grey[300],
-                  ),
-                ),
-              ),
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(top: 40, left: 33),
-                  child: Text('1.9', style: TextStyle(fontSize: 25)),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 40, left: 50),
-                  child: Icon(Icons.location_on, size: 35),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 65, left: 50),
-                  child: FlatButton(
-                    onPressed: () =>
-                        Navigator.pushNamed(context, 'forecastdetail'),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.0),
-                        boxShadow: [
-                          BoxShadow(
-                              offset: const Offset(0.0, 0.0),
-                              blurRadius: 0.0,
-                              spreadRadius: 10.0,
-                              color: Colors.white),
-                        ],
-                      ),
-                      child: Column(
-                        children: [
-                          Icon(
-                            Icons.brightness_low_outlined,
-                            color: Colors.black,
-                          ),
-                          Text(
-                            "Forecast",
-                            style: TextStyle(
-                              fontFamily: 'Ubuntu',
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 65, left: 0),
-                  child: FlatButton(
-                    onPressed: () => Navigator.pushNamed(context, 'livecam'),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.0),
-                        boxShadow: [
-                          BoxShadow(
-                            offset: const Offset(0.0, 0.0),
-                            blurRadius: 0.0,
-                            spreadRadius: 10.0,
-                            color: Colors.white,
-                          ),
-                        ],
-                      ),
-                      child: Column(
-                        children: [
-                          Icon(
-                            Icons.videocam,
-                            color: Colors.black,
-                          ),
-                          Text(
-                            "Em direto",
-                            style: TextStyle(
-                              fontFamily: 'Ubuntu',
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 45),
-                  child: Text('m', style: TextStyle(fontSize: 15)),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 53),
-                  child: Text('Espinho', style: TextStyle(fontSize: 15)),
-                ),
-              ],
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                top: 50,
-                bottom: 20.0,
-              ),
-              child: FlatButton(
-                onPressed: () =>
-                    Navigator.popAndPushNamed(context, 'locationchoose'),
-                child: Container(
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      'Adicione um Local',
-                      style: TextStyle(
-                        fontFamily: 'Ubuntu',
-                        fontSize: 18,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  width: 190,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Theme.of(context).primaryColor,
-                    boxShadow: [
-                      BoxShadow(
-                        offset: const Offset(0.0, 0.0),
-                        blurRadius: 1.0,
-                        spreadRadius: 1.0,
-                        color: Colors.grey,
+    final UserMob _userMob = Provider.of<UserMob>(context);
+
+    return StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance.collection('Spots').snapshots(),
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          print(snapshot.data.docs.first.get('spot'));
+
+          if (!snapshot.hasData) return CircularProgressIndicator();
+
+          return SingleChildScrollView(
+            child: SafeArea(
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 20, top: 30),
+                        child: Image.asset(
+                          'assets/logo_text_color.png',
+                          width: 220,
+                        ),
                       ),
                     ],
                   ),
-                ),
+                  for (var spot in snapshot.data.docs) ...[
+                    Container(
+                      alignment: Alignment(2, 0.0),
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 50),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          child: Container(
+                            height: 1.0,
+                            width: 355.0,
+                            color: Colors.grey[300],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(top: 40, left: 33),
+                              child: Text(
+                                spot.get('size'),
+                                style: TextStyle(fontSize: 25),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(left: 33, top: 20),
+                              child: Text(
+                                spot.get('unit'),
+                                style: TextStyle(
+                                  fontSize: 15,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 40, left: 20),
+                          child: Column(
+                            children: [
+                              Icon(Icons.location_on),
+                              Padding(
+                                padding: EdgeInsets.only(left: 8, top: 20),
+                                child: Container(
+                                  width: 80,
+                                  child: Text(
+                                    spot.get('spot'),
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 40, left: 20),
+                          child: FlatButton(
+                            onPressed: () =>
+                                Navigator.pushNamed(context, 'forecastdetail'),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5.0),
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: const Offset(0.0, 0.0),
+                                    blurRadius: 0.0,
+                                    spreadRadius: 10.0,
+                                    color: Colors.white,
+                                  ),
+                                ],
+                              ),
+                              child: Column(
+                                children: [
+                                  Icon(
+                                    Icons.brightness_low_outlined,
+                                    color: Colors.black,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 20),
+                                    child: Text(
+                                      "Forecast",
+                                      style: TextStyle(
+                                        fontFamily: 'Ubuntu',
+                                        color: Colors.black,
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 40, right: 0),
+                          child: FlatButton(
+                            onPressed: () =>
+                                Navigator.pushNamed(context, 'livecam'),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5.0),
+                                boxShadow: [
+                                  BoxShadow(
+                                      offset: const Offset(0.0, 0.0),
+                                      blurRadius: 0.0,
+                                      spreadRadius: 10.0,
+                                      color: Colors.white),
+                                ],
+                              ),
+                              child: Column(
+                                children: [
+                                  Icon(
+                                    Icons.videocam,
+                                    color: Colors.black,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 20),
+                                    child: Text(
+                                      "Em direto",
+                                      style: TextStyle(
+                                        fontFamily: 'Ubuntu',
+                                        color: Colors.black,
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                  Padding(
+                    padding: EdgeInsets.only(
+                      top: 50,
+                      bottom: 20.0,
+                    ),
+                    child: FlatButton(
+                      onPressed: () =>
+                          Navigator.popAndPushNamed(context, 'locationchoose'),
+                      child: Container(
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            'Adicione um Local',
+                            style: TextStyle(
+                              fontFamily: 'Ubuntu',
+                              fontSize: 18,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        width: 190,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: Theme.of(context).primaryColor,
+                          boxShadow: [
+                            BoxShadow(
+                              offset: const Offset(0.0, 0.0),
+                              blurRadius: 1.0,
+                              spreadRadius: 1.0,
+                              color: Colors.grey,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
-      ),
-    );
+          );
+        });
   }
 }

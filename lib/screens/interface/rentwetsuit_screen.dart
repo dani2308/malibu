@@ -25,9 +25,9 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
     return StreamBuilder<QuerySnapshot>(
       stream: FirebaseFirestore.instance.collection('Suits').snapshots(),
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-        // print(
-          //snapshot.data.docs.first.get('name'),
-        // );
+        print(
+          snapshot.data.docs.first.get('name'),
+        );
 
         //if (!snapshot.hasData) return _buildLoadingBar();
         if (snapshot.data.docs == null) {
@@ -143,15 +143,16 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                                       child: Padding(
                                         padding: const EdgeInsets.only(
                                             left: 10, top: 5),
-                                        child: Text(suit.get('name')),
+                                        child: Text(
+                                          suit.get('name'),
+                                        ),
                                       ),
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.only(
-                                          bottom: 10, right: 58),
+                                    Align(
+                                      alignment: Alignment.center,
                                       child: Image.network(
                                         suit.get('image'),
-                                        height: 170,
+                                        height: 120,
                                       ),
                                     ),
                                     Container(
