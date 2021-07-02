@@ -15,7 +15,7 @@ class _LiveCamScreenState extends State<LiveCamScreen> {
   @override
   void initState() {
     _controller = VideoPlayerController.network(
-        'https://beachcam.meo.pt/84194a08-406c-462d-9185-f73f9aa4d694');
+        'https://firebasestorage.googleapis.com/v0/b/malibu-dfr23.appspot.com/o/IMG_6117.MOV?alt=media&token=9803530f-d941-4cb0-b937-54d6aea8eea6');
     _initializeVideoPlayerFuture = _controller.initialize();
     _controller.setLooping(true);
     _controller.setVolume(1.0);
@@ -37,7 +37,7 @@ class _LiveCamScreenState extends State<LiveCamScreen> {
           if (snapshot.connectionState == ConnectionState.done) {
             return AspectRatio(
               aspectRatio: _controller.value.aspectRatio,
-              child: VideoPlayer(_controller),
+              child:  VideoPlayer(_controller),
             );
           } else {
             return Center(
@@ -62,15 +62,6 @@ class _LiveCamScreenState extends State<LiveCamScreen> {
           _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
         ),
       ),
-
-      // child: Container(
-      //   child: WebView(
-      //     initialUrl: Uri.dataFromString('https://beachcam.meo.pt/livecams/',
-      //             mimeType: 'text/html')
-      //         .toString(),
-      //     javascriptMode: JavascriptMode.unrestricted,
-      //   ),
-      // ),
     );
   }
 }

@@ -13,63 +13,9 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
-
-  createShowDialog(BuildContext context) {
-    return showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text(
-            'Palavra-Passe',
-            style: TextStyle(
-              fontFamily: 'Ubuntu',
-            ),
-          ),
-          content: Text(
-            'Será enviado para o seu email uma mensagem que permitirá que altere a sua palavra-passe.',
-            style: TextStyle(
-              fontFamily: 'Ubuntu',
-            ),
-          ),
-          actions: [
-            MaterialButton(
-              onPressed: () {
-                Navigator.of(context).pop('Palavra-Passe');
-              },
-              child: Container(
-                alignment: Alignment.center,
-                width: 50,
-                height: 30,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    5.0,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      offset: const Offset(0.0, 0.0),
-                      blurRadius: 3.0,
-                      spreadRadius: 1.0,
-                      color: Colors.grey,
-                    ),
-                  ],
-                  color: Theme.of(context).accentColor,
-                ),
-                child: Text(
-                  'OK',
-                  style: TextStyle(
-                    fontFamily: 'Ubuntu',
-                    fontSize: 17,
-                    color: Colors.white,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ),
-          ],
-        );
-      },
-    );
-  }
+  final _formkey = GlobalKey<FormState>();
+  String email = '';
+  String password = '';
 
   @override
   Widget build(BuildContext context) {
@@ -118,6 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 Form(
+                  key: _formkey,
                   child: Column(
                     children: [
                       Padding(
@@ -129,10 +76,15 @@ class _LoginScreenState extends State<LoginScreen> {
                               right: 50,
                             ),
                             child: TextFormField(
+                              validator: (value) =>
+                                  value.isEmpty ? 'Insira um email' : null,
                               controller: emailController,
                               decoration: InputDecoration(
                                 labelText: 'Email',
                               ),
+                              onChanged: (value) {
+                                setState(() => email = value);
+                              },
                               style:
                                   TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
                               keyboardType: TextInputType.emailAddress,
@@ -149,12 +101,18 @@ class _LoginScreenState extends State<LoginScreen> {
                               right: 50,
                             ),
                             child: TextFormField(
+                              validator: (value) => value.length < 6
+                                  ? 'Insira uma palavra passe com mais de 6 caracteres'
+                                  : null,
                               controller: passwordController,
                               decoration: InputDecoration(
                                 labelText: 'Palavra-passe',
                               ),
                               keyboardType: TextInputType.text,
                               obscureText: true,
+                              onChanged: (value) {
+                                setState(() => password = value);
+                              },
                               style:
                                   TextStyle(fontSize: 15, fontFamily: 'Ubuntu'),
                             ),
@@ -208,6 +166,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             ],
                           ),
                           onPressed: () async {
+                            if (_formkey.currentState.validate()) {
+                              print(email);
+                              print(password);
+                            }
                             final isAuthenticated =
                                 await LocalAuthApi.authenticate();
                             if (isAuthenticated) {
@@ -280,6 +242,63 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  createShowDialog(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(
+            'Palavra-Passe',
+            style: TextStyle(
+              fontFamily: 'Ubuntu',
+            ),
+          ),
+          content: Text(
+            'Será enviado para o seu email uma mensagem que permitirá que altere a sua palavra-passe.',
+            style: TextStyle(
+              fontFamily: 'Ubuntu',
+            ),
+          ),
+          actions: [
+            MaterialButton(
+              onPressed: () {
+                Navigator.of(context).pop('Palavra-Passe');
+              },
+              child: Container(
+                alignment: Alignment.center,
+                width: 50,
+                height: 30,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    5.0,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      offset: const Offset(0.0, 0.0),
+                      blurRadius: 3.0,
+                      spreadRadius: 1.0,
+                      color: Colors.grey,
+                    ),
+                  ],
+                  color: Theme.of(context).accentColor,
+                ),
+                child: Text(
+                  'OK',
+                  style: TextStyle(
+                    fontFamily: 'Ubuntu',
+                    fontSize: 17,
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }

@@ -1,8 +1,10 @@
 import 'dart:ui';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:table_calendar/table_calendar.dart';
-
+import 'package:malibu/store/user.store.dart';
 class ClassScreen extends StatefulWidget {
   ClassScreen({Key key}) : super(key: key);
 
@@ -22,8 +24,17 @@ class _ClassScreenState extends State<ClassScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: SafeArea(
+    final UserMob _userMob = Provider.of<UserMob>(context);
+
+    return StreamBuilder<QuerySnapshot>(
+      stream: FirebaseFirestore.instance.collection('Classes').snapshots(),
+      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        print(snapshot.data.docs.first.get('hour'));
+
+        if (!snapshot.hasData) return CircularProgressIndicator();
+
+        return SingleChildScrollView(
+          child: SafeArea(
         child: Column(
           children: [
             Row(
@@ -299,7 +310,9 @@ class _ClassScreenState extends State<ClassScreen> {
             ),
           ],
         ),
-      ),
+      ),);     
+      }
     );
   }
 }
+

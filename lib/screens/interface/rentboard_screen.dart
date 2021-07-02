@@ -132,9 +132,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                               overflow: Overflow.visible,
                               children: [
                                 Align(
-                                  alignment: Alignment.topLeft,
-                                  //heightFactor: 13.5,
-                                  // widthFactor: 1.1,
+                                  alignment: Alignment.topLeft,                                  
                                   child: Padding(
                                     padding: const EdgeInsets.only(
                                         left: 10, top: 5, right: 10),
@@ -165,7 +163,6 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                       color: Theme.of(context).primaryColor,
                                       onPressed: () async {
                                         var userEmail = _userMob.user.email;
-
                                         FirebaseFirestore.instance
                                             .collection('Cart')
                                             .add({

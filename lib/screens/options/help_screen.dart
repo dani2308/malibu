@@ -9,63 +9,6 @@ class HelpScreen extends StatefulWidget {
 }
 
 class _HelpScreenState extends State<HelpScreen> {
-  createShowDialog(BuildContext context) {
-    return showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text(
-            'Ajuda',
-            style: TextStyle(
-              fontFamily: 'Ubuntu',
-            ),
-          ),
-          content: Text(
-            'Será redirecionado para o nosso Website.',
-            style: TextStyle(
-              fontFamily: 'Ubuntu',
-            ),
-          ),
-          actions: [
-            MaterialButton(
-              onPressed: () {
-                Navigator.of(context).pop('Ajuda');
-              },
-              child: Container(
-                alignment: Alignment.center,
-                width: 50,
-                height: 30,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    5.0,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      offset: const Offset(0.0, 0.0),
-                      blurRadius: 1.0,
-                      spreadRadius: 1.0,
-                      color: Colors.grey,
-                    ),
-                  ],
-                  color: Theme.of(context).primaryColor,
-                ),
-                child: Text(
-                  'OK',
-                  style: TextStyle(
-                    fontFamily: 'Ubuntu',
-                    fontSize: 17,
-                    color: Colors.white,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -145,3 +88,59 @@ class _HelpScreenState extends State<HelpScreen> {
     );
   }
 }
+createShowDialog(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(
+            'Ajuda',
+            style: TextStyle(
+              fontFamily: 'Ubuntu',
+            ),
+          ),
+          content: Text(
+            'Será redirecionado para o nosso Website.',
+            style: TextStyle(
+              fontFamily: 'Ubuntu',
+            ),
+          ),
+          actions: [
+            MaterialButton(
+              onPressed: () {
+                Navigator.of(context).pop('Ajuda');
+              },
+              child: Container(
+                alignment: Alignment.center,
+                width: 50,
+                height: 30,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    5.0,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      offset: const Offset(0.0, 0.0),
+                      blurRadius: 1.0,
+                      spreadRadius: 1.0,
+                      color: Colors.grey,
+                    ),
+                  ],
+                  color: Theme.of(context).primaryColor,
+                ),
+                child: Text(
+                  'OK',
+                  style: TextStyle(
+                    fontFamily: 'Ubuntu',
+                    fontSize: 17,
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }

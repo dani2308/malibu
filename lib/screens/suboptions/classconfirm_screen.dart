@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:malibu/models/classes_model.dart';
 
 class ClassConfirmScreen extends StatefulWidget {
@@ -9,12 +10,46 @@ class ClassConfirmScreen extends StatefulWidget {
 }
 
 class _ClassConfirmScreenState extends State<ClassConfirmScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    var androidInitialize = new AndroidInitializationSettings('ic_launcher');
+    var iOSInitialize = new IOSInitializationSettings();
+    var initializationSettings = new InitializationSettings(
+        android: androidInitialize, iOS: iOSInitialize);
+    localNotification = new FlutterLocalNotificationsPlugin();
+    localNotification.initialize(initializationSettings);
+  }
+
   String teacher1 = 'Mário';
   String teacher2 = 'Filipe';
   String type = 'Aulas para: Iniciantes e Avançados';
   String spot = 'Local: Matosinhos';
   String encounter = 'Ponto de Encontro: Malibu Escola de Surf';
   String hour = 'Horário: 10:00 às 11:30';
+
+  FlutterLocalNotificationsPlugin localNotification;
+  Future _showNotification() async {
+    var androidDetails = new AndroidNotificationDetails(
+      "channelId",
+      "Local Notification",
+      "Descrição",
+      importance: Importance.high,
+    );
+    var iosDetails = new IOSNotificationDetails();
+    var generalNotificationsDetails = new NotificationDetails(
+      android: androidDetails,
+      iOS: iosDetails,
+    );
+    await localNotification.show(
+      0,
+      "Aula Agendada!",
+      "A sua aula foi agendada, espere por confirmação por parte do professor responsável.",
+      generalNotificationsDetails,
+    );
+  }
+
   createShowDialog(BuildContext context) {
     return showDialog(
       context: context,
@@ -236,6 +271,7 @@ class _ClassConfirmScreenState extends State<ClassConfirmScreen> {
                         encounter,
                         hour,
                       );
+                      _showNotification();
                       Navigator.pushNamed(context, 'home');
                     },
                   ),

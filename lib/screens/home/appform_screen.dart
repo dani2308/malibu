@@ -15,63 +15,6 @@ enum Awnswer1 { yes, no }
 enum Gender { m, f }
 enum Swim { ns, m, s, b, mb }
 
-createShowDialog(BuildContext context, String title, String content) {
-  return showDialog(
-    context: context,
-    builder: (context) {
-      return AlertDialog(
-        title: Text(
-          title,
-          style: TextStyle(
-            fontFamily: 'Ubuntu',
-          ),
-        ),
-        content: Text(
-          content,
-          style: TextStyle(
-            fontFamily: 'Ubuntu',
-          ),
-        ),
-        actions: [
-          MaterialButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            child: Container(
-              alignment: Alignment.center,
-              width: 50,
-              height: 30,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(
-                  5.0,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    offset: const Offset(0.0, 0.0),
-                    blurRadius: 3.0,
-                    spreadRadius: 1.0,
-                    color: Colors.grey,
-                  ),
-                ],
-                color: Theme.of(context).accentColor,
-              ),
-              child: Text(
-                'Ok',
-                style: TextStyle(
-                  fontFamily: 'Ubuntu',
-                  fontSize: 17,
-                  color: Colors.white,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
-        ],
-      );
-    },
-  );
-}
-
 class _AppformScreenState extends State<AppformScreen> {
   Awnswer _site = Awnswer.yes;
   Awnswer1 _site1 = Awnswer1.no;
@@ -568,4 +511,61 @@ class _AppformScreenState extends State<AppformScreen> {
       ),
     );
   }
+}
+
+createShowDialog(BuildContext context, String title, String content) {
+  return showDialog(
+    context: context,
+    builder: (context) {
+      return AlertDialog(
+        title: Text(
+          title,
+          style: TextStyle(
+            fontFamily: 'Ubuntu',
+          ),
+        ),
+        content: Text(
+          content,
+          style: TextStyle(
+            fontFamily: 'Ubuntu',
+          ),
+        ),
+        actions: [
+          MaterialButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: Container(
+              alignment: Alignment.center,
+              width: 50,
+              height: 30,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(
+                  5.0,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    offset: const Offset(0.0, 0.0),
+                    blurRadius: 3.0,
+                    spreadRadius: 1.0,
+                    color: Colors.grey,
+                  ),
+                ],
+                color: Theme.of(context).accentColor,
+              ),
+              child: Text(
+                'Ok',
+                style: TextStyle(
+                  fontFamily: 'Ubuntu',
+                  fontSize: 17,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
+        ],
+      );
+    },
+  );
 }

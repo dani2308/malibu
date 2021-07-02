@@ -8,63 +8,6 @@ class PrivacyScreen extends StatefulWidget {
 }
 
 class _PrivacyScreenState extends State<PrivacyScreen> {
-  createShowDialog(BuildContext context, String title, String content) {
-    return showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text(
-            title,
-            style: TextStyle(
-              fontFamily: 'Ubuntu',
-            ),
-          ),
-          content: Text(
-            content,
-            style: TextStyle(
-              fontFamily: 'Ubuntu',
-            ),
-          ),
-          actions: [
-            MaterialButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: Container(
-                alignment: Alignment.center,
-                width: 50,
-                height: 30,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    5.0,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      offset: const Offset(0.0, 0.0),
-                      blurRadius: 1.0,
-                      spreadRadius: 1.0,
-                      color: Colors.grey,
-                    ),
-                  ],
-                  color: Theme.of(context).primaryColor,
-                ),
-                child: Text(
-                  'Ok',
-                  style: TextStyle(
-                    fontFamily: 'Ubuntu',
-                    fontSize: 17,
-                    color: Colors.white,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
   bool _value = true;
   @override
   Widget build(BuildContext context) {
@@ -213,35 +156,61 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
       ),
     );
   }
-}
-
-/* class Toggle extends StatefulWidget {
-  @override
-  PostState createState() => new PostState();
-}
-
-class PostState extends State<Toggle> {
-  bool toggled = false;
-
-  _pressed() {
-    setState(
-      () {
-        toggled = !toggled;
+  createShowDialog(BuildContext context, String title, String content) {
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(
+            title,
+            style: TextStyle(
+              fontFamily: 'Ubuntu',
+            ),
+          ),
+          content: Text(
+            content,
+            style: TextStyle(
+              fontFamily: 'Ubuntu',
+            ),
+          ),
+          actions: [
+            MaterialButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Container(
+                alignment: Alignment.center,
+                width: 50,
+                height: 30,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    5.0,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      offset: const Offset(0.0, 0.0),
+                      blurRadius: 1.0,
+                      spreadRadius: 1.0,
+                      color: Colors.grey,
+                    ),
+                  ],
+                  color: Theme.of(context).primaryColor,
+                ),
+                child: Text(
+                  'Ok',
+                  style: TextStyle(
+                    fontFamily: 'Ubuntu',
+                    fontSize: 17,
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ],
+        );
       },
     );
   }
+}
 
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: Icon(
-        toggled ? Icons.toggle_on : Icons.toggle_off_outlined,
-        color: toggled
-            ? Theme.of(context).accentColor
-            : Theme.of(context).accentColor,
-        size: 50,
-      ),
-      onPressed: () => _pressed(),
-    );
-  }
-}*/
