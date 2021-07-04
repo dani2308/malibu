@@ -140,7 +140,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   @override
-  Widget imageProfile() {
+  Widget imageProfile(String image) {
     return Align(
       alignment: Alignment.center,
       child: Padding(
@@ -160,7 +160,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               child: CircleAvatar(
                 backgroundImage: _imageFile == null
-                    ? AssetImage("assets/mii.png")
+                    ? Image.asset(image)
                     : FileImage(
                         File(
                           _imageFile.path,
@@ -299,7 +299,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ],
                     ),
-                    imageProfile(),
+                    imageProfile(_userMob.user.photoURL),
                     Align(
                       alignment: Alignment.center,
                       child: Padding(

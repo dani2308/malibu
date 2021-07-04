@@ -1,20 +1,29 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+class Post {
+  String id;
+  String comment;
+  String description;
+  String image;
+  int likes;
 
-class AppFormService {
-  submitForm(
-    String post,
-    String image,
-  ) async {
-    CollectionReference post = FirebaseFirestore.instance.collection('Post');
+  Post({this.id, this.comment, this.description, this.image, this.likes});
 
-    print("Chegou aqui");
-    await post.add(
-      {
-        'post': post,
-        'image': image,
-      },
-    );
+  Post.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    comment = json['comment'];
+    description = json['description'];
+    image = json['image'];
+    likes = json['likes'];
+  }
 
-    print("Chegou key");
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+
+    data['id'] = this.id;
+    data['comment'] = this.comment;
+    data['description'] = this.description;
+    data['image'] = this.image;
+    data['likes'] = this.likes;
+
+    return data;
   }
 }

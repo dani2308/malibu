@@ -22,6 +22,8 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
       );
     }
 
+    bool liked = false;
+
     final UserMob _userMob = Provider.of<UserMob>(context);
 
     return StreamBuilder<QuerySnapshot>(
@@ -132,7 +134,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                               overflow: Overflow.visible,
                               children: [
                                 Align(
-                                  alignment: Alignment.topLeft,                                  
+                                  alignment: Alignment.topLeft,
                                   child: Padding(
                                     padding: const EdgeInsets.only(
                                         left: 10, top: 5, right: 10),
@@ -140,7 +142,7 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 10),
+                                  padding: const EdgeInsets.only(top: 30),
                                   child: Align(
                                     alignment: Alignment.center,
                                     child: Image.network(
@@ -159,12 +161,47 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   child: IconButton(
-                                      icon: Icon(Icons.add),
-                                      color: Theme.of(context).primaryColor,
+                                    icon: Icon(Icons.add),
+                                    color: Theme.of(context).primaryColor,
+                                    onPressed: () async {
+                                      var userEmail = _userMob.user.email;
+                                      FirebaseFirestore.instance
+                                          .collection('Cart')
+                                          .add({
+                                        'user_email': userEmail,
+                                        'product': {
+                                          'name': board.get('name'),
+                                          'description':
+                                              board.get('description'),
+                                          'image': board.get('image'),
+                                          'id': board.get('id'),
+                                          'price': board.get('price')
+                                        }
+                                      }).then((value) {
+                                        Navigator.popAndPushNamed(
+                                            context, 'shopbag');
+                                      });
+                                    },
+                                  ),
+                                ),
+                                Row(
+                                  children: [
+                                    IconButton(
+                                      icon: Icon(
+                                        liked
+                                            ? Icons.favorite
+                                            : Icons.favorite_border,
+                                        color: liked
+                                            ? Theme.of(context).accentColor
+                                            : Theme.of(context).primaryColor,
+                                      ),
                                       onPressed: () async {
+                                        setState(() {
+                                          liked = !liked;
+                                        });
                                         var userEmail = _userMob.user.email;
                                         FirebaseFirestore.instance
-                                            .collection('Cart')
+                                            .collection('Favs')
                                             .add({
                                           'user_email': userEmail,
                                           'product': {
@@ -172,17 +209,15 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
                                             'description':
                                                 board.get('description'),
                                             'image': board.get('image'),
-                                            'id': board.get('id')
+                                            'id': board.get('id'),
+                                            'price': board.get('price')
                                           }
                                         }).then((value) {
                                           Navigator.popAndPushNamed(
-                                              context, 'shopbag');
+                                              context, 'favourites');
                                         });
-                                      }),
-                                ),
-                                Row(
-                                  children: [
-                                    Post(),
+                                      },
+                                    ),
                                   ],
                                 ),
                               ],
@@ -203,34 +238,6 @@ class _RentBoardScreenState extends State<RentBoardScreen> {
           ),
         );
       },
-    );
-  }
-}
-
-class Post extends StatefulWidget {
-  @override
-  PostState createState() => new PostState();
-}
-
-class PostState extends State<Post> {
-  bool liked = false;
-
-  _pressed() {
-    setState(() {
-      liked = !liked;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: Icon(
-        liked ? Icons.favorite : Icons.favorite_border,
-        color: liked
-            ? Theme.of(context).accentColor
-            : Theme.of(context).primaryColor,
-      ),
-      onPressed: () => _pressed(),
     );
   }
 }

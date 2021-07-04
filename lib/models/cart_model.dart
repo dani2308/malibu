@@ -1,24 +1,29 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+class Cart {
+  String id;
+  String name;
+  String description;
+  String image;
+  int price;
 
-class AppFormService {
-  submitForm(
-    String image,
-    String name,
-    double price,
-    String description,
-  ) async {
-    CollectionReference boards = FirebaseFirestore.instance.collection('Cart');
+  Cart({this.id, this.name, this.description, this.image, this.price});
 
-    print("Chegou aqui");
-    await boards.add(
-      {
-        'image': image,
-        'name': name,
-        'price': price,
-        'description': description,
-      },
-    );
+  Cart.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    name = json['name'];
+    description = json['description'];
+    image = json['image'];
+    price = json['price'];
+  }
 
-    print("Chegou key");
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+
+    data['id'] = this.id;
+    data['name'] = this.name;
+    data['description'] = this.description;
+    data['image'] = this.image;
+    data['price'] = this.price;
+
+    return data;
   }
 }

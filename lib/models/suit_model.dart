@@ -1,16 +1,18 @@
-class Suits {
+class Favs {
   String id;
   String name;
   String description;
   String image;
+  int price;
 
-  Suits({this.id, this.name, this.description, this.image});
+  Favs({this.id, this.name, this.description, this.image, this.price});
 
-  Suits.fromJson(Map<String, dynamic> json) {
+  Favs.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     description = json['description'];
     image = json['image'];
+    price = json['price'];
   }
 
   Map<String, dynamic> toJson() {
@@ -20,6 +22,7 @@ class Suits {
     data['name'] = this.name;
     data['description'] = this.description;
     data['image'] = this.image;
+    data['price'] = this.price;
 
     return data;
   }

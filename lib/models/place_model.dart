@@ -1,4 +1,4 @@
-class Spot {
+class Place {
   String id;
   String spot;
   String unit;
@@ -10,7 +10,7 @@ class Spot {
   String wind;
   String video;
 
-  Spot({
+  Place({
     this.id,
     this.spot,
     this.unit,
@@ -23,7 +23,7 @@ class Spot {
     this.video,
   });
 
-  Spot.fromJson(Map<String, dynamic> json) {
+  Place.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     spot = json['spot'];
     unit = json['unit'];

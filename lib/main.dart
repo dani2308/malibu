@@ -2,13 +2,19 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:malibu/models/board_model.dart';
+import 'package:malibu/models/product_model.dart';
 import 'package:malibu/providers/theme_provider.dart';
 import 'package:malibu/screens/auth/authentication.dart';
 import 'package:provider/provider.dart';
+import 'models/cart_model.dart';
 import 'routes.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 import 'package:malibu/store/user.store.dart';
+import 'models/location_model.dart';
+import 'package:malibu/models/place_model.dart';
+import 'package:malibu/models/spots_model.dart';
 
 final UserMob userMob = UserMob();
 

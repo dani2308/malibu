@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:malibu/models/product_model.dart';
 
 class BoardRentChooseScreen extends StatefulWidget {
-  BoardRentChooseScreen({Key key}) : super(key: key);
+  final String productId;
+  BoardRentChooseScreen({this.productId});
 
   @override
   _BoardRentChooseScreenState createState() => _BoardRentChooseScreenState();

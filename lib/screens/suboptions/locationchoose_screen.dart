@@ -96,34 +96,63 @@ class _LocationChooseScreenState extends State<LocationChooseScreen> {
                   Column(
                     children: [
                       for (var spot in snapshot.data.docs) ...[
-                        Container(
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: Padding(
-                              padding: EdgeInsets.only(top: 30),
-                              child: Text(
-                                spot.get('spot'),
-                                style: TextStyle(
-                                  fontFamily: 'Ubuntu',
-                                  fontSize: 20,
+                        FlatButton(
+                          child: Column(
+                            children: [
+                              Container(
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(top: 30),
+                                    child: Text(
+                                      spot.get('spot'),
+                                      style: TextStyle(
+                                          fontFamily: 'Ubuntu',
+                                          fontSize: 20,
+                                          color: Colors.black),
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment(2, 0.0),
-                          child: Padding(
-                            padding: EdgeInsets.only(top: 30),
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 10.0),
-                              child: Container(
-                                height: 1.0,
-                                width: 355.0,
-                                color: Colors.grey[300],
+                              Container(
+                                alignment: Alignment(2, 0.0),
+                                child: Padding(
+                                  padding: EdgeInsets.only(top: 30),
+                                  child: Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 10.0),
+                                    child: Container(
+                                      height: 1.0,
+                                      width: 355.0,
+                                      color: Colors.grey[300],
+                                    ),
+                                  ),
+                                ),
                               ),
-                            ),
+                            ],
                           ),
+                          onPressed: () async {
+                            var userEmail = _userMob.user.email;
+                            FirebaseFirestore.instance
+                                .collection('Location')
+                                .add({
+                              'user_email': userEmail,
+                              'place': {
+                                'energy': spot.get('energy'),
+                                'high': spot.get('high'),
+                                'low': spot.get('low'),
+                                'period': spot.get('period'),
+                                'size': spot.get('size'),
+                                'unit': spot.get('unit'),
+                                'video': spot.get('video'),
+                                'wind': spot.get('wind'),
+                                'spot': spot.get('spot'),
+                                'id': spot.get('id')
+                              }
+                            }).then((value) {
+                              Navigator.popAndPushNamed(context, 'home');
+                            });
+                          },
                         ),
                       ],
                     ],

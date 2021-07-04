@@ -76,8 +76,15 @@ class _LoginScreenState extends State<LoginScreen> {
                               right: 50,
                             ),
                             child: TextFormField(
-                              validator: (value) =>
-                                  value.isEmpty ? 'Insira um email' : null,
+                              validator: (value) {
+                                final bool emailValid = RegExp(
+                                        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                    .hasMatch(value);
+
+                                return !emailValid
+                                    ? 'O email não é válido'
+                                    : null;
+                              },
                               controller: emailController,
                               decoration: InputDecoration(
                                 labelText: 'Email',
@@ -101,9 +108,11 @@ class _LoginScreenState extends State<LoginScreen> {
                               right: 50,
                             ),
                             child: TextFormField(
-                              validator: (value) => value.length < 6
-                                  ? 'Insira uma palavra passe com mais de 6 caracteres'
-                                  : null,
+                              validator: (value) {
+                                return value.length < 8
+                                    ? 'A password deve ter pelo menos 8 carateres'
+                                    : null;
+                              },
                               controller: passwordController,
                               decoration: InputDecoration(
                                 labelText: 'Palavra-passe',
@@ -167,13 +176,16 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           onPressed: () async {
                             if (_formkey.currentState.validate()) {
-                              print(email);
-                              print(password);
-                            }
-                            final isAuthenticated =
-                                await LocalAuthApi.authenticate();
-                            if (isAuthenticated) {
-                              Navigator.pushNamed(context, 'home');
+                              final isAuthenticated =
+                                  await LocalAuthApi.authenticate();
+                              if (isAuthenticated) {
+                                Navigator.pushNamed(context, 'home');
+                              } else {
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(SnackBar(
+                                  content: Text("Dedinho inválido"),
+                                ));
+                              }
                             }
                           },
                         ),
@@ -200,25 +212,28 @@ class _LoginScreenState extends State<LoginScreen> {
                                 child: TextButton(
                                   child: Icon(Icons.arrow_forward,
                                       color: Colors.white),
-                                  onPressed: () {
-                                    final String email =
-                                        emailController.text.trim();
-                                    final String password =
-                                        passwordController.text.trim();
+                                  onPressed: () async {
+                                    if (_formkey.currentState.validate()) {
+                                      final String email =
+                                          emailController.text.trim();
+                                      final String password =
+                                          passwordController.text.trim();
 
-                                    if (email.isEmpty) {
-                                      print("Email is Empty");
-                                    } else {
-                                      if (password.isEmpty) {
-                                        print("Password is Empty");
+                                      String authenticated = await context
+                                          .read<AuthenticationService>()
+                                          .signIn(
+                                            email,
+                                            password,
+                                          );
+
+                                      if (authenticated == 'Signed in') {
+                                        Navigator.popAndPushNamed(context, 'home');
                                       } else {
-                                        context
-                                            .read<AuthenticationService>()
-                                            .signIn(
-                                              email,
-                                              password,
-                                            );
-                                        Navigator.pushNamed(context, 'home');
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(SnackBar(
+                                          content: Text(
+                                              "Ohhh, o utilizador não existe :("),
+                                        ));
                                       }
                                     }
                                   },

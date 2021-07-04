@@ -1,5 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 import 'package:malibu/screens/home/appform_screen.dart';
+import 'package:provider/provider.dart';
+import 'package:malibu/store/user.store.dart';
 
 class AppFormService {
   submitForm(
@@ -9,6 +12,7 @@ class AppFormService {
     Gender gender,
     Awnswer awnswer,
     Awnswer1 awnswer1,
+    String email,
   ) async {
     CollectionReference users = FirebaseFirestore.instance.collection('Users');
 
@@ -21,6 +25,7 @@ class AppFormService {
         'new_in_school': awnswer.toString(),
         'practices_sport': awnswer1.toString(),
         'swim': swim.toString(),
+        'email': email.toString(),
       },
     );
 
