@@ -11,7 +11,7 @@ class ForecastDetailScreen extends StatefulWidget {
 }
 
 class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
-  var hour = 0;
+  var hour = 14;
   @override
   Widget build(BuildContext context) {
     final UserMob _userMob = Provider.of<UserMob>(context);
@@ -50,13 +50,13 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                         Text(
                           'Segunda',
                           style: TextStyle(fontSize: 17),
-                        ),                        
+                        ),
                         Text(
-                          'Canidelo',
+                          'Matosinhos',
                           style: TextStyle(fontSize: 17),
                         ),
                         Text(
-                          '12/02/2021',
+                          '05/07/2021',
                           style: TextStyle(fontSize: 17),
                         ),
                       ],
@@ -115,7 +115,7 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                         child: Column(
                           children: [
                             Text(
-                              '2.1 m',
+                              '0.9 m',
                               style:
                                   TextStyle(fontFamily: 'Ubuntu', fontSize: 30),
                             ),
@@ -167,7 +167,7 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                             child: Row(
                               children: [
                                 Text(
-                                  'Vento SSW 20',
+                                  'Vento SSW 10',
                                   style: TextStyle(
                                     fontFamily: 'Ubuntu',
                                     fontSize: 17,
@@ -239,7 +239,7 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
                                       ),
                                     ),
                                     Text(
-                                      'Maré Baixa 8:27',
+                                      'Maré Baixa 8:30',
                                       style: TextStyle(
                                         fontSize: 17,
                                         fontFamily: 'Ubuntu',
@@ -315,6 +315,7 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
       },
     );
   }
+
   createShowDialog(BuildContext context, String title, String content) {
     return showDialog(
       context: context,
@@ -371,7 +372,4 @@ class _ForecastDetailScreenState extends State<ForecastDetailScreen> {
       },
     );
   }
-
 }
-
-

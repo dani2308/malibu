@@ -34,7 +34,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 ],
               ),
               Padding(
-                padding: EdgeInsets.only(top: 30, bottom: 30, left: 20),
+                padding: EdgeInsets.only(top: 30, bottom: 30),
                 child: Align(
                   alignment: Alignment.center,
                   child: Column(
@@ -45,19 +45,15 @@ class _LanguageScreenState extends State<LanguageScreen> {
                           children: [
                             Padding(
                               padding: EdgeInsets.only(right: 10),
-                              child: Icon(
-                                Icons.search_outlined,
+                              child: IconButton(
+                                icon: Icon(Icons.search_outlined),
+                                onPressed: () {
+                                  showSearch(
+                                    context: context,
+                                    delegate: DataSearch(),
+                                  );
+                                },
                                 color: Theme.of(context).primaryColor,
-                              ),
-                            ),
-                            Flexible(
-                              child: TextFormField(
-                                decoration: InputDecoration(
-                                  hintText: 'Pesquisar por um Idioma',
-                                ),
-                                keyboardType: TextInputType.text,
-                                style: TextStyle(
-                                    fontSize: 15, fontFamily: 'Ubuntu'),
                               ),
                             ),
                           ],
@@ -68,7 +64,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 20, left: 40, right: 20),
+                padding: EdgeInsets.only(top: 10, left: 40, right: 20),
                 child: FlatButton(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -381,6 +377,81 @@ class _LanguageScreenState extends State<LanguageScreen> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class DataSearch extends SearchDelegate<String> {
+  final languages = [
+    "Português",
+    "Alemão",
+    "Chinês",
+    "Espanhol",
+    "Francês",
+    "Inglês",
+    "Italiano",
+  ];
+
+  final recentLanguages = [
+    "Português",
+    "Inglês",
+    "Espanhol",
+  ];
+
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    // TODO: implement buildActions
+
+    return [
+      IconButton(
+          onPressed: () {
+            query = "";
+          },
+          icon: Icon(Icons.clear))
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    // TODO: implement buildLeading
+    return IconButton(
+      onPressed: () {
+        close(context, null);
+      },
+      icon: AnimatedIcon(
+        icon: AnimatedIcons.menu_arrow,
+        progress: transitionAnimation,
+      ),
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    // TODO: implement buildResults
+    throw UnimplementedError();
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    // TODO: implement buildSuggestions
+    final suggestionList = query.isEmpty
+        ? recentLanguages
+        : languages
+            .where(
+              (p) => p.startsWith(query),
+            )
+            .toList();
+
+    return ListView.builder(
+      itemBuilder: (context, index) => ListTile(
+        leading: Icon(
+          Icons.translate,
+        ),
+        title: Text(
+          suggestionList[index],
+        ),
+      ),
+      itemCount: suggestionList.length,
     );
   }
 }

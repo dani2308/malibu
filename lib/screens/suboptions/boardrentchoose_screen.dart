@@ -1,6 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
-import 'package:malibu/models/product_model.dart';
+import 'package:malibu/models/board_model.dart';
+import 'package:malibu/store/user.store.dart';
+import 'package:provider/provider.dart';
 
 class BoardRentChooseScreen extends StatefulWidget {
   final String productId;
@@ -13,135 +16,157 @@ class BoardRentChooseScreen extends StatefulWidget {
 class _BoardRentChooseScreenState extends State<BoardRentChooseScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  FlatButton(
-                    child: Icon(
-                      Icons.arrow_back_ios_rounded,
-                      color: Theme.of(context).accentColor,
-                    ),
-                    onPressed: () => Navigator.pushNamed(context, 'home'),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              SizedBox(
-                height: 300.0,
-                child: Carousel(
-                  images: [
-                    Image.asset(
-                      'assets/board.png',
-                      height: 10,
-                    ),
-                    Image.asset(
-                      'assets/board.png',
-                      height: 10,
-                    ),
-                    Image.asset(
-                      'assets/board.png',
-                      height: 10,
-                    ),
-                    Image.asset(
-                      'assets/board.png',
-                      height: 10,
-                    ),
-                    Image.asset(
-                      'assets/board.png',
-                      height: 10,
-                    ),
-                  ],
-                  dotSize: 10.0,
-                  indicatorBgPadding: 8.0,
-                  animationDuration: Duration(seconds: 2),
-                  dotBgColor: Colors.transparent,
-                  dotColor: Theme.of(context).accentColor,
-                  dotIncreasedColor: Theme.of(context).accentColor,
+    final UserMob _userMob = Provider.of<UserMob>(context);
+    var userEmail = _userMob.user.email;
+
+    Widget _buildLoadingBar() {
+      return const Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+    }
+
+    return StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance
+            .collection('Boards')
+            .where('user_email', isEqualTo: userEmail)
+            .snapshots(),
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (!snapshot.hasData)
+            return _buildLoadingBar();
+          else {
+            List<Board> boards = List<Board>();
+            if (boards == null) {
+              print('daniel');
+            }
+
+            for (var item in snapshot.data.docs) {
+              boards.add(
+                Board.fromJson(
+                  item.get('description'),
                 ),
-              ),
-              SizedBox(
-                height: 52.0,
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 30),
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.55,
-                decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor,
-                  border: Border.all(
-                    color: Theme.of(context).primaryColor,
-                  ),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular((50)),
-                    topRight: Radius.circular((50)),
-                  ),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 40.0,
-                    ),
-                    Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 20),
-                          child: Text(
-                            "SoftBoard Ocean - 7'0'",
-                            style: TextStyle(
-                              fontFamily: 'Ubuntu',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 17,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                        Post(),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 50.0,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        left: 15.0,
-                        right: 30.0,
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              );
+            }
+
+            return Scaffold(
+              body: SingleChildScrollView(
+                child: SafeArea(
+                  child: Column(
+                    children: [
+                      Row(
                         children: [
-                          CountQntd(),
+                          FlatButton(
+                            child: Icon(
+                              Icons.arrow_back_ios_rounded,
+                              color: Theme.of(context).accentColor,
+                            ),
+                            onPressed: () =>
+                                Navigator.pushNamed(context, 'home'),
+                          ),
                         ],
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: 50.0,
-                        left: 10.0,
+                      SizedBox(
+                        height: 20,
                       ),
-                      child: Text(
-                        "Hello world, aqui está a minha descrição",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
+                      for (Board board in boards) ...[
+                        SizedBox(
+                          height: 300.0,
+                          child: Carousel(
+                            images: [
+                              board.image,
+                              board.image,
+                              board.image,
+                            ],
+                            dotSize: 10.0,
+                            indicatorBgPadding: 8.0,
+                            animationDuration: Duration(seconds: 2),
+                            dotBgColor: Colors.transparent,
+                            dotColor: Theme.of(context).accentColor,
+                            dotIncreasedColor: Theme.of(context).accentColor,
+                          ),
                         ),
-                      ),
-                    ),
-                  ],
+                        SizedBox(
+                          height: 52.0,
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 30),
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.height * 0.55,
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).primaryColor,
+                            border: Border.all(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular((50)),
+                              topRight: Radius.circular((50)),
+                            ),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                height: 40.0,
+                              ),
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 20),
+                                    child: Text(
+                                      board.name,
+                                      style: TextStyle(
+                                        fontFamily: 'Ubuntu',
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 17,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                  Post(),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 50.0,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                  left: 15.0,
+                                  right: 30.0,
+                                ),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    CountQntd(),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                  top: 50.0,
+                                  left: 10.0,
+                                ),
+                                child: Text(
+                                  board.description,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
                 ),
               ),
-            ],
-          ),
-        ),
-      ),
-    );
+            );
+          }
+        });
   }
 }
 

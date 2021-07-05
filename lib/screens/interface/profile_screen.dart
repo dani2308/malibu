@@ -22,7 +22,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   bool _value = false;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     var androidInitialize = new AndroidInitializationSettings('ic_launcher');
     var iOSInitialize = new IOSInitializationSettings();
@@ -140,7 +139,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   @override
-  Widget imageProfile(String image) {
+  Widget imageProfile() {
     return Align(
       alignment: Alignment.center,
       child: Padding(
@@ -160,12 +159,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               child: CircleAvatar(
                 backgroundImage: _imageFile == null
-                    ? Image.asset(image)
-                    : FileImage(
-                        File(
-                          _imageFile.path,
-                        ),
-                      ),
+                    ? AssetImage("assets/mii.png")
+                    : FileImage(File(_imageFile.path)),
               ),
             ),
             Positioned(
@@ -276,435 +271,427 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     final UserMob _userMob = Provider.of<UserMob>(context);
 
-    return StreamBuilder<QuerySnapshot>(
-        stream: FirebaseFirestore.instance.collection('Users').snapshots(),
-        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          print(snapshot.data.docs.first.get('image'));
+    // return StreamBuilder<QuerySnapshot>(
+    //   stream: FirebaseFirestore.instance
+    //       .collection('Users')
+    //       .where('email', isEqualTo: _userMob.user.email)
+    //       .snapshots(),
+    //   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+    //     if (!snapshot.hasData) return CircularProgressIndicator();
 
-          if (!snapshot.hasData) return CircularProgressIndicator();
-
-          return Scaffold(
-            body: SingleChildScrollView(
-              child: SafeArea(
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 20, top: 30),
-                          child: Image.asset(
-                            'assets/logo_text_color.png',
-                            width: 220,
-                          ),
-                        ),
-                      ],
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 20, top: 30),
+                    child: Image.asset(
+                      'assets/logo_text_color.png',
+                      width: 220,
                     ),
-                    imageProfile(_userMob.user.photoURL),
-                    Align(
-                      alignment: Alignment.center,
-                      child: Padding(
-                        padding: EdgeInsets.only(top: 15),
-                        child: Text(
-                          "${_userMob.user.email}",
-                          style: TextStyle(
-                              fontFamily: 'Ubuntu',
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600),
-                        ),
-                      ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Align(
-                          child: Padding(
-                            padding: EdgeInsets.only(top: 15),
-                            child: Container(
-                              height: 20,
-                              width: 110,
-                              child: TextField(
-                                textAlign: TextAlign.center,
-                                decoration: InputDecoration(
-                                  hintText: '${_userMob.user.email}',
-                                ),
-                                style: TextStyle(
-                                  fontFamily: 'Ubuntu',
-                                  fontSize: 15,
-                                ),
-                              ),
-                            ),
+                  ),
+                ],
+              ),
+              imageProfile(),
+              Align(
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: EdgeInsets.only(top: 15),
+                  child: Text(
+                    "${_userMob.user.email}",
+                    style: TextStyle(
+                        fontFamily: 'Ubuntu',
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Align(
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 15),
+                      child: Container(
+                        height: 20,
+                        width: 110,
+                        child: TextField(
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                            hintText: '${_userMob.user.email}',
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 15, left: 5),
-                          child: Icon(
-                            Icons.create_rounded,
-                            size: 20,
-                            color: Theme.of(context).primaryColor,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Align(
-                      alignment: Alignment.center,
-                      child: Padding(
-                        padding: EdgeInsets.only(top: 15),
-                        child: Text(
-                          'Aluno avançado',
                           style: TextStyle(
                             fontFamily: 'Ubuntu',
                             fontSize: 15,
-                            color: Theme.of(context).accentColor,
                           ),
                         ),
                       ),
                     ),
-                    Align(
-                      alignment: Alignment.center,
-                      child: Padding(
-                        padding: EdgeInsets.only(top: 5),
-                        child: Text(
-                          'Frequenta a ecola desde',
-                          style: TextStyle(
-                              fontFamily: 'Ubuntu',
-                              fontSize: 15,
-                              color: Theme.of(context).accentColor),
-                        ),
-                      ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 15, left: 5),
+                    child: Icon(
+                      Icons.create_rounded,
+                      size: 20,
+                      color: Theme.of(context).primaryColor,
                     ),
-                    Align(
-                      alignment: Alignment.center,
-                      child: Padding(
-                        padding: EdgeInsets.only(top: 5),
-                        child: Text(
-                          '16/09/2018',
-                          style: TextStyle(
-                              fontFamily: 'Ubuntu',
-                              fontSize: 15,
-                              color: Theme.of(context).accentColor),
-                        ),
-                      ),
+                  ),
+                ],
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: EdgeInsets.only(top: 15),
+                  child: Text(
+                    'Aluno avançado',
+                    style: TextStyle(
+                      fontFamily: 'Ubuntu',
+                      fontSize: 15,
+                      color: Theme.of(context).accentColor,
                     ),
-                    Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 40, top: 50),
-                          child: Container(
-                            width: 50,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50.0),
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            child: Icon(
-                              Icons.notifications_none,
-                              color: Colors.white,
-                              size: 26,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 45, left: 20),
-                          child: Text(
-                            'Notificações',
-                            style:
-                                TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 45, left: 75),
-                          child: Switch.adaptive(
-                            value: _value,
-                            onChanged: (bool value) {
-                              setState(
-                                () {
-                                  _value = value;
-                                  if (value == true) {
-                                    _showNotification();
-                                  }
-                                },
-                              );
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 40, top: 20),
-                          child: Container(
-                            width: 50,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50.0),
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            child: Icon(
-                              Icons.bedtime_outlined,
-                              color: Colors.white,
-                              size: 26,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 15, left: 20),
-                          child: Text(
-                            'Modo Escuro',
-                            style:
-                                TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 68),
-                          child: ChangeThemeButtonWidget(),
-                        ),
-                      ],
-                    ),
-                    FlatButton(
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 25, top: 20),
-                              child: Container(
-                                width: 50,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50.0),
-                                  color: Theme.of(context).primaryColor,
-                                ),
-                                child: Icon(
-                                  Icons.lock_outlined,
-                                  size: 26,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(top: 15, left: 20),
-                              child: Text(
-                                'Privacidade',
-                                style: TextStyle(
-                                    fontFamily: 'Ubuntu', fontSize: 20),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(top: 15, left: 100),
-                              child: Icon(
-                                Icons.arrow_forward_ios_rounded,
-                                size: 30,
-                                color: Theme.of(context).accentColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                        onPressed: () =>
-                            Navigator.pushNamed(context, 'privacy')),
-                    FlatButton(
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 25, top: 20),
-                            child: Container(
-                              width: 50,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50.0),
-                                color: Theme.of(context).primaryColor,
-                              ),
-                              child: Icon(
-                                Icons.translate_outlined,
-                                size: 26,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 15, left: 20),
-                            child: Text(
-                              'Idioma',
-                              style:
-                                  TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 15, left: 142),
-                            child: Icon(
-                              Icons.arrow_forward_ios_rounded,
-                              size: 30,
-                              color: Theme.of(context).accentColor,
-                            ),
-                          ),
-                        ],
-                      ),
-                      onPressed: () => Navigator.pushNamed(context, 'language'),
-                    ),
-                    FlatButton(
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 25, top: 20),
-                            child: Container(
-                              width: 50,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50.0),
-                                color: Theme.of(context).primaryColor,
-                              ),
-                              child: Icon(
-                                Icons.verified_user_outlined,
-                                size: 26,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 15, left: 20),
-                            child: Text(
-                              'Segurança',
-                              style:
-                                  TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 15, left: 108),
-                            child: Icon(
-                              Icons.arrow_forward_ios_rounded,
-                              size: 30,
-                              color: Theme.of(context).accentColor,
-                            ),
-                          ),
-                        ],
-                      ),
-                      onPressed: () => Navigator.pushNamed(context, 'security'),
-                    ),
-                    FlatButton(
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 25, top: 20),
-                            child: Container(
-                              width: 50,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50.0),
-                                color: Theme.of(context).primaryColor,
-                              ),
-                              child: Icon(
-                                Icons.help_outline,
-                                size: 26,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 15, left: 20),
-                            child: Text(
-                              'Ajuda',
-                              style:
-                                  TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 15, left: 150),
-                            child: Icon(
-                              Icons.arrow_forward_ios_rounded,
-                              size: 30,
-                              color: Theme.of(context).accentColor,
-                            ),
-                          ),
-                        ],
-                      ),
-                      onPressed: () => Navigator.pushNamed(context, 'help'),
-                    ),
-                    FlatButton(
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 25, top: 20),
-                            child: Container(
-                              width: 50,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50.0),
-                                color: Theme.of(context).primaryColor,
-                              ),
-                              child: Icon(
-                                Icons.shopping_bag_outlined,
-                                size: 26,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 15, left: 20),
-                            child: Text(
-                              'Packs',
-                              style:
-                                  TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 15, left: 150),
-                            child: Icon(
-                              Icons.arrow_forward_ios_rounded,
-                              size: 30,
-                              color: Theme.of(context).accentColor,
-                            ),
-                          ),
-                        ],
-                      ),
-                      onPressed: () => Navigator.pushNamed(context, 'pack'),
-                    ),
-                    SizedBox(
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: EdgeInsets.only(top: 5),
+                  child: Text(
+                    'Frequenta a ecola desde',
+                    style: TextStyle(
+                        fontFamily: 'Ubuntu',
+                        fontSize: 15,
+                        color: Theme.of(context).accentColor),
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: EdgeInsets.only(top: 5),
+                  child: Text(
+                    '16/09/2018',
+                    style: TextStyle(
+                        fontFamily: 'Ubuntu',
+                        fontSize: 15,
+                        color: Theme.of(context).accentColor),
+                  ),
+                ),
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 40, top: 50),
+                    child: Container(
+                      width: 50,
                       height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50.0),
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      child: Icon(
+                        Icons.notifications_none,
+                        color: Colors.white,
+                        size: 26,
+                      ),
                     ),
-                    Align(
-                      alignment: Alignment.center,
-                      child: Container(
-                        width: 170,
-                        height: 40,
-                        decoration: BoxDecoration(
-                          border: Border.all(
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 45, left: 20),
+                    child: Text(
+                      'Notificações',
+                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 45, left: 75),
+                    child: Switch.adaptive(
+                      value: _value,
+                      onChanged: (bool value) {
+                        setState(
+                          () {
+                            _value = value;
+                            if (value == true) {
+                              _showNotification();
+                            }
+                          },
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 40, top: 20),
+                    child: Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50.0),
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      child: Icon(
+                        Icons.bedtime_outlined,
+                        color: Colors.white,
+                        size: 26,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 15, left: 20),
+                    child: Text(
+                      'Modo Escuro',
+                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 68),
+                    child: ChangeThemeButtonWidget(),
+                  ),
+                ],
+              ),
+              FlatButton(
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 25, top: 20),
+                        child: Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50.0),
                             color: Theme.of(context).primaryColor,
                           ),
-                          borderRadius: BorderRadius.circular(10),
-                          color: Theme.of(context).primaryColor,
-                          boxShadow: [
-                            BoxShadow(
-                              offset: const Offset(0.0, 0.0),
-                              blurRadius: 1.0,
-                              spreadRadius: 1.0,
-                              color: Colors.grey,
-                            ),
-                          ],
-                        ),
-                        alignment: Alignment.center,
-                        child: FlatButton(
-                          child: Text(
-                            'Terminar Sessão',
-                            style: TextStyle(
-                              fontSize: 17,
-                              color: Colors.white,
-                              fontFamily: 'Ubuntu',
-                            ),
+                          child: Icon(
+                            Icons.lock_outlined,
+                            size: 26,
+                            color: Colors.white,
                           ),
-                          onPressed: () {
-                            FirebaseAuth.instance.signOut();
-                            Navigator.popAndPushNamed(context, 'login');
-                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 15, left: 20),
+                        child: Text(
+                          'Privacidade',
+                          style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 15, left: 100),
+                        child: Icon(
+                          Icons.arrow_forward_ios_rounded,
+                          size: 30,
+                          color: Theme.of(context).accentColor,
+                        ),
+                      ),
+                    ],
+                  ),
+                  onPressed: () => Navigator.pushNamed(context, 'privacy')),
+              FlatButton(
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 25, top: 20),
+                      child: Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50.0),
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        child: Icon(
+                          Icons.translate_outlined,
+                          size: 26,
+                          color: Colors.white,
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: 20,
+                    Padding(
+                      padding: EdgeInsets.only(top: 15, left: 20),
+                      child: Text(
+                        'Idioma',
+                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 15, left: 142),
+                      child: Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        size: 30,
+                        color: Theme.of(context).accentColor,
+                      ),
                     ),
                   ],
                 ),
+                onPressed: () => Navigator.pushNamed(context, 'language'),
               ),
-            ),
-          );
-        });
+              FlatButton(
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 25, top: 20),
+                      child: Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50.0),
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        child: Icon(
+                          Icons.verified_user_outlined,
+                          size: 26,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 15, left: 20),
+                      child: Text(
+                        'Segurança',
+                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 15, left: 108),
+                      child: Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        size: 30,
+                        color: Theme.of(context).accentColor,
+                      ),
+                    ),
+                  ],
+                ),
+                onPressed: () => Navigator.pushNamed(context, 'security'),
+              ),
+              FlatButton(
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 25, top: 20),
+                      child: Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50.0),
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        child: Icon(
+                          Icons.help_outline,
+                          size: 26,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 15, left: 20),
+                      child: Text(
+                        'Ajuda',
+                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 15, left: 150),
+                      child: Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        size: 30,
+                        color: Theme.of(context).accentColor,
+                      ),
+                    ),
+                  ],
+                ),
+                onPressed: () => Navigator.pushNamed(context, 'help'),
+              ),
+              FlatButton(
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 25, top: 20),
+                      child: Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50.0),
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        child: Icon(
+                          Icons.shopping_bag_outlined,
+                          size: 26,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 15, left: 20),
+                      child: Text(
+                        'Packs',
+                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 15, left: 150),
+                      child: Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        size: 30,
+                        color: Theme.of(context).accentColor,
+                      ),
+                    ),
+                  ],
+                ),
+                onPressed: () => Navigator.pushNamed(context, 'pack'),
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                  width: 170,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Theme.of(context).primaryColor,
+                    ),
+                    borderRadius: BorderRadius.circular(10),
+                    color: Theme.of(context).primaryColor,
+                    boxShadow: [
+                      BoxShadow(
+                        offset: const Offset(0.0, 0.0),
+                        blurRadius: 1.0,
+                        spreadRadius: 1.0,
+                        color: Colors.grey,
+                      ),
+                    ],
+                  ),
+                  alignment: Alignment.center,
+                  child: FlatButton(
+                    child: Text(
+                      'Terminar Sessão',
+                      style: TextStyle(
+                        fontSize: 17,
+                        color: Colors.white,
+                        fontFamily: 'Ubuntu',
+                      ),
+                    ),
+                    onPressed: () {
+                      FirebaseAuth.instance.signOut();
+                      Navigator.popAndPushNamed(context, 'login');
+                    },
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
 

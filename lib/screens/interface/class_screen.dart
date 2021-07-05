@@ -137,7 +137,7 @@ class _ClassScreenState extends State<ClassScreen> {
                             Padding(
                               padding: EdgeInsets.only(top: 50),
                               child: Text(
-                                "Hoje",
+                                "Agenda",
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'Ubuntu',
@@ -164,8 +164,13 @@ class _ClassScreenState extends State<ClassScreen> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text(
-                                          'Aula',
+                                        TextField(
+                                          decoration: InputDecoration(
+                                            border: InputBorder.none,
+                                            hintStyle:
+                                                TextStyle(color: Colors.white),
+                                            hintText: 'Título da Tarefa',
+                                          ),
                                           style: (TextStyle(
                                             fontSize: 20,
                                             fontWeight: FontWeight.bold,
@@ -173,15 +178,20 @@ class _ClassScreenState extends State<ClassScreen> {
                                             color: Colors.white,
                                           )),
                                         ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Text(
-                                          'Das 10:00 às 11:30',
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: Colors.white,
-                                              fontFamily: 'Ubuntu'),
+                                        TextField(
+                                          decoration: InputDecoration(
+                                            border: InputBorder.none,
+                                            hintStyle: TextStyle(
+                                              color: Colors.grey,
+                                            ),
+                                            hintText: 'Horário da Tarefa',
+                                          ),
+                                          style: (TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Ubuntu',
+                                            color: Colors.white,
+                                          )),
                                         ),
                                       ],
                                     ),
@@ -207,8 +217,13 @@ class _ClassScreenState extends State<ClassScreen> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text(
-                                          'Tarefa 2',
+                                        TextField(
+                                          decoration: InputDecoration(
+                                            border: InputBorder.none,
+                                            hintStyle:
+                                                TextStyle(color: Colors.white),
+                                            hintText: 'Título da Tarefa',
+                                          ),
                                           style: (TextStyle(
                                             fontSize: 20,
                                             fontWeight: FontWeight.bold,
@@ -216,15 +231,20 @@ class _ClassScreenState extends State<ClassScreen> {
                                             color: Colors.white,
                                           )),
                                         ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Text(
-                                          'Descrição da Tarfea 2',
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: Colors.white,
-                                              fontFamily: 'Ubuntu'),
+                                        TextField(
+                                          decoration: InputDecoration(
+                                            border: InputBorder.none,
+                                            hintStyle: TextStyle(
+                                              color: Colors.grey,
+                                            ),
+                                            hintText: 'Horário da Tarefa',
+                                          ),
+                                          style: (TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Ubuntu',
+                                            color: Colors.white,
+                                          )),
                                         ),
                                       ],
                                     ),

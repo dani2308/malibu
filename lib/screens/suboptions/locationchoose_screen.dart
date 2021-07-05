@@ -45,7 +45,7 @@ class _LocationChooseScreenState extends State<LocationChooseScreen> {
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 30, bottom: 30, left: 20),
+                    padding: EdgeInsets.only(top: 30, bottom: 30),
                     child: Align(
                       alignment: Alignment.center,
                       child: Column(
@@ -56,19 +56,15 @@ class _LocationChooseScreenState extends State<LocationChooseScreen> {
                               children: [
                                 Padding(
                                   padding: EdgeInsets.only(right: 10),
-                                  child: Icon(
-                                    Icons.search_outlined,
+                                  child: IconButton(
+                                    icon: Icon(Icons.search_outlined),
+                                    onPressed: () {
+                                      showSearch(
+                                        context: context,
+                                        delegate: DataSearch(),
+                                      );
+                                    },
                                     color: Theme.of(context).primaryColor,
-                                  ),
-                                ),
-                                Flexible(
-                                  child: TextFormField(
-                                    decoration: InputDecoration(
-                                      hintText: 'Pesquisar por um Local',
-                                    ),
-                                    keyboardType: TextInputType.text,
-                                    style: TextStyle(
-                                        fontSize: 15, fontFamily: 'Ubuntu'),
                                   ),
                                 ),
                               ],
@@ -78,11 +74,10 @@ class _LocationChooseScreenState extends State<LocationChooseScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
                   Container(
                     alignment: Alignment(2, 0.0),
                     child: Padding(
-                      padding: EdgeInsets.only(top: 30),
+                      padding: EdgeInsets.only(top: 0),
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 10.0),
                         child: Container(
@@ -163,6 +158,77 @@ class _LocationChooseScreenState extends State<LocationChooseScreen> {
           ),
         );
       },
+    );
+  }
+}
+
+class DataSearch extends SearchDelegate<String> {
+  final spots = [
+    "Ericeira",
+    "Maceda",
+    "Leça",
+    "Vila Praia de Âncora",
+    "Ofir",
+    "Nazaré",
+    "Esmoriz",
+  ];
+
+  final recentLanguages = [];
+
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    // TODO: implement buildActions
+
+    return [
+      IconButton(
+          onPressed: () {
+            query = "";
+          },
+          icon: Icon(Icons.clear))
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    // TODO: implement buildLeading
+    return IconButton(
+      onPressed: () {
+        close(context, null);
+      },
+      icon: AnimatedIcon(
+        icon: AnimatedIcons.menu_arrow,
+        progress: transitionAnimation,
+      ),
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    // TODO: implement buildResults
+    throw UnimplementedError();
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    // TODO: implement buildSuggestions
+    final suggestionList = query.isEmpty
+        ? recentLanguages
+        : spots
+            .where(
+              (p) => p.startsWith(query),
+            )
+            .toList();
+
+    return ListView.builder(
+      itemBuilder: (context, index) => ListTile(
+        leading: Icon(
+          Icons.location_on,
+        ),
+        title: Text(
+          suggestionList[index],
+        ),
+      ),
+      itemCount: suggestionList.length,
     );
   }
 }

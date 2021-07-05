@@ -69,7 +69,12 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                           Icons.search_rounded,
                           color: Theme.of(context).primaryColor,
                         ),
-                        onPressed: () => Navigator.pushNamed(context, ''),
+                        onPressed: () {
+                          showSearch(
+                            context: context,
+                            delegate: DataSearch(),
+                          );
+                        },
                       ),
                     ),
                     Padding(
@@ -180,10 +185,7 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                                           'id': suit.get('id'),
                                           'price': suit.get('price')
                                         }
-                                      }).then((value) {
-                                        Navigator.popAndPushNamed(
-                                            context, 'shopbag');
-                                      });
+                                      }).then((value) {});
                                     },
                                   ),
                                 ),
@@ -215,10 +217,7 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
                                             'id': suit.get('id'),
                                             'price': suit.get('price')
                                           }
-                                        }).then((value) {
-                                          Navigator.popAndPushNamed(
-                                              context, 'favourites');
-                                        });
+                                        }).then((value) {});
                                       },
                                     ),
                                   ],
@@ -241,6 +240,76 @@ class _RentWetsuitScreenState extends State<RentWetsuitScreen> {
           ),
         );
       },
+    );
+  }
+}
+
+class DataSearch extends SearchDelegate<String> {
+  final suits = [
+    "RipCurl - Women 5/3",
+    "RipCurl - DawnPatrol 4/3",
+    "RipCurl - E-Bomb 4/3",
+    "QuickSilver - Kids 4/3",
+    "Onda - ZFlex 5/3",
+    "Billabong - Absolute 4/3"
+  ];
+
+  final recentSuits = [];
+
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    // TODO: implement buildActions
+
+    return [
+      IconButton(
+          onPressed: () {
+            query = "";
+          },
+          icon: Icon(Icons.clear))
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    // TODO: implement buildLeading
+    return IconButton(
+      onPressed: () {
+        close(context, null);
+      },
+      icon: AnimatedIcon(
+        icon: AnimatedIcons.menu_arrow,
+        progress: transitionAnimation,
+      ),
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    // TODO: implement buildResults
+    throw UnimplementedError();
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    // TODO: implement buildSuggestions
+    final suggestionList = query.isEmpty
+        ? recentSuits
+        : suits
+            .where(
+              (p) => p.startsWith(query),
+            )
+            .toList();
+
+    return ListView.builder(
+      itemBuilder: (context, index) => ListTile(
+        leading: Icon(
+          Icons.surfing,
+        ),
+        title: Text(
+          suggestionList[index],
+        ),
+      ),
+      itemCount: suggestionList.length,
     );
   }
 }

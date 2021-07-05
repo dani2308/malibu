@@ -1,10 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:malibu/models/cart_model.dart';
 import 'package:malibu/models/product_model.dart';
 import 'package:malibu/store/user.store.dart';
 import 'package:provider/provider.dart';
-import 'package:malibu/widgets/shopbag_item.dart';
 
 class ShopBagScreen extends StatefulWidget {
   ShopBagScreen({Key key}) : super(key: key);
@@ -20,9 +18,44 @@ class _ShopBagScreenState extends State<ShopBagScreen> {
     var userEmail = _userMob.user.email;
 
     Widget _buildLoadingBar() {
-      return const Scaffold(
-        body: Center(
-          child: CircularProgressIndicator(),
+      return Scaffold(
+        body: SingleChildScrollView(
+          child: SafeArea(
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    FlatButton(
+                      child: Icon(
+                        Icons.arrow_back_ios_rounded,
+                        color: Theme.of(context).accentColor,
+                      ),
+                      onPressed: () => Navigator.pushNamed(context, 'home'),
+                    ),
+                    Text(
+                      'Saco de Compras',
+                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 270,
+                ),
+                Text(
+                  'Não existem dados no carrinho!',
+                  style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Icon(
+                  Icons.search_off,
+                  size: 50,
+                  color: Theme.of(context).primaryColor,
+                ),
+              ],
+            ),
+          ),
         ),
       );
     }
@@ -38,7 +71,6 @@ class _ShopBagScreenState extends State<ShopBagScreen> {
         else {
           int total = 0;
           List<Product> products = List<Product>();
-
           print(
             snapshot.data.docs.first.get('product'),
           );
@@ -121,14 +153,19 @@ class _ShopBagScreenState extends State<ShopBagScreen> {
                                       color: Theme.of(context).accentColor,
                                       onPressed: () {
                                         FirebaseFirestore.instance
-                                            .collection("Cart")
-                                            .doc(product.id)
-                                            .delete()
+                                            .collection('Cart')
+                                            .get()
                                             .then(
-                                          (_) {
-                                            print('sucesso!');
-                                          },
-                                        );
+                                              (snapshot) => {
+                                                for (DocumentSnapshot ds
+                                                    in snapshot.docs)
+                                                  {
+                                                    print(ds),
+                                                    ds.reference.delete()
+                                                  }
+                                              },
+                                            );
+                                        Navigator.pushNamed(context, 'home');
                                       },
                                     ),
                                   ),
@@ -198,7 +235,9 @@ class _ShopBagScreenState extends State<ShopBagScreen> {
                                     fontFamily: 'Ubuntu',
                                   ),
                                 ),
-                                onPressed: () async {},
+                                onPressed: () async {
+                                  createShowDialog(context);
+                                },
                               ),
                             ),
                           ),
@@ -238,7 +277,13 @@ class _ShopBagScreenState extends State<ShopBagScreen> {
           actions: [
             MaterialButton(
               onPressed: () {
-                Navigator.of(context).pop('Confirmado');
+                FirebaseFirestore.instance.collection('Cart').get().then(
+                      (snapshot) => {
+                        for (DocumentSnapshot ds in snapshot.docs)
+                          {print(ds), ds.reference.delete()}
+                      },
+                    );
+                Navigator.pushNamed(context, 'home');
               },
               child: Container(
                 alignment: Alignment.center,

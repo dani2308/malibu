@@ -156,7 +156,7 @@ class _ClassConfirmScreenState extends State<ClassConfirmScreen> {
                             borderRadius: BorderRadius.circular(50.0),
                           ),
                           child: CircleAvatar(
-                            backgroundImage: AssetImage("assets/mii.png"),
+                            backgroundImage: AssetImage("assets/mario.png"),
                           ),
                         ),
                         Padding(
@@ -184,7 +184,7 @@ class _ClassConfirmScreenState extends State<ClassConfirmScreen> {
                             borderRadius: BorderRadius.circular(50.0),
                           ),
                           child: CircleAvatar(
-                            backgroundImage: AssetImage("assets/mii.png"),
+                            backgroundImage: AssetImage("assets/miguel.png"),
                           ),
                         ),
                         Padding(

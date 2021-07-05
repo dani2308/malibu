@@ -17,10 +17,46 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
     final UserMob _userMob = Provider.of<UserMob>(context);
     var userEmail = _userMob.user.email;
     bool liked = false;
+
     Widget _buildLoadingBar() {
-      return const Scaffold(
-        body: Center(
-          child: CircularProgressIndicator(),
+      return Scaffold(
+        body: SingleChildScrollView(
+          child: SafeArea(
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    FlatButton(
+                      child: Icon(
+                        Icons.arrow_back_ios_rounded,
+                        color: Theme.of(context).accentColor,
+                      ),
+                      onPressed: () => Navigator.pushNamed(context, 'home'),
+                    ),
+                    Text(
+                      'Favoritos',
+                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 270,
+                ),
+                Text(
+                  'Não existem dados nos favoritos!',
+                  style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Icon(
+                  Icons.search_off,
+                  size: 50,
+                  color: Theme.of(context).primaryColor,
+                ),
+              ],
+            ),
+          ),
         ),
       );
     }
@@ -122,21 +158,6 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                         ),
                                       ),
                                     ),
-                                    Container(
-                                      width: 40,
-                                      height: 40,
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Theme.of(context).primaryColor,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                      ),
-                                      child: Icon(
-                                        Icons.add,
-                                        color: Theme.of(context).primaryColor,
-                                      ),
-                                    ),
                                     Row(
                                       children: [
                                         IconButton(
@@ -154,14 +175,20 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                             });
 
                                             FirebaseFirestore.instance
-                                                .collection("Favs")
-                                                .doc(product.id)
-                                                .delete()
+                                                .collection('Favs')
+                                                .get()
                                                 .then(
-                                              (_) {
-                                                print('sucesso!');
-                                              },
-                                            );
+                                                  (snapshot) => {
+                                                    for (DocumentSnapshot ds
+                                                        in snapshot.docs)
+                                                      {
+                                                        print(ds),
+                                                        ds.reference.delete()
+                                                      }
+                                                  },
+                                                );
+                                            Navigator.pushNamed(
+                                                context, 'home');
                                           },
                                         ),
                                       ],
