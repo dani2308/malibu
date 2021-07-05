@@ -1,9 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:malibu/models/location_model.dart';
 import 'package:malibu/models/place_model.dart';
-import 'package:malibu/models/spots_model.dart';
 import 'package:provider/provider.dart';
 import 'package:malibu/store/user.store.dart';
 

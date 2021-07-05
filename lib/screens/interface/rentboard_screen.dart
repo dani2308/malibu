@@ -253,9 +253,7 @@ class DataSearch extends SearchDelegate<String> {
   ];
 
   final recentBoards = [
-    // "HardBoard - NSP RoundPin 6'0",
-    // "SoftBoard - Ocean 7'0",
-    // "HardBoard - NSP Fish 6'0",
+    
   ];
 
   @override

@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -159,7 +158,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               child: CircleAvatar(
                 backgroundImage: _imageFile == null
-                    ? AssetImage("assets/mii.png")
+                    ? AssetImage("assets/user.png")
                     : FileImage(File(_imageFile.path)),
               ),
             ),
@@ -271,13 +270,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     final UserMob _userMob = Provider.of<UserMob>(context);
 
-    // return StreamBuilder<QuerySnapshot>(
-    //   stream: FirebaseFirestore.instance
-    //       .collection('Users')
-    //       .where('email', isEqualTo: _userMob.user.email)
-    //       .snapshots(),
-    //   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-    //     if (!snapshot.hasData) return CircularProgressIndicator();
 
     return Scaffold(
       body: SingleChildScrollView(

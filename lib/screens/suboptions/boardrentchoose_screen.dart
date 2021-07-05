@@ -69,97 +69,77 @@ class _BoardRentChooseScreenState extends State<BoardRentChooseScreen> {
                       SizedBox(
                         height: 20,
                       ),
-                      for (Board board in boards) ...[
-                        SizedBox(
-                          height: 300.0,
-                          child: Carousel(
-                            images: [
-                              board.image,
-                              board.image,
-                              board.image,
-                            ],
-                            dotSize: 10.0,
-                            indicatorBgPadding: 8.0,
-                            animationDuration: Duration(seconds: 2),
-                            dotBgColor: Colors.transparent,
-                            dotColor: Theme.of(context).accentColor,
-                            dotIncreasedColor: Theme.of(context).accentColor,
-                          ),
+                      SizedBox(
+                        height: 300.0,
+                        child: Carousel(
+                          images: [
+                            Image.asset('assets/nspF.png'),
+                            Image.asset('assets/nspF1.png'),
+                            Image.asset('assets/nspF2.png'),
+                          ],
+                          dotSize: 10.0,
+                          indicatorBgPadding: 8.0,
+                          animationDuration: Duration(seconds: 2),
+                          dotBgColor: Colors.transparent,
+                          dotColor: Theme.of(context).accentColor,
+                          dotIncreasedColor: Theme.of(context).accentColor,
                         ),
-                        SizedBox(
-                          height: 52.0,
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(left: 30),
-                          width: MediaQuery.of(context).size.width,
-                          height: MediaQuery.of(context).size.height * 0.55,
-                          decoration: BoxDecoration(
+                      ),
+                      SizedBox(
+                        height: 52.0,
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 30),
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height * 0.55,
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).primaryColor,
+                          border: Border.all(
                             color: Theme.of(context).primaryColor,
-                            border: Border.all(
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular((50)),
-                              topRight: Radius.circular((50)),
-                            ),
                           ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                height: 40.0,
-                              ),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 20),
-                                    child: Text(
-                                      board.name,
-                                      style: TextStyle(
-                                        fontFamily: 'Ubuntu',
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 17,
-                                        color: Colors.white,
-                                      ),
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular((50)),
+                            topRight: Radius.circular((50)),
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 40.0,
+                            ),
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(left: 20),
+                                  child: Text(
+                                    "HardBoard - NSP Fish 6'0",
+                                    style: TextStyle(
+                                      fontFamily: 'Ubuntu',
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 17,
+                                      color: Colors.white,
                                     ),
                                   ),
-                                  Post(),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 50.0,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(
-                                  left: 15.0,
-                                  right: 30.0,
                                 ),
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    CountQntd(),
-                                  ],
+                              ],
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                top: 50.0,
+                                left: 10.0,
+                              ),
+                              child: Text(
+                                'Prancha indicada para avançados, 32 litros de volume. Fácil de manobrar, adaptável a ondas grandes e pequenas.',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
                                 ),
                               ),
-                              Padding(
-                                padding: EdgeInsets.only(
-                                  top: 50.0,
-                                  left: 10.0,
-                                ),
-                                child: Text(
-                                  board.description,
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ],
                   ),
                 ),

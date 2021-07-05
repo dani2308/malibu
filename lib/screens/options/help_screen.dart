@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:malibu/theme.dart';
 
 class HelpScreen extends StatefulWidget {
   HelpScreen({Key key}) : super(key: key);
